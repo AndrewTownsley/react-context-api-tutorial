@@ -8,7 +8,7 @@ const Header = ({cart}) => {
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    {/* <li><Link to="/cart">Cart<span>{cart.length}</span></Link></li>   */}
+                    <li><Link to="/cart">Cart</Link></li>  
                 </ul>
             </nav>
         </div>

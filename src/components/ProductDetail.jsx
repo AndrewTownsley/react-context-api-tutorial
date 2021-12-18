@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
-const ProductDetail = ({ product }) => {
-    const [cart, setCart] = useState([]);
+const ProductDetail = ({ product, cart, setCart }) => {
 
-    console.log(cart);
     return (
         <article className='product-card'>
         <img src={product.image} alt={product.item} />
