@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../Context';
 
-const ProductDetail = ({ product, cart, setCart }) => {
+const ProductDetail = ({ product }) => {
+  const {cart, setCart} = useContext(CartContext)
 
     return (
         <article className='product-card'>
