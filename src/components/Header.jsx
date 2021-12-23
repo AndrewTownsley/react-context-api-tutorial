@@ -1,9 +1,9 @@
 import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../Context';
+import { CartState } from '../Context';
 
 const Header = () => {
-    const { cart, setCart} = useContext(CartContext);
+    const { cart, setCart} = CartState();
 
     return (
         <div className='header'>

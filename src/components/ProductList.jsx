@@ -1,0 +1,23 @@
+import React from 'react'
+import ProductDetail from './ProductDetail';
+import { CartState } from '../Context';
+
+const ProductList = () => {
+    const { products } = CartState();
+
+    return (
+        <div className="product-list" >
+        {
+            products.map((product) => (
+               <ProductDetail 
+                id={product.id} 
+                key={product.id} 
+                product={product}
+                />
+            ))
+        }
+    </div>
+    )
+}
+
+export default ProductList

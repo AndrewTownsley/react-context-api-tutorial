@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
-import { CartContext } from '../Context';
+import { CartState } from '../Context';
 
 const ProductDetail = ({ product }) => {
-  const {cart, setCart} = useContext(CartContext)
+  const {cart, setCart} = CartState();
 
     return (
         <article className='product-card'>
         <img src={product.image} alt={product.item} />
-        <h5>{product.item}</h5>
+        <h5>{product.name}</h5>
         <p>${product.price}</p>
         {cart.includes(product) ?
         (
