@@ -1,6 +1,6 @@
 import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartState } from '../Context';
+import { CartState } from '../Context/Context';
 
 const Header = () => {
     const { cart, setCart} = CartState();

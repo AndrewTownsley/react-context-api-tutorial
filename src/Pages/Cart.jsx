@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
-import ProductDetail from '../components/ProductDetail'
 import CartItem from '../components/CartItem';
-import { CartState } from '../Context';
+import { CartState } from '../Context/Context';
 
 const Cart = ({ product, handleRemoveItem }) => {
     const [total, setTotal] = useState(0.00);

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import Context from './Context';
+import Context from './Context/Context';
 import App from './App';
 
 ReactDOM.render(
@@ -9,7 +9,6 @@ ReactDOM.render(
     <Context>
       <App />
     </Context>
-    
   </React.StrictMode>,
   document.getElementById('root')
 );
