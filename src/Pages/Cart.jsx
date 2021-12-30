@@ -3,7 +3,7 @@ import ProductDetail from '../components/ProductDetail'
 import CartItem from '../components/CartItem';
 import { CartState } from '../Context';
 
-const Cart = ({ product }) => {
+const Cart = ({ product, handleRemoveItem }) => {
     const [total, setTotal] = useState(0.00);
     const {cart, setCart} = CartState();
 

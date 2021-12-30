@@ -11,7 +11,9 @@ const Context = ({ children }) => {
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
-    image: faker.random.image(),
+    inStock: faker.random.arrayElement([0,3,4,5,6,7]),
+    nextDay: faker.datatype.boolean(),
+    rating: faker.random.arrayElement([1,2,3,4,5]),
   }));
 
   const [products] = useState(productsArray);
