@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductDetail from './ProductDetail';
-import { CartState } from '../Context';
+import { CartState } from '../Context/Context';
 
 const ProductList = () => {
     const { products } = CartState();

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { CartState } from '../Context';
+import { CartState } from '../Context';
 
 
 const CartItem = ({ product, cart, setCart }) => {
