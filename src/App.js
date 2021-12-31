@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Cart from './Pages/Cart';
 import Home from './Pages/Home';
-import { CartState } from './Context';
+import { CartState } from './Context/Context';
 
 
 function App() {

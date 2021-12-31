@@ -1,8 +1,6 @@
-import faker from 'faker';
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import ProductList from '../components/ProductList';
 
-faker.seed(100)
 
 const Home = () => {
 
