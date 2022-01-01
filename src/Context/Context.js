@@ -23,7 +23,7 @@ const Context = ({ children }) => {
   })
 
   return (
-    <Cart.Provider value={{ state, dispatch }}>
+    <Cart.Provider value={{ state, dispatch, cart, setCart }}>
       {children}
     </Cart.Provider>
   );

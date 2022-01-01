@@ -3,12 +3,12 @@ import ProductDetail from './ProductDetail';
 import { CartState } from '../Context/Context';
 
 const ProductList = () => {
-    const { products } = CartState();
+    const { state: {productsArray, cart, setCart} } = CartState();
 
     return (
         <div className="product-list" >
         {
-            products.map((product) => (
+            productsArray.map((product) => (
                <ProductDetail 
                 id={product.id} 
                 key={product.id} 

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { CartState } from '../Context';
+import { CartState } from '../Context/Context';
 
 
 const CartItem = ({ product, cart, setCart }) => {
 
-
-   console.log(cart);
     return (
         <div>
             <article className='product-card'>

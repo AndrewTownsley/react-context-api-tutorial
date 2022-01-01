@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+.Home {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
 .header {
   margin: 0;
   padding: 1rem;
@@ -23,6 +28,19 @@
 
 .header a {
   color: #fff;
+}
+
+.Filters {
+  border-right: 2px solid #999;
+}
+
+.Filters ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.Filters ul input {
+  margin: 1rem 0;
 }
 
 .product-list {
