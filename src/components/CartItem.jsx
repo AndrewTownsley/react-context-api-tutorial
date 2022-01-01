@@ -10,6 +10,7 @@ const CartItem = ({ product, cart, setCart }) => {
                 <img src={product.image} alt={product.item} />
                 <h5>{product.name}</h5>
                 <p>${product.price}</p>
+                <p>${product.inStock}</p>
                 {
                     product.nextDay ? <p><em>Next Day Shipping</em></p> : null
                 }

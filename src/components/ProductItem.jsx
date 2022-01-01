@@ -11,21 +11,22 @@ const ProductDetail = ({ product }) => {
           product.nextDay ? <p>Next Day Shipping</p> : null
         }
         <p>Rating: {product.rating}/5</p>
-        {cart.includes(product) ?
-        (
-        <button
-          className="add remove"
-          onClick={() => setCart(cart.filter((c) => c.id !== product.id))}
-        >
-          Remove from Cart
+        <p>inStock: {product.instock}</p>
+        {product.instock !== 0 ?
+          (
+            <button className="add" onClick={() => setCart([...cart, product])}>
+              Add to Cart
+            </button>
+          )
+          : 
+          (
+            <button
+            className="out-of-stock"
+            >
+          Out of Stock
         </button>
       ) 
-      : 
-      (
-        <button className="add" onClick={() => setCart([...cart, product])}>
-          Add to Cart
-        </button>
-      )}
+    }
     </article>
     )
 }

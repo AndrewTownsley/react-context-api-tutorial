@@ -1,15 +1,15 @@
 import React from 'react'
-import ProductDetail from './ProductDetail';
+import ProductItem from './ProductItem';
 import { CartState } from '../Context/Context';
 
 const ProductList = () => {
     const { state: {productsArray, cart, setCart} } = CartState();
-
+    console.log(productsArray);
     return (
         <div className="product-list" >
         {
             productsArray.map((product) => (
-               <ProductDetail 
+               <ProductItem 
                 id={product.id} 
                 key={product.id} 
                 product={product}

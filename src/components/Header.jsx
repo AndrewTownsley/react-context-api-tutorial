@@ -4,7 +4,6 @@ import { CartState } from '../Context/Context';
 
 const Header = () => {
     const { cart, setCart} = CartState();
-
     return (
         <div className='header'>
             <h2>Header Component</h2>
