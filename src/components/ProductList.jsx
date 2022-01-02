@@ -4,7 +4,6 @@ import { CartState } from '../Context/Context';
 
 const ProductList = () => {
     const { state: {productsArray, cart, setCart} } = CartState();
-    console.log(productsArray);
     return (
         <div className="product-list" >
         {
