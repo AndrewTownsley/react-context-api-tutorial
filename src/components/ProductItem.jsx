@@ -20,7 +20,7 @@ const ProductDetail = ({ product }) => {
           product.nextDay ? <p>Next Day Shipping</p> : null
         }
         <p>Rating: {product.rating}/5</p>
-        <p>inStock: {inStock}</p>
+        <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p>
         {inStock !== 0 ?
           (
             // <button className="add" onClick={() => setCart([...cart, product])}>

@@ -80,8 +80,13 @@
   color: #61dafb;
 }
 
+.low-stock {
+  color: red;
+  font-weight: bold;
+}
+
 .out-of-stock {
-  color: #999;
-  background-color: blue;
+  color: #555;
+  background-color: rgba(255, 18, 18, 0.8);
   pointer-events: none;
 }
