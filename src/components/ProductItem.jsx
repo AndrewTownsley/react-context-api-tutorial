@@ -16,9 +16,7 @@ const ProductDetail = ({ product }) => {
         <article className='product-card'>
         <h5>{product.name}</h5>
         <p>${product.price}</p>
-        {
-          product.nextDay ? <p>Next Day Shipping</p> : null
-        }
+        { product.nextDay ? <p>Next Day Shipping</p> : null}
         <p>Rating: {product.rating}/5</p>
         <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p>
         {inStock !== 0 ?
