@@ -5,12 +5,6 @@ import { CartState } from '../Context/Context';
 const Cart = () => {
     const [total, setTotal] = useState(0.00);
     const {cart, setCart} = CartState();
-
-    // const removeSingleCartItem = (cart, id) => {
-    //     return cart.filter(function(item) {
-    //         return item.id !== id;
-    //     })
-    // }
     
     const decreaseCartQty = (id) => {
         let cartCopy = [...cart]
