@@ -2,9 +2,27 @@ import React, { useState, useEffect, useContext } from 'react'
 import CartItem from '../components/CartItem';
 import { CartState } from '../Context/Context';
 
-const Cart = ({ product, handleRemoveItem }) => {
+const Cart = () => {
     const [total, setTotal] = useState(0.00);
     const {cart, setCart} = CartState();
+
+    // const removeSingleCartItem = (cart, id) => {
+    //     return cart.filter(function(item) {
+    //         return item.id !== id;
+    //     })
+    // }
+    
+    const decreaseCartQty = (id) => {
+        let cartCopy = [...cart]
+        let productQty = cartCopy.filter(item => item.id === id);
+        console.log(cart);
+        productQty.pop();
+        let newCart = cart.filter(item => item.id !== id);
+        setCart([...newCart, ...productQty])
+        console.log("ProductQty: ", productQty);
+        console.log("newCart: ", newCart);
+        // console.log("Cart: ", cart);
+    }
 
 
     useEffect(() => {
@@ -20,7 +38,13 @@ const Cart = ({ product, handleRemoveItem }) => {
             <div className="product-container">
                 {
                     cart.map((product, index) => (
-                        <CartItem key={index} product={product} cart={cart} setCart={setCart} />
+                        <CartItem 
+                            key={index} 
+                            product={product} 
+                            cart={cart} 
+                            setCart={setCart}
+                            decreaseCartQty={decreaseCartQty}
+                        />
                     ))
                 }
             </div>

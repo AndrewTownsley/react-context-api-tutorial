@@ -5,8 +5,9 @@ import faker from "faker";
 const Cart = createContext();
 faker.seed(100);
 
-const Context = ({ children }) => {
+const Context = ({ children,product }) => {
   const [cart, setCart] = useState([]);
+  const [productQty, setProductQty] = useState(1);
 
   const productsArray = [...Array(20)].map((p) => ({
     id: faker.datatype.uuid(),
@@ -22,8 +23,9 @@ const Context = ({ children }) => {
     cart: [ ],
   })
 
+
   return (
-    <Cart.Provider value={{ state, dispatch, cart, setCart }}>
+    <Cart.Provider value={{ state, dispatch, cart, setCart, productQty, setProductQty }}>
       {children}
     </Cart.Provider>
   );

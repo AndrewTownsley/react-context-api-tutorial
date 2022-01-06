@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { CartState } from '../Context/Context';
 
 
-const CartItem = ({ product, cart, setCart }) => {
+const CartItem = ({ product, decreaseCartQty }) => {
+    const {cart, setCart, productQty, setProductQty} = CartState();
+
 
     return (
         <div>
@@ -19,9 +21,11 @@ const CartItem = ({ product, cart, setCart }) => {
             <section>
                 <div>
 
-                    Quantity: {cart.length}
+                    <label name="product-quantity" htmlFor="cartItemQty">
                     <button onClick={() => setCart([...cart, product])}>+</button>
-                    <button >-</button>
+                        <input onChange={(e) => setProductQty(e.target.value)} type="number" id="cartItemQty" name="product-quantity" />
+                    <button onClick={() => decreaseCartQty(product.id)} >-</button>
+                    </label>
                 </div>
                 <button onClick={() => setCart(cart.filter((c) => c.id !== product.id))}>Remove Item</button>
             </section>

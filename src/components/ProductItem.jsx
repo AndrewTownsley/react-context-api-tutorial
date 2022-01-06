@@ -2,14 +2,14 @@ import { CartState } from '../Context/Context';
 import React, { useState } from 'react';
 
 const ProductDetail = ({ product }) => {
-  const {cart, setCart} = CartState();
+  const {cart, setCart } = CartState();
   const [inStock, setInStock] = useState(product.inStock)
-  console.log("default: ", inStock);
+  // console.log("default: ", inStock);
   
   const addItemToCart = (product) => {
     setCart([...cart, product])
     setInStock(inStock - 1);
-    console.log("after add item: ", inStock);
+    // console.log("after add item: ", inStock);
   }
 
     return (
@@ -30,7 +30,7 @@ const ProductDetail = ({ product }) => {
           (
             <button
             className="out-of-stock"
-            disabled="true"
+            disabled={true}
             >
           Out of Stock
         </button>
