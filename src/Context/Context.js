@@ -20,12 +20,28 @@ const Context = ({ children,product }) => {
 
   const [state, dispatch] = useReducer(cartReducer, {
     productsArray: productsArray,
-    cart: [ ],
+    cart: [],
   })
+
+//   const decreaseCartQty = (id) => {
+//     let cartCopy = [...cart]
+//     let productQty = cartCopy.filter(item => item.id === id);
+//     productQty.pop();
+//     let newCart = cart.filter(item => item.id !== id);
+//     setCart([...newCart, ...productQty])
+// }
+
+  const decreaseCartQty = (id) => {
+    let cartCopy = [...cart]
+    let productQty = cartCopy.filter(item => item.id === id);
+    productQty.pop();
+    let newCart = cart.filter(item => item.id !== id);
+    setCart([...newCart, ...productQty])
+}
 
 
   return (
-    <Cart.Provider value={{ state, dispatch, cart, setCart, productQty, setProductQty }}>
+    <Cart.Provider value={{ state, dispatch, cart, setCart, productQty, setProductQty, decreaseCartQty }}>
       {children}
     </Cart.Provider>
   );

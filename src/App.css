@@ -60,6 +60,17 @@
   width: 100px;
 } 
 
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 275px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

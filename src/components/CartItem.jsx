@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { CartState } from '../Context/Context';
 
 
-const CartItem = ({ product, decreaseCartQty }) => {
-    const {cart, setCart, productQty, setProductQty} = CartState();
+const CartItem = ({ product }) => {
+    const {cart, setCart, productQty, setProductQty, decreaseCartQty} = CartState();
 
 
     return (
-        <div>
+        <div className="cart-item">
             <article className='product-card'>
-                <img src={product.image} alt={product.item} />
+                {/* <img src={product.image} alt={product.item} /> */}
                 <h5>{product.name}</h5>
                 <p>${product.price}</p>
                 <p>${product.inStock}</p>
@@ -23,7 +23,7 @@ const CartItem = ({ product, decreaseCartQty }) => {
 
                     <label name="product-quantity" htmlFor="cartItemQty">
                     <button onClick={() => setCart([...cart, product])}>+</button>
-                        <input onChange={(e) => setProductQty(e.target.value)} type="number" id="cartItemQty" name="product-quantity" />
+                        {/* <input onChange={(e) => setProductQty(e.target.value)} type="number" id="cartItemQty" name="product-quantity" /> */}
                     <button onClick={() => decreaseCartQty(product.id)} >-</button>
                     </label>
                 </div>
