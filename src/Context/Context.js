@@ -5,7 +5,7 @@ import faker from "faker";
 const Cart = createContext();
 faker.seed(100);
 
-const Context = ({ children,product }) => {
+const Context = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [productQty, setProductQty] = useState(1);
 

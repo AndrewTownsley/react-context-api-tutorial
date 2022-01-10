@@ -32,7 +32,15 @@ const ProductDetail = ({ product }) => {
             // <button className="add" onClick={() => setCart([...cart, product])}>
             <button 
               className={inStock !== 0 ? "" : "out-of-stock"} 
-              onClick={() => addItemToCart(product)}>
+              onClick={() => addItemToCart(product)}
+            >
+              qty:
+              <label name="productQty">
+                <input 
+                // onChange={(e) => setProductQuantity(e.target.value)}
+                  type="number" 
+                  id="productQty"/>
+              </label>
               Add to Cart
             </button>
          
