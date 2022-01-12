@@ -60,6 +60,10 @@
   width: 100px;
 } 
 
+.product-card label, input {
+  max-width: 100%;
+}
+
 .product-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
