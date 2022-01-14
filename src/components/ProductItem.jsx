@@ -2,7 +2,10 @@ import { CartState } from '../Context/Context';
 import React, { useState } from 'react';
 
 const ProductDetail = ({ product }) => {
-  const {cart, setCart, decreaseCartQty } = CartState();
+  const { state: 
+    {cart, setCart, decreaseCartQty},
+      dispatch 
+    } = CartState();
   const [inStock, setInStock] = useState(product.inStock)
   // console.log("default: ", inStock);
   
@@ -22,7 +25,12 @@ const ProductDetail = ({ product }) => {
           (
             <button
               className={inStock !== 0 ? "" : "out-of-stock"}
-              onClick={() => decreaseCartQty(product.id)}
+              onClick={() => {
+                dispatch({  
+                  type: "REMOVE_FROM_CART",
+                  payload: product
+                })
+              }}
             >
           Remove from cart
         </button>
@@ -32,7 +40,12 @@ const ProductDetail = ({ product }) => {
           <>
             <button 
               className={inStock !== 0 ? "" : "out-of-stock"} 
-              onClick={() => addItemToCart(product)}
+              onClick={() => {
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: product
+                })
+              }}
               >
              
               Add to Cart
