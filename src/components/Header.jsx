@@ -3,12 +3,20 @@ import { Link } from 'react-router-dom';
 import { CartState } from '../Context/Context';
 
 const Header = () => {
-    const { state: {cart} } = CartState();
+    const { state: {cart}, dispatch, productDispatch } = CartState();
     return (
         <div className='header'>
             <h2>Header Component</h2>
             <label htmlFor="productSearch">
-                <input type="text" id="search" />
+                <input
+                    onChange={(e) => {
+                        productDispatch({
+                            type: "FILTER_BY_SEARCH",
+                            payload: e.target.value 
+                        })
+                    }}
+                    type="text" 
+                    id="search" />
             </label>
             <nav>
                 <ul>

@@ -34,7 +34,7 @@ const ProductList = () => {
         }
         //  filter by search query 
         if(searchQuery) {
-            sortedProducts = sortedProducts.fitler(product => 
+            sortedProducts = sortedProducts.filter(product => 
                 product.name.toLowerCase().includes(searchQuery)
             )
         }

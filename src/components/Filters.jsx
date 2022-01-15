@@ -7,7 +7,8 @@ const Filters = () => {
     const { productState: {
         sort,
         byNextDay,
-        byStock
+        byStock,
+        byRating
     }, productDispatch} = CartState();
     const [ rating ]  =useState(3);
 
@@ -70,7 +71,7 @@ const Filters = () => {
                     />
                 </label>
                 <Rating 
-                    rating={rating} 
+                    rating={byRating} 
                     onClick={(i) => {
                         productDispatch({
                             type: "FILTER_BY_RATING",
