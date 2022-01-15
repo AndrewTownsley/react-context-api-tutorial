@@ -4,9 +4,12 @@ import { CartState } from '../Context/Context';
 
 
 const Filters = () => {
-    const [rating, setRating]  =useState(3);
-    const [nextDay, setNextDay] = useState(false);
-    const [outOfStock, setOutOfStock] = useState(false);
+    const { productState: {
+        sort,
+        byNextDay,
+        byStock
+    }, productDispatch} = CartState();
+    const [ rating ]  =useState(3);
 
     return (
         <div className='Filters'>
@@ -14,30 +17,76 @@ const Filters = () => {
             <ul>
                 <label htmlFor="priceAscend">
                     Price: low to high
-                    <input type="radio" name="priceSort" />
+                    <input 
+                        onChange={() => {
+                            productDispatch({
+                                type: "SORT_BY_PRICE",
+                                payload: "lowToHigh"
+                            })
+                        }}
+                        type="radio" 
+                        name="priceSort" 
+                        checked={sort === "highToLow" ? true : false}
+                    />
                 </label>
                 <label htmlFor="priceDescend">
                     Price: high to low
-                    <input type="radio" name="priceSort" />
+                    <input 
+                        onChange={() => {
+                            productDispatch({
+                                type: "SORT_BY_PRICE",
+                                payload: "highToLow"
+                            })
+                        }}
+                        type="radio" 
+                        name="priceSort" 
+                        checked={sort === "highToLow" ? true : false}
+                    />
                 </label>
                 <label htmlFor="nextDay">
                     Next Day Delivery
                     <input 
-                        onChange={() => setNextDay(true)} 
+                        onChange={() => {
+                            productDispatch({
+                                type: "FILTER_BY_DELIVERY",
+                            })
+                        }}
                         type="checkbox"
-                        name="nextDay" />
+                        name="nextDay"
+                        checked={byNextDay} 
+                    />
                 </label>
                 <label htmlFor="outOfStock">
                     Show out of stock items
                     <input 
-                        onChange={() => setOutOfStock(true)} 
+                        onChange={() => {
+                            productDispatch({
+                                type: "FILTER_BY_STOCK"
+                            })
+                        }}
                         type="checkbox"
-                        name="outOfStock" />
+                        name="outOfStock" 
+                        checked={byStock}
+                    />
                 </label>
                 <Rating 
                     rating={rating} 
-                    onClick={(i) => setRating(i + 1)}
+                    onClick={(i) => {
+                        productDispatch({
+                            type: "FILTER_BY_RATING",
+                            payload: i + 1,
+                        })
+                    }}
                 />
+                <button 
+                    onClick={() => 
+                        productDispatch({
+                            type: "CLEAR_FILTERS",
+                        })
+                    }
+                >
+                    Clear Filters
+                </button>
             </ul>
         </div>
     )

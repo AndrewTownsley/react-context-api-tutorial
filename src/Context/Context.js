@@ -21,6 +21,7 @@ const Context = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, {
     productsArray: productsArray,
     cart: [],
+    productQty: 0,
   })
   console.log(productsArray);
 

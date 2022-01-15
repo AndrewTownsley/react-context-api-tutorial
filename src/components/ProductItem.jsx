@@ -2,17 +2,16 @@ import { CartState } from '../Context/Context';
 import React, { useState } from 'react';
 
 const ProductDetail = ({ product }) => {
-  const { state: 
-    {cart, setCart, decreaseCartQty},
+  const { 
+      state: { cart },
       dispatch 
     } = CartState();
   const [inStock, setInStock] = useState(product.inStock)
-  // console.log("default: ", inStock);
   
-  const addItemToCart = (product) => {
-    setCart([...cart, product])
-    setInStock(inStock - 1);
-  }
+  // const addItemToCart = (product) => {
+  //   setCart([...cart, product])
+  //   setInStock(inStock - 1);
+  // }
 
     return (
         <article className='product-card'>
@@ -21,19 +20,21 @@ const ProductDetail = ({ product }) => {
         { product.nextDay ? <p>Next Day Shipping</p> : null}
         <p>Rating: {product.rating}/5</p>
         <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p>
-        { cart.includes(product) ?
+
+        { cart.some(p => p.id === product.id ) ?
           (
             <button
               className={inStock !== 0 ? "" : "out-of-stock"}
               onClick={() => {
+                setInStock(inStock + 1)
                 dispatch({  
                   type: "REMOVE_FROM_CART",
                   payload: product
                 })
               }}
             >
-          Remove from cart
-        </button>
+              Remove from cart
+            </button>
           )
           : 
           (
@@ -41,28 +42,22 @@ const ProductDetail = ({ product }) => {
             <button 
               className={inStock !== 0 ? "" : "out-of-stock"} 
               onClick={() => {
+                setInStock(inStock -1)
                 dispatch({
                   type: "ADD_TO_CART",
                   payload: product
                 })
               }}
-              >
-             
+            >
               Add to Cart
             </button>
-             <label name="productQty">
-             qty:
-             <input 
-             // onChange={(e) => setProductQuantity(e.target.value)}
-             type="number" 
-             id="productQty"/>
-           </label>
           </>
          
       ) 
     }
+
     </article>
     )
 }
 
-export default ProductDetail
+export default ProductDetail;

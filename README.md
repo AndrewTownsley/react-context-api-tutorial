@@ -7,6 +7,9 @@
 7.  Error / Loading components
 8.  Styled Components
 <!-- --Backend-- -->
+1.  SQL ?
+2.  SSG ?
+3.  Dashboard for adding / removing products?
 
 **************************************************
 

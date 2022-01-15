@@ -4,10 +4,10 @@ import { CartState } from '../Context/Context';
 
 const Cart = () => {
     const [total, setTotal] = useState(0.00);
-    const {cart, setCart } = CartState();
+    const { state: { cart, setCart } } = CartState();
 
     useEffect(() => {
-        setTotal(cart.reduce((a, b) => a + Number(b.price), 0))
+        setTotal(cart.reduce((a, b) => a + Number(b.price) * Number(b.qty), 0))
     }, [cart])
 
       

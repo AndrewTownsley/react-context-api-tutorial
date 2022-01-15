@@ -21,23 +21,29 @@ const CartItem = ({ product }) => {
             <section>
                 <div>
 
-                    <label name="product-quantity" htmlFor="cartItemQty">
-                    <button onClick={(e) => {
-                        dispatch({
+                    <select 
+                        value={product.productQty}
+                        name="productQuantity"
+                        id="productQuantity"
+                        onChange={(e) => {
+                            dispatch({
                             type: "UPDATE_CART_QUANTITY",
                             payload: {
                                 id: product.id,
                                 qty: e.target.value
                             }
                         })
-                    }}>+</button>
-                    <button onClick={() => {
-                        dispatch({
-                            type: "ADD_TO_CART",
-                            payload: product
-                        })
-                    }} >-</button>
-                    </label>
+                    }}
+                    >
+                        {
+                            product.inStock > 0 ? 
+                            ([...Array(product.inStock).keys()].map((x) => (
+                                <option key={x + 1}>{x + 1}</option>
+                            )))
+                            :
+                            <option>0</option>
+                        }
+                    </select>
                 </div>
                     <button onClick={() => {
                         dispatch({
