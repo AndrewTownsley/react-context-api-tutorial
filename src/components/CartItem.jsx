@@ -3,7 +3,9 @@ import { CartState } from '../Context/Context';
 
 
 const CartItem = ({ product }) => {
-    const {dispatch, cart, setCart, productQty, setProductQty, decreaseCartQty} = CartState();
+    const [selectedQty, setSelectedQty] = useState(0);
+    const { state: { cart }, 
+        dispatch } = CartState();
 
 
     return (
@@ -12,7 +14,7 @@ const CartItem = ({ product }) => {
                 {/* <img src={product.image} alt={product.item} /> */}
                 <h5>{product.name}</h5>
                 <p>${product.price}</p>
-                <p>${product.inStock}</p>
+                <p>in stock: {product.inStock - selectedQty}</p>
                 {
                     product.nextDay ? <p><em>Next Day Shipping</em></p> : null
                 }
@@ -26,6 +28,8 @@ const CartItem = ({ product }) => {
                         name="productQuantity"
                         id="productQuantity"
                         onChange={(e) => {
+                            console.log(cart)
+                            setSelectedQty(e.target.value)
                             dispatch({
                             type: "UPDATE_CART_QUANTITY",
                             payload: {

@@ -7,6 +7,9 @@ const Header = () => {
     return (
         <div className='header'>
             <h2>Header Component</h2>
+            <label htmlFor="productSearch">
+                <input type="text" id="search" />
+            </label>
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>

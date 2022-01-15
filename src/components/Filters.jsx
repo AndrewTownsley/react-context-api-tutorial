@@ -26,7 +26,7 @@ const Filters = () => {
                         }}
                         type="radio" 
                         name="priceSort" 
-                        checked={sort === "highToLow" ? true : false}
+                        checked={sort === "lowToHigh" ? true : false}
                     />
                 </label>
                 <label htmlFor="priceDescend">
