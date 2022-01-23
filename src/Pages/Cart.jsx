@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 import { CartState } from '../Context/Context';
 
@@ -17,6 +18,7 @@ const Cart = () => {
             <h3>Cart</h3>
             <h4>{cart.length} Items</h4>
             <h5>Total: ${total}</h5>
+            <Link to="/checkout"><button>Checkout</button></Link>
             <div className="product-container">
                 {
                     cart.map((product, index) => (

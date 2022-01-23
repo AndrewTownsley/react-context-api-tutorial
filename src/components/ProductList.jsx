@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductItem from './ProductItem';
 import { CartState } from '../Context/Context';
 
 const ProductList = () => {
+    const [error, setError] = useState(false);
     const { state: {productsArray },
             productState: { sort, byStock, byNextDay, byRating, searchQuery }
             } = CartState();
