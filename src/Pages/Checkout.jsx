@@ -2,11 +2,17 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../Context/Context';
 import CheckoutItem from '../components/CheckoutItem';
+import CheckoutForm from '../components/CheckoutForm';
 
 const Checkout = ({ total, setTotal}) => {
     // const location = useLocation();
     // const { total } = location.state;
     const { state: { cart, setCart, states } } = CartState();
+
+    // 1.  Submit the info from the address form
+    // 2.  Choose shipping option, update total price, and submit payment info.
+    // 3.  Pass it to a component that shows the address, the items ordered, the total price, and shipping info.  Then show a Submit Order button and display a modal saying the order is successfully placed, and has been shipped.   
+    //
 
     return (
         <div>
@@ -14,43 +20,7 @@ const Checkout = ({ total, setTotal}) => {
             total: ${total}
             <section className='checkout-main'>
                 <section className='checkout-form-container'>
-                    <form className='checkout-form' action="submit">
-                            <h3>Contact Information</h3>
-                        <label htmlFor="email">
-                            <input placeholder="Email" type="email" />
-                        </label>
-                        <h3>Shipping Information</h3>
-                        <label htmlFor="firstName">
-                            <input placeholder="First name" id="firstName" type="text" />
-                        </label>
-                        <label htmlFor="lastName">
-                            <input placeholder="Last name" id="lastName" type="text" />
-                        </label>
-                        <label htmlFor="address">
-                            <input placeholder="Address" id="address" type="text" />
-                        </label>
-                        <label htmlFor="apartment">
-                            <input placeholder="Apartment" id="apartment" type="text" />
-                        </label>
-                        <label htmlFor="city">
-                            <input placeholder="City" id="city" type="text" />
-                        </label>
-                        <label htmlFor="zipCode">
-                            <input placeholder="Zip code" id="zipCode" type="text" />
-                        </label>
-                        <select name="country" id="country">
-                            <option value="usa">United States</option>
-                            <option value="canada">Canada</option>
-                            <option value="Mexico">Mexico</option>
-                        </select>
-                        <select name="state" id="state">
-                            {
-                                states.map((state) => (
-                                    <option key={state} value={state} >{state}</option>
-                                ))
-                            }
-                        </select>
-                    </form>
+                    <CheckoutForm/>
                 </section>
                 <section className='checkout-summary'>
                     {
