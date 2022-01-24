@@ -9,6 +9,7 @@ import { CartState } from './Context/Context';
 
 
 function App() {
+  const [total, setTotal] = useState(0.00)
 
   return (
     <BrowserRouter>
@@ -16,8 +17,8 @@ function App() {
       <Header/>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/cart" element={<Cart total={total} setTotal={setTotal} />} />
+            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} />} />
           </Routes>
       </div>
     </BrowserRouter>

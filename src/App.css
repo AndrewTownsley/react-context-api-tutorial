@@ -105,3 +105,31 @@
   background-color: rgba(255, 18, 18, 0.8);
   pointer-events: none;
 }
+
+/* Checkout */
+
+.checkout-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-card {
+  display: flex;
+  flex-direction: row;
+  max-width: 300px;
+  margin: 0rem;
+  border: none;
+  border-bottom: 1px solid #999;
+}

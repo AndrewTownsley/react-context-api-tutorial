@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 import { CartState } from '../Context/Context';
 
-const Cart = () => {
-    const [total, setTotal] = useState(0.00);
+const Cart = ({ total, setTotal}) => {
+    // const [total, setTotal] = useState(0.00);
     const { state: { cart, setCart } } = CartState();
 
     useEffect(() => {
@@ -18,7 +18,11 @@ const Cart = () => {
             <h3>Cart</h3>
             <h4>{cart.length} Items</h4>
             <h5>Total: ${total}</h5>
-            <Link to="/checkout"><button>Checkout</button></Link>
+            <Link 
+                to="/checkout"
+                state={{ total: 'total' }}
+            >
+            <button>Checkout</button></Link>
             <div className="product-container">
                 {
                     cart.map((product, index) => (
