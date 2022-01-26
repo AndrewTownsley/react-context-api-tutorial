@@ -70,13 +70,22 @@ const Context = ({ children }) => {
     rating: faker.random.arrayElement([1,2,3,4,5]),
   }));
 
+  const [shipFormData, setShipFormData] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    apartment: "",
+    city: "",
+    zipCode: "",
+}) 
+
   const [state, dispatch] = useReducer(cartReducer, {
     productsArray: productsArray,
     cart: [],
     productQty: 0,
     states: states
   })
-  console.log(productsArray);
 
   const [productState, productDispatch] = useReducer(productReducer, {
     byStock: false,
@@ -86,7 +95,7 @@ const Context = ({ children }) => {
   })
 
   return (
-    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch }}>
+    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData }}>
       {children}
     </Cart.Provider>
   );
