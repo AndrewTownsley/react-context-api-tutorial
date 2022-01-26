@@ -7,24 +7,25 @@ import ShippingForm from '../components/ShippingForm';
 const Checkout = ({ total, setTotal }) => {
     const { state: { cart, setCart, states } } = CartState();
 
-    const [shipFormData, setShipFormData] = useState({
-        email: "",
-        firstName: "",
-        lastName: "",
-        address: "",
-        apartment: "",
-        city: "",
-        zipCode: "",
-    }) 
+    // const [shipFormData, setShipFormData] = useState({
+    //     email: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     address: "",
+    //     apartment: "",
+    //     city: "",
+    //     zipCode: "",
+    // }) 
 
-    const handleShipFormSubmit = (e) => {
-        const { name, value } = e.target;
-        setShipFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }))
-    }
-    console.log(shipFormData);
+    // const handleShipFormSubmit = (e) => {
+    //     e.preventDefault();
+    //     const { name, value } = e.target;
+    //     setShipFormData((prevState) => ({
+    //         ...prevState,
+    //         [name]: value,
+    //     }))
+    // }
+    // console.log(shipFormData);
 
 
 
@@ -32,19 +33,19 @@ const Checkout = ({ total, setTotal }) => {
         <div>
             <Link to="/cart"><button>Back to Cart</button></Link>
             <h4>Cart Total: ${total}</h4>
-            <section className="userInfo">
+            {/* <section className="userInfo">
                 <h3>Ship To:</h3>
                 <p>{shipFormData.email}</p>
                 <p>{shipFormData.firstName}{shipFormData.lastName}</p>
                 <p>{shipFormData.address}</p>
-                <p>{shipFormData.city}</p>
-            </section>
+                <p>{shipFormData.city} {shipFormData.zipCode}</p>
+            </section> */}
             <section className='checkout-main'>
                 <section className='checkout-form-container'>
                     <ShippingForm
-                        shipFormData={shipFormData}
-                        setShipFormData={setShipFormData}
-                        handleShipFormSubmit={handleShipFormSubmit}
+                        // shipFormData={shipFormData}
+                        // setShipFormData={setShipFormData}
+                        // handleShipFormSubmit={handleShipFormSubmit}
                     />
                 </section>
                 <section className='checkout-summary'>

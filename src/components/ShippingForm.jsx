@@ -2,30 +2,46 @@ import React, { useState } from 'react'
 import { CartState } from '../Context/Context';
 
 
-const CheckoutForm = ({ shipFormData, setShipFormData, handleShipFormSubmit }) => {
+const CheckoutForm = () => {
     const { state: { cart, setCart, states, } } = CartState();
-    // const [shipFormData, setShipFormData] = useState({
-    //     email: "",
-    //     firstName: "",
-    //     lastName: "",
-    //     address: "",
-    //     apartment: "",
-    //     city: "",
-    //     zipCode: "",
-    // }) 
+    const [shipFormSubmit, setShipFormSubmit] = useState(false);
+    const [shipFormData, setShipFormData] = useState({
+        email: "",
+        firstName: "",
+        lastName: "",
+        address: "",
+        apartment: "",
+        city: "",
+        state: "",
+        zipCode: "",
+    }) 
 
-    // const handleShipFormSubmit = (e) => {
-    //     const { name, value } = e.target;
-    //     setShipFormData((prevState) => ({
-    //         ...prevState,
-    //         [name]: value,
-    //     }))
-    // }
-    // console.log(shipFormData);
+    const handleShipFormSubmit = (e) => {
+        e.preventDefault();
+        const { name, value } = e.target;
+        setShipFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }))
+    }
+    console.log(shipFormData);
 
 
     return (
-        <form className='checkout-form' action="submit">
+        <section 
+            onSubmit={(e) => e.preventDefault}
+            className='checkout-form' 
+            action="submit"
+        >
+                            <section className="userInfo">
+                {/* <h3>Ship To:</h3> */}
+                <p>Contact: {shipFormData.firstName}{shipFormData.lastName}</p>
+                <p>{shipFormData.email}</p>
+                <p>Ship to: {shipFormData.address} 
+                </p>
+                <p>{shipFormData.city} {shipFormData.state} {shipFormData.zipCode}
+                </p>
+            </section>
                             <h3>Contact Information</h3>
                         <label htmlFor="email">
                             <input 
@@ -94,16 +110,43 @@ const CheckoutForm = ({ shipFormData, setShipFormData, handleShipFormSubmit }) =
                             <option value="usa">United States</option>
                             <option value="canada">Canada</option>
                             <option value="Mexico">Mexico</option>
-                        </select>
-                        <select name="state" id="state">
+                        </select> */}
+                        <select 
+                            id="state"
+                            name="state"
+                            onChange={handleShipFormSubmit} 
+                        >
                             {
                                 states.map((state) => (
-                                    <option key={state} value={state} >{state}</option>
+                                    <option 
+                                        key={state} 
+                                        value={state}  
+                                    >
+                                        {state}
+                                    </option>
                                 ))
                             }
-                        </select> */}
-                        {/* <button onClick={() => handleShippingForm}>Submit</button> */}
-                    </form>
+                        </select>
+                        <button 
+                            onClick={() => setShipFormSubmit(true)}
+                        >
+                            Submit
+                        </button>
+                        {
+                            shipFormSubmit && 
+                        <section>
+                            <h3>Shipping Options</h3>
+                            <label htmlFor="">
+                                Next Day Shipping
+                                <input type="checkbox" name="nextDay" id="" />
+                            </label>
+                            <label htmlFor="">
+                                Standard Ground Shipping
+                                <input type="checkbox" name="ups ground" id="" />
+                            </label>
+                        </section>
+                        }
+                    </section>
     )
 }
 

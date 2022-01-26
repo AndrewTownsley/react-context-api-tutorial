@@ -16,7 +16,9 @@ const Header = () => {
                         })
                     }}
                     type="text" 
-                    id="search" />
+                    id="search"
+                    placeholder="search products"
+                />
             </label>
             <nav>
                 <ul>
