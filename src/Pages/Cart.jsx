@@ -24,8 +24,8 @@ console.log(cart);
                 <h4>{cart.length} Items</h4>
                 <h5>Total: ${total}</h5>
                 <Link 
-                to="/checkout"
-                state={{ total: 'total' }}
+                    to="/checkout"
+                    state={{ total: 'total' }}
                 >
                 <button>Checkout</button></Link>
                 <div className="product-container">

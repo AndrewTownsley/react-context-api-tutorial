@@ -3,8 +3,11 @@ import { CartState } from '../Context/Context';
 
 
 const CheckoutForm = () => {
+    let nextDay = 10
+    let standard = 0
     const { state: { cart, setCart, states, } } = CartState();
     const [shipFormSubmit, setShipFormSubmit] = useState(false);
+    const [shipMethod, setShipMethod] = useState(standard)
     const [shipFormData, setShipFormData] = useState({
         email: "",
         firstName: "",
@@ -24,8 +27,11 @@ const CheckoutForm = () => {
             [name]: value,
         }))
     }
-    console.log(shipFormData);
 
+    const shipMethodChange = (e) => {
+        console.log(e.target.value);
+        setShipMethod(e.target.value)
+    }
 
     return (
         <section 
@@ -128,6 +134,7 @@ const CheckoutForm = () => {
                             }
                         </select>
                         <button 
+                            type="button"
                             onClick={() => setShipFormSubmit(true)}
                         >
                             Submit
@@ -136,13 +143,23 @@ const CheckoutForm = () => {
                             shipFormSubmit && 
                         <section>
                             <h3>Shipping Options</h3>
-                            <label htmlFor="">
+                            <label htmlFor="nextDay">
                                 Next Day Shipping
-                                <input type="checkbox" name="nextDay" id="" />
+                                <input 
+                                    onChange={shipMethodChange}
+                                    value={nextDay}
+                                    type="radio" 
+                                    name="shipMethod" 
+                                    id="nextDay" />
                             </label>
-                            <label htmlFor="">
+                            <label htmlFor="standardGround">
                                 Standard Ground Shipping
-                                <input type="checkbox" name="ups ground" id="" />
+                                <input 
+                                    onChange={shipMethodChange}
+                                    value={standard}
+                                    type="radio" 
+                                    name="shipMethod" 
+                                    id="standard" />
                             </label>
                         </section>
                         }

@@ -43,3 +43,5 @@ Page Structure ===
    2.  Star Ratings
    3.  **** ERROR Handling !!! ***
    4.  *** 404 page !!! ***
+   5.  Validation of form inputs*********************
+

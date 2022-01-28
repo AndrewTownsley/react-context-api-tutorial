@@ -66,7 +66,7 @@ const Context = ({ children }) => {
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
     inStock: faker.random.arrayElement([0,0,0,0,1,1,1,1,1,3,4,5,6,7,24,37,46,57,79,29,64,12,17,98,56,47]),
-    nextDay: faker.datatype.boolean(),
+    // nextDay: faker.datatype.boolean(),
     rating: faker.random.arrayElement([1,2,3,4,5]),
   }));
 

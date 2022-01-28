@@ -15,9 +15,6 @@ const CartItem = ({ product }) => {
                 <h5>{product.name}</h5>
                 <p>${product.price}</p>
                 <p>in stock: {product.inStock - selectedQty}</p>
-                {
-                    product.nextDay ? <p><em>Next Day Shipping</em></p> : null
-                }
                 <p>Rating: {product.rating}/5</p>
             </article>
             <section>
