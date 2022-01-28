@@ -43,9 +43,8 @@ const Checkout = ({ total, setTotal }) => {
             <section className='checkout-main'>
                 <section className='checkout-form-container'>
                     <ShippingForm
-                        // shipFormData={shipFormData}
-                        // setShipFormData={setShipFormData}
-                        // handleShipFormSubmit={handleShipFormSubmit}
+                        total={total}
+                        setTotal={setTotal}
                     />
                 </section>
                 <section className='checkout-summary'>

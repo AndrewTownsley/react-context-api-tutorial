@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CartState } from '../Context/Context';
 
 
-const CheckoutForm = () => {
-    let nextDay = 10
-    let standard = 0
+const ShippingForm = ({ total, setTotal}) => {
     const { state: { cart, setCart, states, } } = CartState();
     const [shipFormSubmit, setShipFormSubmit] = useState(false);
-    const [shipMethod, setShipMethod] = useState(standard)
+    const [shipMethod, setShipMethod] = useState()
+    const [shipTotal, setShipTotal] = useState(0)
     const [shipFormData, setShipFormData] = useState({
         email: "",
         firstName: "",
@@ -29,9 +28,38 @@ const CheckoutForm = () => {
     }
 
     const shipMethodChange = (e) => {
-        console.log(e.target.value);
-        setShipMethod(e.target.value)
+        // if nextDay is already selected, subtract 10,
+        // else add 10
+        console.log("value: ", e.target.value);
+        if(e.target.value == Number(10) && shipTotal === 0) {
+            setTotal(total + Number(10))
+            setShipTotal(10)
+        } else if(e.target.value == 0 && shipTotal === 0) {
+            setTotal(total)
+            setShipTotal(0)
+        } else if(e.target.value == 0 && shipTotal === 10) {
+            setTotal(total - 10)
+            setShipTotal(0)
+        }
+        console.log("total: ", total);
     }
+
+    // useEffect(() => {
+        
+    // const shipMethodChange = (e) => {
+    //     // if nextDay is already selected, subtract 10,
+    //     // else add 10
+    //     console.log("value: ", shipMethod);
+    //     if(shipMethod === 0 && shipMethod === nextDay) {
+    //         setTotal(Number(shipMethod) + total)
+    //     } else if (shipMethod === 10 && shipMethod === standard){
+    //         setTotal(total + Number(shipMethod))
+    //     }
+    //     console.log("total: ", total);
+
+    // }
+    // shipMethodChange()
+    // }, [nextDay, standard, total, setTotal, shipMethod])
 
     return (
         <section 
@@ -147,7 +175,7 @@ const CheckoutForm = () => {
                                 Next Day Shipping
                                 <input 
                                     onChange={shipMethodChange}
-                                    value={nextDay}
+                                    value={Number(10)}
                                     type="radio" 
                                     name="shipMethod" 
                                     id="nextDay" />
@@ -156,7 +184,7 @@ const CheckoutForm = () => {
                                 Standard Ground Shipping
                                 <input 
                                     onChange={shipMethodChange}
-                                    value={standard}
+                                    value={0}
                                     type="radio" 
                                     name="shipMethod" 
                                     id="standard" />
@@ -167,4 +195,4 @@ const CheckoutForm = () => {
     )
 }
 
-export default CheckoutForm
+export default ShippingForm
