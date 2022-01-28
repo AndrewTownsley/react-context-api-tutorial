@@ -3,9 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../Context/Context';
 import CheckoutItem from '../components/CheckoutItem';
 import ShippingForm from '../components/ShippingForm';
+import PaymentForm from '../components/PaymentForm';
 
 const Checkout = ({ total, setTotal }) => {
     const { state: { cart, setCart, states } } = CartState();
+    const [paymentFormActive, setPaymentFormActive] = useState(false)
 
     // const [shipFormData, setShipFormData] = useState({
     //     email: "",
@@ -45,7 +47,17 @@ const Checkout = ({ total, setTotal }) => {
                     <ShippingForm
                         total={total}
                         setTotal={setTotal}
+                        setPaymentFormActive={setPaymentFormActive}
                     />
+                   {
+                       paymentFormActive ? 
+                   <PaymentForm 
+                        paymentFormActive={paymentFormActive}
+                        setPaymentFormActive={setPaymentFormActive}
+                    />
+                    :
+                    null
+                    }
                 </section>
                 <section className='checkout-summary'>
                     {

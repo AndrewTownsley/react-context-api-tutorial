@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { CartState } from '../Context/Context';
 
 
-const ShippingForm = ({ total, setTotal}) => {
-    const { state: { cart, setCart, states, } } = CartState();
+const ShippingForm = ({ total, setTotal, setPaymentFormActive }) => {
+    const { state: { cart, setCart, states }} = CartState();
     const [shipFormSubmit, setShipFormSubmit] = useState(false);
-    const [shipMethod, setShipMethod] = useState()
     const [shipTotal, setShipTotal] = useState(0)
     const [shipFormData, setShipFormData] = useState({
         email: "",
@@ -30,6 +29,7 @@ const ShippingForm = ({ total, setTotal}) => {
     const shipMethodChange = (e) => {
         // if nextDay is already selected, subtract 10,
         // else add 10
+        setPaymentFormActive(true)
         console.log("value: ", e.target.value);
         if(e.target.value == Number(10) && shipTotal === 0) {
             setTotal(total + Number(10))

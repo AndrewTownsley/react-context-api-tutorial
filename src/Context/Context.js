@@ -84,7 +84,8 @@ const Context = ({ children }) => {
     productsArray: productsArray,
     cart: [],
     productQty: 0,
-    states: states
+    states: states,
+    paymentFormActive: false,
   })
 
   const [productState, productDispatch] = useReducer(productReducer, {
