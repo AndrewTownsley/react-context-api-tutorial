@@ -169,10 +169,10 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive }) => {
                         </button>
                         {
                             shipFormSubmit && 
-                        <section>
+                        <section className='ship-options'>
                             <h3>Shipping Options</h3>
                             <label htmlFor="nextDay">
-                                Next Day Shipping
+                                Next Day Shipping -- $10
                                 <input 
                                     onChange={shipMethodChange}
                                     value={Number(10)}
@@ -181,7 +181,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive }) => {
                                     id="nextDay" />
                             </label>
                             <label htmlFor="standardGround">
-                                Standard Ground Shipping
+                                Standard Ground Shipping -- Free
                                 <input 
                                     onChange={shipMethodChange}
                                     value={0}

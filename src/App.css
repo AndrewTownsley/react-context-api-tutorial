@@ -133,3 +133,12 @@
   border: none;
   border-bottom: 1px solid #999;
 }
+
+.ship-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-form {
+  margin-bottom: 10rem;
+}
