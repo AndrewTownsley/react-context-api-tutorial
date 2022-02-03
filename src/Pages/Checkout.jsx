@@ -4,11 +4,13 @@ import { CartState } from '../Context/Context';
 import CheckoutItem from '../components/CheckoutItem';
 import ShippingForm from '../components/ShippingForm';
 import PaymentForm from '../components/PaymentForm';
+import ConfirmationModal from '../components/ConfirmationModal';
 
-const Checkout = ({ total, setTotal }) => {
+const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
     const { state: { cart, setCart, states } } = CartState();
     const [paymentFormActive, setPaymentFormActive] = useState(false)
 
+        console.log(openEdit);
     // const [shipFormData, setShipFormData] = useState({
     //     email: "",
     //     firstName: "",
@@ -33,6 +35,12 @@ const Checkout = ({ total, setTotal }) => {
 
     return (
         <div>
+              {
+                openEdit === true ?
+                (<ConfirmationModal/>)
+                :
+        (    
+        <>
             <Link to="/cart"><button>Back to Cart</button></Link>
             <h4>Cart Total: ${total}</h4>
             {/* <section className="userInfo">
@@ -54,6 +62,7 @@ const Checkout = ({ total, setTotal }) => {
                    <PaymentForm 
                         paymentFormActive={paymentFormActive}
                         setPaymentFormActive={setPaymentFormActive}
+                        openConfirmationModal={openConfirmationModal}
                     />
                     :
                     null
@@ -71,6 +80,8 @@ const Checkout = ({ total, setTotal }) => {
                     }
                 </section>
             </section>
+            </>)  
+}
         </div>
     )
 }

@@ -1,6 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { CartState } from '../Context/Context';
 
-const PaymentForm = () => {
+const PaymentForm = ({ openConfirmationModal }) => {
+    const { state: {} } = CartState();
+
+    const [month, setMonth] = useState("")
+    const [days, setDays] = useState("")
+    const months = [
+        "January",
+        "February",
+        "March", 
+        "April",
+        "May", 
+        "June", 
+        "July", 
+        "August", 
+        "September", 
+        "October", 
+        "November", 
+        "December"
+    ]
+   
+    const createYears = () => {
+        let yearsArray = []
+        for(let i = 0; i < 20; i++) {
+            yearsArray.push(new Date().getFullYear() + i)
+        }
+        return yearsArray
+    }
+    createYears()
+
     return (
         <div className='payment-form'>
             <h3>Payment Form</h3>
@@ -28,14 +57,31 @@ const PaymentForm = () => {
                 </label>
                 <label htmlFor="exp-select">
                     Expiration Date
-                <select name="credit-card-exp-month" id="creditCardExpMonth">
-                    <option value="Month"></option>
+                <select 
+                    name="credit-card-exp-month" 
+                    id="creditCardExpMonth"
+                    onChange={(e) => setMonth(e.target.value)}
+                >
+                    {
+                        months.map((month) => (
+                            <option key={month} value={month}>{month}</option>
+                        ))
+                    }
                 </select>
                 <select name="credit-card-exp-year" id="creditCardExpYear">
-                    <option value="Year"></option>
+                    {
+                        createYears().map((year) => (
+                            <option key={year} value={year}>{year}</option>
+                        ))
+                    }
                 </select>
                 </label>
             </form>
+                <button 
+                    onClick={() => openConfirmationModal()} 
+                >
+                        Confirm Card
+                    </button>
         </div>
     )
 }

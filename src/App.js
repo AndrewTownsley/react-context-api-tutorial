@@ -5,20 +5,27 @@ import Header from './components/Header';
 import Cart from './Pages/Cart';
 import Home from './Pages/Home';
 import Checkout from './Pages/Checkout';
-import { CartState } from './Context/Context';
+import ConfirmationModal from './components/ConfirmationModal';
 
 
 function App() {
   const [total, setTotal] = useState(0.00)
+  const [openEdit, setOpenEdit] = useState(false)
+
+  const openConfirmationModal = () => {
+    setOpenEdit(true)
+    console.log("open modal...");
+  }
 
   return (
     <BrowserRouter>
       <div className="App">
       <Header/>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home openEdit={openEdit} />} />
             <Route path="/cart" element={<Cart total={total} setTotal={setTotal} />} />
-            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} />} />
+            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} openEdit={openEdit} openConfirmationModal={openConfirmationModal} />} />
+            <Route exact path="/confirmationmodal" element={<ConfirmationModal openEdit={openEdit} />} />
           </Routes>
       </div>
     </BrowserRouter>

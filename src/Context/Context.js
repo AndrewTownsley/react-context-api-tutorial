@@ -95,6 +95,10 @@ const Context = ({ children }) => {
     searchQeury: "",
   })
 
+  // const openConfirmationModal = () => {
+  //   console.log("open modal...");
+  // }
+
   return (
     <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData }}>
       {children}
