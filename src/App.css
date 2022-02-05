@@ -8,6 +8,15 @@
   margin: 0;
 }
 
+a {
+  padding:0.5rem;
+}
+
+.active-page-link {
+  background-color: #444;
+  color:rgb(251, 79, 188);
+}
+
 .Home {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -170,4 +179,13 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
+}
+
+.page-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(251, 79, 188);
+  padding: 0.5rem;
+  max-height: 1rem;
 }

@@ -61,7 +61,7 @@ const Context = ({ children }) => {
     'Wyoming',
   ]
 
-  const productsArray = [...Array(60)].map((p) => ({
+  const productsArray = [...Array(100)].map((p) => ({
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
