@@ -2,9 +2,9 @@ import React, { useState} from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../Context/Context';
 import CheckoutItem from '../components/CheckoutItem';
-import ShippingForm from '../components/ShippingForm';
-import PaymentForm from '../components/PaymentForm';
-import ConfirmationModal from '../components/ConfirmationModal';
+import ShippingForm from '../components/Checkout/ShippingForm';
+import PaymentForm from '../components/Checkout/PaymentForm';
+import ConfirmationModal from '../components/Checkout/ConfirmationModal';
 
 const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
     const { state: { cart, setCart, states } } = CartState();

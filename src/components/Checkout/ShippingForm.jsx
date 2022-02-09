@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { CartState } from '../Context/Context';
+import { CartState } from '../../Context/Context';
 
 
 const ShippingForm = ({ total, setTotal, setPaymentFormActive }) => {
@@ -31,35 +31,18 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive }) => {
         // else add 10
         setPaymentFormActive(true)
         console.log("value: ", e.target.value);
-        if(e.target.value == Number(10) && shipTotal === 0) {
+        if(e.target.value === Number(10) && shipTotal === 0) {
             setTotal(total + Number(10))
             setShipTotal(10)
-        } else if(e.target.value == 0 && shipTotal === 0) {
+        } else if(e.target.value === 0 && shipTotal === 0) {
             setTotal(total)
             setShipTotal(0)
-        } else if(e.target.value == 0 && shipTotal === 10) {
+        } else if(e.target.value === 0 && shipTotal === 10) {
             setTotal(total - 10)
             setShipTotal(0)
         }
         console.log("total: ", total);
     }
-
-    // useEffect(() => {
-        
-    // const shipMethodChange = (e) => {
-    //     // if nextDay is already selected, subtract 10,
-    //     // else add 10
-    //     console.log("value: ", shipMethod);
-    //     if(shipMethod === 0 && shipMethod === nextDay) {
-    //         setTotal(Number(shipMethod) + total)
-    //     } else if (shipMethod === 10 && shipMethod === standard){
-    //         setTotal(total + Number(shipMethod))
-    //     }
-    //     console.log("total: ", total);
-
-    // }
-    // shipMethodChange()
-    // }, [nextDay, standard, total, setTotal, shipMethod])
 
     return (
         <section 
@@ -67,11 +50,11 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive }) => {
             className='checkout-form' 
             action="submit"
         >
-                            <section className="userInfo">
+                            <section className="user-info">
                 {/* <h3>Ship To:</h3> */}
-                <p>Contact: {shipFormData.firstName}{shipFormData.lastName}</p>
+                <p><strong>Contact:</strong> {shipFormData.firstName} {shipFormData.lastName}</p>
                 <p>{shipFormData.email}</p>
-                <p>Ship to: {shipFormData.address} 
+                <p><strong>Ship to:</strong> {shipFormData.address} 
                 </p>
                 <p>{shipFormData.city} {shipFormData.state} {shipFormData.zipCode}
                 </p>

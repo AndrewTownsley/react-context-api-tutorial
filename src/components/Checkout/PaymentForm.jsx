@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { CartState } from '../Context/Context';
+import { CartState } from '../../Context/Context';
 
 const PaymentForm = ({ openConfirmationModal }) => {
     const { state: {} } = CartState();
@@ -45,6 +45,8 @@ const PaymentForm = ({ openConfirmationModal }) => {
                     <input 
                         id="creditCardCvv" 
                         type="text" 
+                        min="3"
+                        maxLength="3"
                         placeholder="CVV"
                     />
                 </label>
@@ -52,6 +54,8 @@ const PaymentForm = ({ openConfirmationModal }) => {
                     <input 
                         id="creditCardNumber" 
                         type="text" 
+                        min="16"
+                        maxLength="16"
                         placeholder="Card Number"
                     />
                 </label>

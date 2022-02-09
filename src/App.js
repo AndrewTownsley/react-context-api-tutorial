@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Cart from './Pages/Cart';
 import Home from './Pages/Home';
 import Checkout from './Pages/Checkout';
-import ConfirmationModal from './components/ConfirmationModal';
+import ConfirmationModal from './components//Checkout/ConfirmationModal';
 
 
 function App() {
