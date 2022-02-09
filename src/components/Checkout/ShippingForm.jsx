@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
 
 
-const ShippingForm = ({ total, setTotal, setPaymentFormActive }) => {
+const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, setShipFormData }) => {
     const { state: { cart, setCart, states }} = CartState();
     const [shipFormSubmit, setShipFormSubmit] = useState(false);
     const [shipTotal, setShipTotal] = useState(0)
-    const [shipFormData, setShipFormData] = useState({
-        email: "",
-        firstName: "",
-        lastName: "",
-        address: "",
-        apartment: "",
-        city: "",
-        state: "",
-        zipCode: "",
-    }) 
+    // const [shipFormData, setShipFormData] = useState({
+    //     email: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     address: "",
+    //     apartment: "",
+    //     city: "",
+    //     state: "",
+    //     zipCode: "",
+    // }) 
 
     const handleShipFormSubmit = (e) => {
         e.preventDefault();

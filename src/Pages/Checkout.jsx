@@ -11,15 +11,15 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
     const [paymentFormActive, setPaymentFormActive] = useState(false)
 
         console.log(openEdit);
-    // const [shipFormData, setShipFormData] = useState({
-    //     email: "",
-    //     firstName: "",
-    //     lastName: "",
-    //     address: "",
-    //     apartment: "",
-    //     city: "",
-    //     zipCode: "",
-    // }) 
+    const [shipFormData, setShipFormData] = useState({
+        email: "",
+        firstName: "",
+        lastName: "",
+        address: "",
+        apartment: "",
+        city: "",
+        zipCode: "",
+    }) 
 
     // const handleShipFormSubmit = (e) => {
     //     e.preventDefault();
@@ -37,7 +37,11 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
         <div>
               {
                 openEdit === true ?
-                (<ConfirmationModal/>)
+                (<ConfirmationModal
+                    shipFormData={shipFormData}
+                    setShipFormData={setShipFormData}
+                 />
+                )
                 :
         (    
         <>
@@ -56,6 +60,8 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
                         total={total}
                         setTotal={setTotal}
                         setPaymentFormActive={setPaymentFormActive}
+                        shipFormData={shipFormData}
+                        setShipFormData={setShipFormData}
                     />
                    {
                        paymentFormActive ? 
