@@ -164,7 +164,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     id="nextDay" />
                             </label>
                             <label htmlFor="standardGround">
-                                Standard Ground Shipping -- Free
+                                Standard Ground Shipping (5 days) -- Free
                                 <input 
                                     onChange={shipMethodChange}
                                     value={0}

@@ -36,7 +36,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
     return (
         <div>
               {
-                openEdit === true ?
+                openEdit === (true) ?
                 (<ConfirmationModal
                     shipFormData={shipFormData}
                     setShipFormData={setShipFormData}
