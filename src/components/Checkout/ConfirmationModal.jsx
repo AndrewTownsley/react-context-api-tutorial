@@ -2,17 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 
-const ConfirmationModal = ({ shipFormData, setShipFormData, groundShipping}) => {
-    const { state: {cart, setOpenEdit, modalRef}} = CartState();
+const ConfirmationModal = ({ shipFormData, setShipFormData}) => {
+    const { groundShipping} = CartState();
     const randomNumber = Math.floor(Math.random() * 100000)
     console.log("Confirmation ship data:", shipFormData);
     
     const date = Date.now()
     const shipDate = new Date(date);
     const shipDateString = shipDate.toDateString();
-    const groundDeliveryDate = new Date(shipDate.setDate(shipDate.getDate() + 5));
+    const groundDeliveryDate = new Date(shipDate.setDate(shipDate.getDate() + 35));
     console.log("shipDate: ", shipDateString);
     console.log("ground Date: ", groundDeliveryDate);
+    console.log("groundShipping: ", groundShipping);
 return (
     <div>
         <h1>Order Confirmation</h1>

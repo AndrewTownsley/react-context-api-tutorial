@@ -28,14 +28,17 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
             console.log("Next Day");
             setTotal(total + 10)
             setShipTotal(10)
+            setGroundShipping(false)
         } else if(e.target.value === "0" && shipTotal === 0) {
             console.log("Ground");
             setTotal(total)
             setShipTotal(0)
+            setGroundShipping(true)
         } else if(e.target.value === "0" && shipTotal === 10) {
             console.log("Ground");
             setTotal(total - 10)
             setShipTotal(0)
+            setGroundShipping(true)
         }
         setPaymentFormActive(true)
         console.log("total: ", total);
