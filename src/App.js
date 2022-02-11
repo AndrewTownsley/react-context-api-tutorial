@@ -6,15 +6,16 @@ import Cart from './Pages/Cart';
 import Home from './Pages/Home';
 import Checkout from './Pages/Checkout';
 import ConfirmationModal from './components//Checkout/ConfirmationModal';
+import { CartState } from './Context/Context';
 
 
 function App() {
+
   const [total, setTotal] = useState(0.00)
   const [openEdit, setOpenEdit] = useState(false)
 
   const openConfirmationModal = () => {
     setOpenEdit(true)
-    console.log("open modal...");
   }
 
   return (

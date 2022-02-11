@@ -6,11 +6,11 @@ import ShippingForm from '../components/Checkout/ShippingForm';
 import PaymentForm from '../components/Checkout/PaymentForm';
 import ConfirmationModal from '../components/Checkout/ConfirmationModal';
 
-const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
+const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShipping, setGroundShipping }) => {
     const { state: { cart, setCart, states } } = CartState();
     const [paymentFormActive, setPaymentFormActive] = useState(false)
+    // const [groundShipping, setGroundShipping] = useState(true);
 
-        console.log(openEdit);
     const [shipFormData, setShipFormData] = useState({
         email: "",
         firstName: "",
@@ -31,6 +31,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
     // }
     // console.log(shipFormData);
 
+    console.log("total: ", total);
 
 
     return (
@@ -40,6 +41,8 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
                 (<ConfirmationModal
                     shipFormData={shipFormData}
                     setShipFormData={setShipFormData}
+                    groundShipping={groundShipping}
+                    setGroundShipping={setGroundShipping}
                  />
                 )
                 :
@@ -62,6 +65,8 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal }) => {
                         setPaymentFormActive={setPaymentFormActive}
                         shipFormData={shipFormData}
                         setShipFormData={setShipFormData}
+                        groundShipping={groundShipping}
+                        setGroundShipping={setGroundShipping}
                     />
                    {
                        paymentFormActive ? 

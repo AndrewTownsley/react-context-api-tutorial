@@ -6,16 +6,8 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
     const { state: { cart, setCart, states }} = CartState();
     const [shipFormSubmit, setShipFormSubmit] = useState(false);
     const [shipTotal, setShipTotal] = useState(0)
-    // const [shipFormData, setShipFormData] = useState({
-    //     email: "",
-    //     firstName: "",
-    //     lastName: "",
-    //     address: "",
-    //     apartment: "",
-    //     city: "",
-    //     state: "",
-    //     zipCode: "",
-    // }) 
+    const [groundShipping, setGroundShipping] = useState(true);
+  
 
     const handleShipFormSubmit = (e) => {
         e.preventDefault();
@@ -26,24 +18,30 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
         }))
     }
 
+
+
     const shipMethodChange = (e) => {
-        // if nextDay is already selected, subtract 10,
-        // else add 10
-        setPaymentFormActive(true)
-        console.log("value: ", e.target.value);
-        if(e.target.value === Number(10) && shipTotal === 0) {
-            setTotal(total + Number(10))
+      
+        console.log(e.target.value);
+
+        if(e.target.value === "10" && shipTotal === 0) {
+            console.log("Next Day");
+            setTotal(total + 10)
             setShipTotal(10)
-        } else if(e.target.value === 0 && shipTotal === 0) {
+        } else if(e.target.value === "0" && shipTotal === 0) {
+            console.log("Ground");
             setTotal(total)
             setShipTotal(0)
-        } else if(e.target.value === 0 && shipTotal === 10) {
+        } else if(e.target.value === "0" && shipTotal === 10) {
+            console.log("Ground");
             setTotal(total - 10)
             setShipTotal(0)
         }
+        setPaymentFormActive(true)
         console.log("total: ", total);
     }
 
+        
     return (
         <section 
             onSubmit={(e) => e.preventDefault}
@@ -158,19 +156,19 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 Next Day Shipping -- $10
                                 <input 
                                     onChange={shipMethodChange}
-                                    value={Number(10)}
+                                    value="10"
                                     type="radio" 
                                     name="shipMethod" 
                                     id="nextDay" />
                             </label>
-                            <label htmlFor="standardGround">
+                            <label htmlFor="standard">
                                 Standard Ground Shipping (5 days) -- Free
                                 <input 
                                     onChange={shipMethodChange}
-                                    value={0}
+                                    value="0"
                                     type="radio" 
                                     name="shipMethod" 
-                                    id="standard" />
+                                    id="ground" />
                             </label>
                         </section>
                         }

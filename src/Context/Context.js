@@ -7,6 +7,8 @@ faker.seed(100);
 
 const Context = ({ children }) => {
   const [productQty, setProductQty] = useState(1);
+  const [groundShipping, setGroundShipping] = useState(false);
+
   const states = [
     'State',
     'Alabama',
@@ -96,12 +98,8 @@ const Context = ({ children }) => {
     searchQeury: "",
   })
 
-  // const openConfirmationModal = () => {
-  //   console.log("open modal...");
-  // }
-
   return (
-    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData }}>
+    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData, groundShipping, setGroundShipping}}>
       {children}
     </Cart.Provider>
   );

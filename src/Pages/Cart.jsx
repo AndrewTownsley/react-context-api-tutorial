@@ -4,13 +4,11 @@ import CartItem from '../components/CartItem';
 import { CartState } from '../Context/Context';
 
 const Cart = ({ total, setTotal}) => {
-    // const [total, setTotal] = useState(0.00);
-    const { state: { cart, setCart } } = CartState();
+    const { state: { cart, setCart}} = CartState();
 
     useEffect(() => {
         setTotal(cart.reduce((a, b) => a + Number(b.price) * Number(b.qty), 0))
-    }, [cart, setTotal])
-console.log(cart);
+    }, [cart, setTotal, total])
       
 
     return (
@@ -27,7 +25,10 @@ console.log(cart);
                     to="/checkout"
                     state={{ total: 'total' }}
                 >
-                <button>Checkout</button></Link>
+                    <button>
+                        Checkout
+                    </button>
+                </Link>
                 <div className="product-container">
                     {
                         cart.map((product, index) => (
