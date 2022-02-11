@@ -100,6 +100,14 @@ a {
   color: white;
 }
 
+.cart-active {
+  background-color: #00ec04;
+}
+
+.cart-active a {
+  color: #444;
+}
+
 .App-link {
   color: #61dafb;
 }
