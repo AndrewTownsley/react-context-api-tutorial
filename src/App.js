@@ -1,4 +1,5 @@
 import './App.css';
+import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import Header from './components/Header';
@@ -7,6 +8,7 @@ import Home from './Pages/Home';
 import Checkout from './Pages/Checkout';
 import ConfirmationModal from './components//Checkout/ConfirmationModal';
 import { CartState } from './Context/Context';
+import { AppContainer } from './AppContainer';
 
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <AppContainer>
       <Header/>
           <Routes>
             <Route exact path="/" element={<Home openEdit={openEdit} />} />
@@ -28,7 +30,7 @@ function App() {
             <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} openEdit={openEdit} openConfirmationModal={openConfirmationModal} />} />
             <Route exact path="/confirmationmodal" element={<ConfirmationModal openEdit={openEdit} />} />
           </Routes>
-      </div>
+      </AppContainer>
     </BrowserRouter>
   );
 }
