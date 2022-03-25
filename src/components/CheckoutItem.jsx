@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { CartState } from '../Context/Context';
 
 const CheckoutItem = ({ product }) => {

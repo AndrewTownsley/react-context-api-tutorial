@@ -1,12 +1,14 @@
 import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartState } from '../Context/Context';
+import { CartState } from '../../Context/Context';
+import HeaderContainer from './HeaderContainer';
 
 const Header = () => {
     const { state: {cart}, dispatch, productDispatch } = CartState();
+
     return (
-        <div className='header'>
-            <h2>Header Component</h2>
+        <HeaderContainer>
+            <h2>Header</h2>
             <label htmlFor="productSearch">
                 <input
                     onChange={(e) => {
@@ -26,7 +28,7 @@ const Header = () => {
                     <li className={cart.length ? "cart-active" : null}><Link to="/cart">Cart{cart.length}</Link></li>  
                 </ul>
             </nav>
-        </div>
+        </HeaderContainer>
     )
 }
 

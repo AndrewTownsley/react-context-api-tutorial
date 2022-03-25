@@ -1,8 +1,8 @@
 import './App.css';
-import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
-import Header from './components/Header';
+import Header from './components/Header/Header';
+// import { Header } from './components/Header/HeaderStyle';
 import Cart from './Pages/Cart';
 import Home from './Pages/Home';
 import Checkout from './Pages/Checkout';
@@ -27,7 +27,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home openEdit={openEdit} />} />
             <Route path="/cart" element={<Cart total={total} setTotal={setTotal} />} />
-            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} openEdit={openEdit} openConfirmationModal={openConfirmationModal} />} />
+            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} openEdit=    {openEdit} openConfirmationModal={openConfirmationModal} />} />
             <Route exact path="/confirmationmodal" element={<ConfirmationModal openEdit={openEdit} />} />
           </Routes>
       </AppContainer>

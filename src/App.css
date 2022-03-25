@@ -22,14 +22,14 @@ a {
   grid-template-columns: 20% 80%;
 }
 
-.header {
+/* .header {
   margin: 0;
   padding: 1rem;
   background-color: #282c34;
   color: #fff;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .header ul li {
   list-style-type: none;
