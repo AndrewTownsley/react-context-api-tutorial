@@ -1,10 +1,11 @@
 import React, { useState} from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import { CartState } from '../Context/Context';
-import CheckoutItem from '../components/CheckoutItem';
-import ShippingForm from '../components/Checkout/ShippingForm';
-import PaymentForm from '../components/Checkout/PaymentForm';
-import ConfirmationModal from '../components/Checkout/ConfirmationModal';
+import { CartState } from '../../Context/Context';
+import CheckoutItem from '../../components/CheckoutItem';
+import ShippingForm from '../../components/Checkout/ShippingForm';
+import PaymentForm from '../../components/Checkout/PaymentForm';
+import ConfirmationModal from '../../components/Checkout/ConfirmationModal';
+import { CheckoutWrapper } from './CheckoutStyle';
 
 const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShipping, setGroundShipping }) => {
     const { state: { cart, setCart, states } } = CartState();
@@ -57,7 +58,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                 <p>{shipFormData.address}</p>
                 <p>{shipFormData.city} {shipFormData.zipCode}</p>
             </section> */}
-            <section className='checkout-main'>
+            <CheckoutWrapper>
                 <section className='checkout-form-container'>
                     <ShippingForm
                         total={total}
@@ -90,7 +91,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                         ))
                     }
                 </section>
-            </section>
+            </CheckoutWrapper>
             </>)  
 }
         </div>

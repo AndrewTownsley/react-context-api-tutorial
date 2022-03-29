@@ -3,7 +3,7 @@ import ProductList from '../../components/ProductList';
 import Filters from '../../components/Filters';
 // import ConfirmationModal from '../components/Checkout/ConfirmationModal';
 import { CartState } from '../../Context/Context';
-import { HomeWrapper } from './Home';
+import { HomeWrapper } from './HomeStyle';
 
 
 export const Home = ({ openEdit }) => {

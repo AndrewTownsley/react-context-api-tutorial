@@ -8,19 +8,10 @@
   margin: 0;
 } */
 
-a {
-  padding: 0.5rem;
-}
-
-.active-page-link {
-  background-color: #444;
-  color: rgb(251, 79, 188);
-}
-
-.Home {
+/* .Home {
   display: grid;
   grid-template-columns: 20% 80%;
-}
+} */
 
 /* .header {
   margin: 0;
@@ -30,6 +21,15 @@ a {
   display: flex;
   justify-content: space-between;
 } */
+
+a {
+  padding: 0.5rem;
+}
+
+.active-page-link {
+  background-color: #444;
+  color: rgb(251, 79, 188);
+}
 
 .header ul li {
   list-style-type: none;
@@ -125,10 +125,10 @@ input {
 
 /* Checkout */
 
-.checkout-main {
+/* .checkout-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
+} */
 
 .checkout-form {
   display: flex;

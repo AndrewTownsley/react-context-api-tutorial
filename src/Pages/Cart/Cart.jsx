@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
-import CartItem from '../components/CartItem';
-import { CartState } from '../Context/Context';
+import CartItem from '../../components/CartItem';
+import { CartState } from '../../Context/Context';
+import { CartWrapper } from './CartStyle';
 
-const Cart = ({ total, setTotal}) => {
+export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
 
     useEffect(() => {
@@ -16,7 +17,7 @@ const Cart = ({ total, setTotal}) => {
         { 
         cart.length !== 0
              ?
-            (<div className='cart'>
+            (<CartWrapper>
 
                     <h3>Cart</h3>
                 <h4>{cart.length} Items</h4>
@@ -42,7 +43,7 @@ const Cart = ({ total, setTotal}) => {
                             ))
                     }
                 </div>
-            </div>)
+            </CartWrapper>)
         : 
             (
                 <>
