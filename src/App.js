@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Header from './components/Header/Header';
 // import { Header } from './components/Header/HeaderStyle';
 import Cart from './Pages/Cart';
-import Home from './Pages/Home';
+import Home from './Pages/Home/index';
 import Checkout from './Pages/Checkout';
 import ConfirmationModal from './components//Checkout/ConfirmationModal';
 import { CartState } from './Context/Context';
