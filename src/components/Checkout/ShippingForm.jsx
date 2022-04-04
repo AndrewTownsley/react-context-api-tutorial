@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
+import Checkout from '../../Pages/Checkout/Checkout';
+import { CheckoutFormWrapper, UserInfo } from './CheckoutStyles/ShippingFormStyle';
 
 
 const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, setShipFormData }) => {
@@ -46,12 +48,12 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
 
         
     return (
-        <section 
+        <CheckoutFormWrapper 
             onSubmit={(e) => e.preventDefault}
-            className='checkout-form' 
+            // className='checkout-form' 
             action="submit"
         >
-                            <section className="user-info">
+            <UserInfo>
                 {/* <h3>Ship To:</h3> */}
                 <p><strong>Contact:</strong> {shipFormData.firstName} {shipFormData.lastName}</p>
                 <p>{shipFormData.email}</p>
@@ -59,8 +61,8 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                 </p>
                 <p>{shipFormData.city} {shipFormData.state} {shipFormData.zipCode}
                 </p>
-            </section>
-                            <h3>Contact Information</h3>
+            </UserInfo>
+                        <h3>Contact Information</h3>
                         <label htmlFor="email">
                             <input 
                                 placeholder="Email" 
@@ -175,7 +177,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                             </label>
                         </section>
                         }
-                    </section>
+                    </CheckoutFormWrapper>
     )
 }
 

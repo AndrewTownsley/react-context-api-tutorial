@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header `
+export const HeaderWrapper = styled.header `
     padding: 1rem;
     background-color: #282c34;
     color: #fff;
     display: flex;
     justify-content: space-between;
 `
-export default HeaderContainer;
+
+export default HeaderWrapper;

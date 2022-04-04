@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
+import { PaymentFormWrapper } from './CheckoutStyles/ShippingFormStyle';
 
 const PaymentForm = ({ openConfirmationModal }) => {
     const { state: {} } = CartState();
@@ -31,7 +32,7 @@ const PaymentForm = ({ openConfirmationModal }) => {
     createYears()
 
     return (
-        <div className='payment-form'>
+        <PaymentFormWrapper>
             <h3>Payment Form</h3>
             <form action="submit">
                 <label htmlFor="creditCardName">
@@ -86,7 +87,7 @@ const PaymentForm = ({ openConfirmationModal }) => {
                 >
                         Confirm Card
                     </button>
-        </div>
+        </PaymentFormWrapper>
     )
 }
 

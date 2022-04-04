@@ -1,13 +1,13 @@
 import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
-import HeaderContainer from './HeaderContainer';
+import HeaderWrapper from './HeaderStyle';
 
 const Header = () => {
     const { state: {cart}, dispatch, productDispatch } = CartState();
 
     return (
-        <HeaderContainer>
+        <HeaderWrapper>
             <h2>Header</h2>
             <label htmlFor="productSearch">
                 <input
@@ -28,7 +28,7 @@ const Header = () => {
                     <li className={cart.length ? "cart-active" : null}><Link to="/cart">Cart{cart.length}</Link></li>  
                 </ul>
             </nav>
-        </HeaderContainer>
+        </HeaderWrapper>
     )
 }
 

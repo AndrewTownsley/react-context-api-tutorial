@@ -1,12 +1,15 @@
 import { CartState } from '../../Context/Context';
+import { CheckoutItemList, CheckoutCard } from './CheckoutItemStyle';
 
 const CheckoutItem = ({ product }) => {
     const { state: { cart },
         dispatch } = CartState();          
         
         return (
-            <div className="cart-item checkout-item">
-            <article className='product-card checkout-card'>
+            // <div className="cart-item checkout-item">
+        <CheckoutItemList>
+            {/* <article className='product-card checkout-card'> */}
+            <CheckoutCard>
                 {/* <img src={product.image} alt={product.item} /> */}
                 <h5>{product.name}</h5>
                 <p>${product.price}</p>
@@ -15,7 +18,7 @@ const CheckoutItem = ({ product }) => {
                     product.nextDay ? <p><em>Next Day Shipping</em></p> : null
                 }
                 <p>Rating: {product.rating}/5</p> */}
-            </article>
+            </CheckoutCard>
             <section>
                 <div>
                 </div>
@@ -28,7 +31,7 @@ const CheckoutItem = ({ product }) => {
                         Remove Item
                     </button>
             </section>
-        </div>
+        </CheckoutItemList>
     )
 }
 

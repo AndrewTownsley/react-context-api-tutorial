@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Rating from './Rating'
-import { CartState } from '../Context/Context';
+import Rating from '../Rating'
+import { CartState } from '../../Context/Context';
+import { FilterWrapper } from './FilterStyle';
 
 
 const Filters = () => {
@@ -13,7 +14,7 @@ const Filters = () => {
     const [ rating ]  =useState(3);
 
     return (
-        <div className='Filters'>
+        <FilterWrapper>
             <h3>Filter Products</h3>
             <ul>
                 <label htmlFor="priceAscend">
@@ -89,7 +90,7 @@ const Filters = () => {
                     Clear Filters
                 </button>
             </ul>
-        </div>
+        </FilterWrapper>
     )
 }
 
