@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductList from '../../components/ProductList';
+import ProductList from '../../components/ProductList/ProductList';
 import Filters from '../../components/Filters';
 // import ConfirmationModal from '../components/Checkout/ConfirmationModal';
 import { CartState } from '../../Context/Context';

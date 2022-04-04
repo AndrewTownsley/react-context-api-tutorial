@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
-import CartItem from '../../components/CartItem';
+import CartItem from '../../components/CartItem/CartItem';
 import { CartState } from '../../Context/Context';
-import { CartWrapper } from './CartStyle';
+import { CartWrapper, ProductContainer } from './CartStyle';
 
 export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
@@ -30,7 +30,7 @@ export const Cart = ({ total, setTotal}) => {
                         Checkout
                     </button>
                 </Link>
-                <div className="product-container">
+                <ProductContainer>
                     {
                         cart.map((product, index) => (
                             <CartItem 
@@ -42,7 +42,7 @@ export const Cart = ({ total, setTotal}) => {
                             
                             ))
                     }
-                </div>
+                </ProductContainer>
             </CartWrapper>)
         : 
             (

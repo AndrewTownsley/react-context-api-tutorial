@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import ProductItem from './ProductItem';
-import Pagination from './Pagination';
-import { CartState } from '../Context/Context';
+import ProductItem from '../ProductItem/ProductItem';
+import Pagination from '../Pagination';
+import { CartState } from '../../Context/Context';
+import { ProductListWrapper } from './ProductListStyle';
 
 const ProductList = () => {
     const { state: {productsArray },
@@ -55,7 +56,7 @@ const ProductList = () => {
 
 
     return (
-        <div className="product-list" >
+        <ProductListWrapper>
         {
             transFormProducts().map((product) => (
                <ProductItem 
@@ -71,7 +72,7 @@ const ProductList = () => {
           pageNumber={pageNumber}  
           handlePageNumberClick={handlePageNumberClick}
         />
-    </div>
+    </ProductListWrapper>
     )
 }
 

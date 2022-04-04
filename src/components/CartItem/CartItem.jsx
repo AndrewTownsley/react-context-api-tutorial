@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { CartState } from '../Context/Context';
+import { CartState } from '../../Context/Context';
+import { CartItemWrapper } from './CartItemStyle';
+import { ProductCard } from '../ProductItem/ProductItemStyle';
 
 
 const CartItem = ({ product }) => {
@@ -9,14 +11,14 @@ const CartItem = ({ product }) => {
 
 
     return (
-        <div className="cart-item">
-            <article className='product-card'>
+        <CartItemWrapper>
+            <ProductCard>
                 {/* <img src={product.image} alt={product.item} /> */}
                 <h5>{product.name}</h5>
                 <p>${product.price}</p>
                 <p>in stock: {product.inStock - selectedQty}</p>
                 <p>Rating: {product.rating}/5</p>
-            </article>
+            </ProductCard>
             <section>
                 <div>
 
@@ -55,7 +57,7 @@ const CartItem = ({ product }) => {
                         Remove Item
                     </button>
             </section>
-        </div>
+        </CartItemWrapper>
     )
 }
 

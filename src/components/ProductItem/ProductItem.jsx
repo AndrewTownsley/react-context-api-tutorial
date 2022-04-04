@@ -1,5 +1,6 @@
-import { CartState } from '../Context/Context';
+import { CartState } from '../../Context/Context';
 import React, { useState } from 'react';
+import { ProductCard } from './ProductItemStyle';
 
 const ProductDetail = ({ product }) => {
   const { 
@@ -14,7 +15,7 @@ const ProductDetail = ({ product }) => {
   // }
 
     return (
-        <article className='product-card'>
+        <ProductCard>
         <h5>{product.name}</h5>
         <p>${product.price}</p>
         { product.nextDay ? <p>Next Day Shipping</p> : null}
@@ -56,7 +57,7 @@ const ProductDetail = ({ product }) => {
       ) 
     }
 
-    </article>
+    </ProductCard>
     )
 }
 
