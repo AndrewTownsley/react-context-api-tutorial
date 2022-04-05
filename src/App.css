@@ -2,17 +2,23 @@
   margin: 0;
 }
 
+a {
+  padding: 0.5rem;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #444;
+}
+
 ul li {
   list-style-type: none;
 }
 
-ul li a {
+/* ul li a {
   color: #fff;
-}
+} */
 
-a {
-  padding: 0.5rem;
-}
 
 .active-page-link {
   background-color: #444;

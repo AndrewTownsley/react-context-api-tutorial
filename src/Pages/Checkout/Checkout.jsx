@@ -49,6 +49,8 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                 :
         (    
         <>
+        <CheckoutWrapper>
+            
             <Link to="/cart"><button>Back to Cart</button></Link>
             <h4>Cart Total: ${total}</h4>
             {/* <section className="userInfo">
@@ -58,7 +60,6 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                 <p>{shipFormData.address}</p>
                 <p>{shipFormData.city} {shipFormData.zipCode}</p>
             </section> */}
-            <CheckoutWrapper>
                 <section className='checkout-form-container'>
                     <ShippingForm
                         total={total}
@@ -91,7 +92,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                         ))
                     }
                 </section>
-            </CheckoutWrapper>
+        </CheckoutWrapper>
             </>)  
 }
         </div>

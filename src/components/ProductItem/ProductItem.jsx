@@ -1,6 +1,7 @@
 import { CartState } from '../../Context/Context';
 import React, { useState } from 'react';
 import { ProductCard } from './ProductItemStyle';
+import RatingOnCard from '../RatingOnCard';
 
 const ProductDetail = ({ product }) => {
   const { 
@@ -19,7 +20,7 @@ const ProductDetail = ({ product }) => {
         <h5>{product.name}</h5>
         <p>${product.price}</p>
         { product.nextDay ? <p>Next Day Shipping</p> : null}
-        <p>Rating: {product.rating}/5</p>
+        <RatingOnCard rating={product.rating} />
         <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p>
 
         { cart.some(p => p.id === product.id ) ?

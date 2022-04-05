@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { CartState } from '../../Context/Context';
 import { CartItemWrapper } from './CartItemStyle';
 import { ProductCard } from '../ProductItem/ProductItemStyle';
-
+import RatingOnCard from '../RatingOnCard';
 
 const CartItem = ({ product }) => {
     const [selectedQty, setSelectedQty] = useState(0);
@@ -17,7 +17,7 @@ const CartItem = ({ product }) => {
                 <h5>{product.name}</h5>
                 <p>${product.price}</p>
                 <p>in stock: {product.inStock - selectedQty}</p>
-                <p>Rating: {product.rating}/5</p>
+                <RatingOnCard rating={product.rating} />
             </ProductCard>
             <section>
                 <div>

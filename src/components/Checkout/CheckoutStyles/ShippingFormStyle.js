@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const CheckoutFormWrapper = styled.section`
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
     justify-content: center;
     align-items: center;
+    max-width: 80%;
+    margin: 0 auto 2rem auto;
 `
 
 export const UserInfo = styled.section `
