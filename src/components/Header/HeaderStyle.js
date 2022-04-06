@@ -45,6 +45,9 @@ export const HeaderSearch = styled.input `
     &:focus {
         outline: 2px solid #14a76c;
     }
+    &:hover {
+        outline: 2px solid #14a76c;
+    }
 `
 
 export const HeaderNav = styled.nav `
@@ -55,6 +58,10 @@ export const HeaderNav = styled.nav `
         align-items: end;
         li a {
             padding: 1rem 1rem 0 1rem;
+            &:hover {
+                background-color: #f5f5f5;
+                border-bottom: 2px solid #14a76c;
+            }
         }
     }
 `

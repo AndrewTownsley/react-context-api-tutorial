@@ -23,6 +23,10 @@ ul li {
   list-style-type: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .active-page-link {
   background-color: #444;
   color: rgb(251, 79, 188);

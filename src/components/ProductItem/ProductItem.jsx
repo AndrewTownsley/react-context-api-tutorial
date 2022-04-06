@@ -1,6 +1,6 @@
 import { CartState } from '../../Context/Context';
 import React, { useState } from 'react';
-import { ProductCard } from './ProductItemStyle';
+import { ProductCard,ProductCardImgCont } from './ProductItemStyle';
 import RatingOnCard from '../RatingOnCard';
 
 const ProductDetail = ({ product }) => {
@@ -17,46 +17,49 @@ const ProductDetail = ({ product }) => {
 
     return (
         <ProductCard>
-        <h5>{product.name}</h5>
-        <p>${product.price}</p>
-        { product.nextDay ? <p>Next Day Shipping</p> : null}
-        <RatingOnCard rating={product.rating} />
-        <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p>
+            <ProductCardImgCont>
+              <img src="https://picsum.photos/125" alt="product" />
+            </ProductCardImgCont>
+            <h5>{product.name}</h5>
+            <p>${product.price}</p>
+            { product.nextDay ? <p>Next Day Shipping</p> : null}
+            <RatingOnCard rating={product.rating} />
+            <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p>
 
-        { cart.some(p => p.id === product.id ) ?
-          (
-            <button
-              className={inStock !== 0 ? "" : "out-of-stock"}
-              onClick={() => {
-                setInStock(inStock + 1)
-                dispatch({  
-                  type: "REMOVE_FROM_CART",
-                  payload: product
-                })
-              }}
-            >
-              Remove from cart
-            </button>
-          )
-          : 
-          (
-          <>
-            <button 
-              className={inStock !== 0 ? "" : "out-of-stock"} 
-              onClick={() => {
-                setInStock(inStock -1)
-                dispatch({
-                  type: "ADD_TO_CART",
-                  payload: product
-                })
-              }}
-            >
-              Add to Cart
-            </button>
-          </>
+            { cart.some(p => p.id === product.id ) ?
+              (
+                <button
+                  className={inStock !== 0 ? "" : "out-of-stock"}
+                  onClick={() => {
+                    setInStock(inStock + 1)
+                    dispatch({  
+                      type: "REMOVE_FROM_CART",
+                      payload: product
+                    })
+                  }}
+                >
+                  Remove from cart
+                </button>
+              )
+              : 
+              (
+              <>
+                <button 
+                  className={inStock !== 0 ? "" : "out-of-stock"} 
+                  onClick={() => {
+                    setInStock(inStock -1)
+                    dispatch({
+                      type: "ADD_TO_CART",
+                      payload: product
+                    })
+                  }}
+                >
+                  Add to Cart
+                </button>
+              </>
          
-      ) 
-    }
+              ) 
+            }
 
     </ProductCard>
     )
