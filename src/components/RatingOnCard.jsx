@@ -9,7 +9,6 @@ const RatingCard = styled.div`
 const RatingOnCard = ({ rating, onClick}) => {
     return (
         <RatingCard>
-            <p>Rating Component</p>
             {
                 [...Array(5)].map((_, i) => (
                     <span key={i} onClick={() => onClick(i)}>

@@ -5,7 +5,6 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 const Rating = ({ rating, onClick}) => {
     return (
         <div>
-            <p>Rating Component</p>
             {
                 [...Array(5)].map((_, i) => (
                     <span key={i} onClick={() => onClick(i)}>

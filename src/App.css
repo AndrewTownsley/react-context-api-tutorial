@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 * {
   margin: 0;
 }
 
+body {
+  font-family: 'Inter', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 a {
   padding: 0.5rem;
-  color: #222;
+  color: #444;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 h1, h2, h3, h4, h5 {
@@ -15,18 +23,13 @@ ul li {
   list-style-type: none;
 }
 
-/* ul li a {
-  color: #fff;
-} */
-
-
 .active-page-link {
   background-color: #444;
   color: rgb(251, 79, 188);
 }
 
 .cart-active {
-  background-color: #00ec04;
+  /* border-bottom: 2px solid #000; */
 }
 
 .cart-active a {

@@ -17,7 +17,25 @@ export const HeaderLogo = styled.h1 `
     align-items: center;
 `
 
+export const HeaderSearchContianer = styled.div `
+    position: relative;
+`
+
+export const HeaderSearchButton = styled.button `
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    background: transparent;
+    color: #888;
+    outline: none;
+    border: none;
+    font-size: 1.25rem;
+`
+
 export const HeaderSearch = styled.input `
+    text-align: center;
     background-color: #f5f5f5;
     border: none;
     outline: 2px solid #e5e5e5;
@@ -36,8 +54,23 @@ export const HeaderNav = styled.nav `
         justify-content: space-between;
         align-items: end;
         li a {
-            padding: 1rem;
+            padding: 1rem 1rem 0 1rem;
         }
     }
+`
+
+export const CartNavItemsLi = styled.li `
+    width: 175px;
+`
+
+export const CartQuantityIcon = styled.span`
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    font-size: .75rem;
+    border-radius: 5px;
+    padding: 2px;
+    color: #fff;
+    background-color: #14a76c;
 `
 
