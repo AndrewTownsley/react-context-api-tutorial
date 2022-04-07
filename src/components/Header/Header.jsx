@@ -1,5 +1,5 @@
 import React, {  useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 import { GiLindenLeaf } from 'react-icons/gi';
 import { AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai';
@@ -16,6 +16,8 @@ import {
 
 const Header = () => {
     const { state: {cart}, dispatch, productDispatch } = CartState();
+    const location = useLocation();
+    console.log(location.pathname);
 
     return (
         <HeaderWrapper>
@@ -33,21 +35,27 @@ const Header = () => {
                         id="search"
                         placeholder="search products"
                         />
-                        <HeaderSearchButton>
+                        <HeaderSearchButton aria-label='search-for-products'>
                             <AiOutlineSearch/>
                         </HeaderSearchButton>
                 </label>
             </HeaderSearchContianer>
             <HeaderNav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <CartNavItemsLi className={cart.length ? "cart-active" : null}>
+                    <CartNavItemsLi color={location.pathname === '/' ? "#14a76c" : "#444"}>
+                        <Link  to="/">
+                            Shop
+                        </Link>
+                    </CartNavItemsLi>
+                    <CartNavItemsLi 
+                        color={location.pathname === '/' ? "#444" : "#14a76c"}
+                        className={cart.length ? "cart-active" : null}
+                    >
                         <Link to="/cart">
-                            Cart
                             <AiOutlineShoppingCart 
                                 style={{position: 'relative', fontSize: '1.5rem'}} 
                             />
-                            <CartQuantityIcon>{cart.length}</CartQuantityIcon>
+                    <CartQuantityIcon>{cart.length}</CartQuantityIcon>
                         </Link>
                     </CartNavItemsLi>  
                 </ul>

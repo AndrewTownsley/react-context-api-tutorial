@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.header `
     /* color: #fff; */
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     border-bottom: 2px solid #e5e5e5;
     `
 
@@ -26,7 +26,8 @@ export const HeaderSearchButton = styled.button `
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 8px;
+    top: 25px;
+    left: 20px;
     background: transparent;
     color: #888;
     outline: none;
@@ -40,7 +41,7 @@ export const HeaderSearch = styled.input `
     border: none;
     outline: 2px solid #e5e5e5;
     padding: 0.5rem 2rem;
-    margin: 0 0 1rem 0;
+    margin: 1rem ;
     border-radius: 5px;
     &:focus {
         outline: 2px solid #14a76c;
@@ -52,28 +53,35 @@ export const HeaderSearch = styled.input `
 
 export const HeaderNav = styled.nav `
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ul {
         display: flex;
-        justify-content: space-between;
-        align-items: end;
-        li a {
-            padding: 1rem 1rem 0 1rem;
-            &:hover {
-                background-color: #f5f5f5;
-                border-bottom: 2px solid #14a76c;
-            }
-        }
+        justify-content: center;
+        /* align-items: center; */
     }
-`
+    `
 
 export const CartNavItemsLi = styled.li `
-    width: 175px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: ${(props) => props.color};
+            &:hover {
+                /* background-color: rgba(20, 167, 108, 0.1); */
+                /* border-bottom: 2px solid #14a76c; */
+                color: #14a76c;
+            }
+    }
 `
 
 export const CartQuantityIcon = styled.span`
     position: absolute;
-    top: 30px;
-    right: 80px;
+    top: 19px;
+    right: 25px;
     font-size: .75rem;
     border-radius: 5px;
     padding: 2px;

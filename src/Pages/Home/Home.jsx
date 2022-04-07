@@ -14,10 +14,6 @@ export const Home = ({ openEdit }) => {
             <Filters/>
             <ProductList/>
         </HomeWrapper>
-        // <div className='Home'>
-        //     <Filters/>
-        //     <ProductList/>
-        // </div>
     )
 }
 
