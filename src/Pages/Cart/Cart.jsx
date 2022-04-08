@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import CartItem from '../../components/CartItem/CartItem';
 import { CartState } from '../../Context/Context';
-import { CartWrapper, ProductContainer } from './CartStyle';
+import { CartWrapper, ProductContainer, CartEmpty } from './CartStyle';
+import Footer from '../../components/Footer';
 
 export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
@@ -46,14 +47,15 @@ export const Cart = ({ total, setTotal}) => {
             </CartWrapper>)
         : 
             (
-                <>
-                <h3>Cart is Empty!</h3>
-                <Link to="/"><button>Continue Shopping</button></Link>
-                </>
-
+                <CartEmpty>
+                    <h3>Cart is Empty!</h3>
+                    <Link to="/"><button>Continue Shopping</button></Link>
+                </CartEmpty>
             )
         }
+        <Footer/>
         </>
+
     )
 }
 

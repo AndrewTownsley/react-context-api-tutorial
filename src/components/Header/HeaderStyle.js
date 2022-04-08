@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.header `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #e5e5e5;
+    border-bottom: 3px solid #e5e5e5;
     `
 
 export const HeaderLogo = styled.h1 `
@@ -53,6 +53,7 @@ export const HeaderSearch = styled.input `
 
 export const HeaderNav = styled.nav `
     height: 100%;
+    padding: 0 1rem 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,15 +65,27 @@ export const HeaderNav = styled.nav `
     `
 
 export const CartNavItemsLi = styled.li `
-    padding: 1rem;
+    position: relative;
+    padding: 1rem 1rem 1rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    &::after {
+        position: absolute;
+        bottom: -14px;
+        content: "";
+        display: ${(props) => props.display};
+        width: 100%;
+        height: 3px;
+        background-color: #14a76c;
+        margin: 0.5rem 0;
+    }
+        /* border-bottom: ${(props) => props.border}; */
+    }
     a {
         color: ${(props) => props.color};
             &:hover {
                 /* background-color: rgba(20, 167, 108, 0.1); */
-                /* border-bottom: 2px solid #14a76c; */
                 color: #14a76c;
             }
     }

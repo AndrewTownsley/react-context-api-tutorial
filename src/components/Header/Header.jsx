@@ -42,13 +42,19 @@ const Header = () => {
             </HeaderSearchContianer>
             <HeaderNav>
                 <ul>
-                    <CartNavItemsLi color={location.pathname === '/' ? "#14a76c" : "#444"}>
+                    <CartNavItemsLi 
+                        color={location.pathname === '/' ? "#14a76c" : "#444"}
+                        // border={location.pathname === '/' ? '2px solid #14a76c' : ''}
+                        display={location.pathname === '/' ? 'block' : 'none'}
+                    >
                         <Link  to="/">
                             Shop
                         </Link>
                     </CartNavItemsLi>
                     <CartNavItemsLi 
                         color={location.pathname === '/' ? "#444" : "#14a76c"}
+                        // border={location.pathname === '/' ? '' : '2px solid #14a76c'}
+                        display={location.pathname === '/' ? 'none' : 'block'}
                         className={cart.length ? "cart-active" : null}
                     >
                         <Link to="/cart">
