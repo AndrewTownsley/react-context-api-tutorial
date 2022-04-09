@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductItem from '../ProductItem/ProductItem';
 import Pagination from '../Pagination';
 import { CartState } from '../../Context/Context';
@@ -14,7 +14,15 @@ const ProductList = () => {
     const [pageNumber, setPageNumber] = useState(0);
     console.log(productsArray.length / PRODUCTS_PER_PAGE);
 
+        // console.log(productsArray.forEach(product => console.log(product.inStock)));
 
+    useEffect(() => {
+        productsArray.forEach((product) => {
+            product.clearance = (product.inStock <= 5 ? true : false);
+        })
+    }, [productsArray]);
+
+    console.log(productsArray);
 
     const transFormProducts = () => {
         let sortedProducts = productsArray;
@@ -63,6 +71,7 @@ const ProductList = () => {
                 id={product.id} 
                 key={product.id} 
                 product={product}
+                // clearance={product.inStock <= 5 ? true : false}
                 />
             ))
         }

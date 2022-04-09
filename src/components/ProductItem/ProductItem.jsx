@@ -1,7 +1,7 @@
 import { CartState } from '../../Context/Context';
 import React, { useState } from 'react';
 import { Button } from '../../StyleProps';
-import { ProductCard,ProductCardImgCont, ProductCardBtnCont } from './ProductItemStyle';
+import { ProductCard,ProductCardImgCont, ProductCardBtnCont, PriceClearance } from './ProductItemStyle';
 import RatingOnCard from '../RatingOnCard';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 
@@ -12,10 +12,7 @@ const ProductDetail = ({ product }) => {
     } = CartState();
   const [inStock, setInStock] = useState(product.inStock)
   
-  // const addItemToCart = (product) => {
-  //   setCart([...cart, product])
-  //   setInStock(inStock - 1);
-  // }
+// console.log(ProductItem.clearance);
 
     return (
         <ProductCard>
@@ -26,8 +23,14 @@ const ProductDetail = ({ product }) => {
                <h5>{product.name}</h5>
                <RatingOnCard rating={product.rating} />
                { product.nextDay ? <p>Next Day Shipping</p> : null}
-               {/* <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p> */}
+               {
+                inStock <= 5 ? 
+                <p>
+                  <PriceClearance>{product.price}</PriceClearance> {parseInt(product.price * .800)}.00
+                </p>
+                :
                <p>${product.price}</p>            
+               }
             </section>
             <ProductCardBtnCont>
 

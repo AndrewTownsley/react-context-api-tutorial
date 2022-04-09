@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BORDERS, STYLES } from '../../StyleProps';
+import { BORDERS, COLORS, STYLES, FONTS } from '../../StyleProps';
 
 export const ProductCard = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const ProductCard = styled.div`
   /* text-align: center; */
   margin: 1rem;
   border: 1px solid #e5e5e5;
-  border-radius: ${BORDERS.radiusPrimary};
+  /* border-radius: ${BORDERS.radiusPrimary}; */
   max-width: 220px;
   section {
     display: flex;
@@ -19,9 +19,11 @@ export const ProductCard = styled.div`
     padding: 0rem 1rem 0 1rem;
   }
   h5 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 2rem;
     padding-bottom: ${STYLES.paddingSecondary};
-    color: #333;
+    color: #000;
+    font-weight: bold;
     &:hover {
       color: #666;
     }
@@ -41,8 +43,8 @@ export const ProductCardImgCont = styled.div`
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-top-right-radius: ${BORDERS.radiusPrimary};
-    border-top-left-radius: ${BORDERS.radiusPrimary};
+    /* border-top-right-radius: ${BORDERS.radiusPrimary}; */
+    /* border-top-left-radius: ${BORDERS.radiusPrimary}; */
   }
 `
 
@@ -51,4 +53,9 @@ export const ProductCardBtnCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+`
+
+export const PriceClearance = styled.span`
+  color: ${COLORS.textLight};
+  text-decoration: line-through;
 `

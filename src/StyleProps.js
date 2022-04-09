@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const COLORS = {
-    accentPurple: '#a64ac9',
+    accentPurple: 'linear-gradient(90deg, rgba(166,74,201,1) 0%, rgba(157,0,217,1) 50%, rgba(164,69,252,1) 100%)',
     accentPurpleHover: '#9e3cb8',
     accentYellow: '#fccd04',
     accentLightBlue: '#17e9e0',
@@ -19,8 +19,8 @@ export const BORDERS = {
     borderAccent: '1px solid #a64ac9',
     borderActive: '3px solid #a64ac9',
     focus: '1px solid #a64ac9',
-    radiusPrimary: '16px',
-    radiusSecondary: '10px',
+    radiusPrimary: '10px',
+    radiusSecondary: '5px',
 }
 
 export const FONTS = {
@@ -45,7 +45,7 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${COLORS.accentPurple};
+    background: ${COLORS.accentPurple};
     color: ${COLORS.white};
     border: none};
     border-radius: ${BORDERS.radiusSecondary};

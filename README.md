@@ -1,18 +1,18 @@
 <!-- 1.  Just make a basic Router setup. -->
+
 2.  Home page, Product page, checkout page/modal
 <!-- 3.  Shopping Cart -->
-4.  Search Feature
-5.  Update/Add/Delete cart items
-6.  Make a nice product page and checkout UI.
-7.  Error / Loading components
-8.  Styled Components
+3.  Search Feature
+4.  Update/Add/Delete cart items
+5.  Make a nice product page and checkout UI.
+6.  Error / Loading components
+7.  Styled Components
 <!-- --Backend-- -->
-1.  SQL ?
-2.  SSG ?
-3.  Dashboard for adding / removing products?
+8.  SQL ?
+9.  SSG ?
+10. Dashboard for adding / removing products?
 
-**************************************************
-
+---
 
 Page Structure ===
 
@@ -20,28 +20,31 @@ Page Structure ===
    a. App.js
    b. Home.js
    c. Products.js
-      i. Categories.js ??
+   i. Categories.js ??
    d. Checkout / Shopping Cart.js
 
-
    --- Home.js ---
-   1. Header / Nav / Shopping Cart Icon
-   2. Main -- Products / Filter-Category selection
-   3. Footer -- Nav
+
+   1. Loading State && ASYNC / AWAIT !!!
+   2. Header / Nav / Shopping Cart Icon
+   3. Main -- Products / Filter-Category selection
+   4. Footer -- Nav
 
    --- Products.js ---
+
    1. For now products will be displayed on home page.
 
    --- Checkout / Shopping Cart ---
-   1.  Add / Delete / Remove items
-   2.  Total
-   3.  Discount Code
-   4.  Shipping Info
+
+   1. Add / Delete / Remove items
+   2. Total
+   3. Discount Code
+   4. Shipping Info
 
    --- Other Features to add ---
-   1.  Reviews
-   2.  Star Ratings
-   3.  **** ERROR Handling !!! ***
-   4.  *** 404 page !!! ***
-   5.  Validation of form inputs*********************
 
+   1. Reviews
+   2. Star Ratings
+   3. \***_ ERROR Handling !!! _**
+   4. **_ 404 page !!! _**
+   5. Validation of form inputs****\*\*****\*****\*\*****

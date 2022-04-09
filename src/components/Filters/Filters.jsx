@@ -16,9 +16,6 @@ const Filters = () => {
     const [sortActiveLow, setSortActiveLow] = useState(false);
     const [sortActiveHigh, setSortActiveHigh] = useState(false);
 
-    console.log("High", sortActiveLow);
-    console.log("Low", sortActiveHigh);
-
     return (
         <FilterWrapper>
             <h3>Filter Products</h3>

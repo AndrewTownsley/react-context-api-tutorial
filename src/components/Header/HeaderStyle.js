@@ -96,7 +96,7 @@ export const CartQuantityIcon = styled.span`
     right: 25px;
     font-size: .75rem;
     border-radius: 5px;
-    padding: 2px;
+    padding: 1px 4px;
     color: #fff;
     background-color: ${COLORS.accentLightBlue};
 `
