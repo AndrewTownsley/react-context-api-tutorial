@@ -1,20 +1,26 @@
 import styled from "styled-components"
 
 export const COLORS = {
-    accentGreen: '#0dc47b',
-    accentGreenHover: '#00be72',
+    accentPurple: '#a64ac9',
+    accentPurpleHover: '#9e3cb8',
+    accentYellow: '#fccd04',
+    accentLightBlue: '#17e9e0',
     textReg: '#444',
     textLight: '#666',
     textDark: '#222',
     lightGray: '#e5e5e5',
+    white: '#fff',
 }
 
 export const BORDERS = {
     borderPrimary: '3px solid #e5e5e5',
     borderSecondary: '1px solid #e5e5e5',
-    focus: '1px solid #0dc47b',
-    radiusPrimary: '8px',
-    radiusSecondary: '5px',
+    borderDark: '2px solid #444',
+    borderAccent: '1px solid #a64ac9',
+    borderActive: '3px solid #a64ac9',
+    focus: '1px solid #a64ac9',
+    radiusPrimary: '16px',
+    radiusSecondary: '10px',
 }
 
 export const FONTS = {
@@ -36,9 +42,12 @@ export const STYLES = {
 }
 
 export const Button = styled.button`
-    background-color: ${COLORS.accentGreen};
-    color: #fff;
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${COLORS.accentPurple};
+    color: ${COLORS.white};
+    border: none};
     border-radius: ${BORDERS.radiusSecondary};
     padding: 0.5rem 1rem;
     margin: ${STYLES.marginSecondary};
@@ -47,9 +56,9 @@ export const Button = styled.button`
     outline: none;
     cursor: pointer;
     &:hover {
-        background-color: ${COLORS.accentGreenHover};
-    }
+        background-color: ${COLORS.accentPurpleHover};
     &:focus {
         ${BORDERS.focus}
     }
 `
+

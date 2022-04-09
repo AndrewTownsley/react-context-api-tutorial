@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Rating from '../Rating'
 import { CartState } from '../../Context/Context';
-import { FilterWrapper } from './FilterStyle';
+import { FilterWrapper, FilterButton } from './FilterStyle';
+import { BORDERS, Button } from '../../StyleProps';
 
 
 const Filters = () => {
@@ -11,14 +12,38 @@ const Filters = () => {
         byStock,
         byRating
     }, productDispatch} = CartState();
-    const [ rating ]  =useState(3);
+    const [ rating ] = useState(3);
+    const [sortActiveLow, setSortActiveLow] = useState(false);
+    const [sortActiveHigh, setSortActiveHigh] = useState(false);
+
+    console.log("High", sortActiveLow);
+    console.log("Low", sortActiveHigh);
 
     return (
         <FilterWrapper>
             <h3>Filter Products</h3>
             <ul>
-                <label htmlFor="priceAscend">
-                    Price: low to high
+                <li><h4>Price:</h4></li>
+                <FilterButton 
+                        onClick={() => {
+                            productDispatch({
+                                type: "SORT_BY_PRICE",
+                                payload: "lowToHigh"
+                            })
+                            setSortActiveHigh(false)
+                        }}
+                        onMouseDown={() => setSortActiveLow(true)}
+                        type="radio" 
+                        name="priceSort" 
+                        value="sortLow" 
+                        border={
+                            (sortActiveLow && !sortActiveHigh) ? `${BORDERS.borderActive}` : `${BORDERS.borderPrimary}`}
+                        checked={sort === "lowToHigh" ? true : false}
+                >
+                    low to high
+                </FilterButton>
+                {/* <label htmlFor="priceAscend">
+                     low to high
                     <input 
                         onChange={() => {
                             productDispatch({
@@ -30,9 +55,27 @@ const Filters = () => {
                         name="priceSort" 
                         checked={sort === "lowToHigh" ? true : false}
                     />
-                </label>
-                <label htmlFor="priceDescend">
-                    Price: high to low
+                </label> */}
+                <FilterButton 
+                        onClick={() => {
+                            productDispatch({
+                                type: "SORT_BY_PRICE",
+                                payload: "highToLow"
+                            })
+                            setSortActiveHigh(true)
+                        }}
+                        onMouseDown={() => setSortActiveLow(false)}
+                        type="radio" 
+                        name="priceSort" 
+                        value="sortHigh"
+                        border={
+                            (sortActiveHigh && !sortActiveLow) ? `${BORDERS.borderActive}` : `${BORDERS.borderPrimary}`}
+                        checked={sort === "highToLow" ? true : false}
+                >
+                    high to low
+                </FilterButton>
+                {/* <label htmlFor="priceDescend">
+                    high to low
                     <input 
                         onChange={() => {
                             productDispatch({
@@ -44,21 +87,24 @@ const Filters = () => {
                         name="priceSort" 
                         checked={sort === "highToLow" ? true : false}
                     />
-                </label>
-                <label htmlFor="nextDay">
-                    Next Day Delivery
-                    <input 
-                        onChange={() => {
+                </label> */}
+                </ul>
+                <ul>
+                <FilterButton 
+                        onClick={() => {
                             productDispatch({
-                                type: "FILTER_BY_DELIVERY",
+                                type: "FILTER_BY_STOCK"
                             })
                         }}
                         type="checkbox"
-                        name="nextDay"
-                        checked={byNextDay} 
-                    />
-                </label>
-                <label htmlFor="outOfStock">
+                        name="outOfStock" 
+                        border={`${BORDERS.borderPrimary}`}
+                        checked={byStock}
+                >
+                    Clearance
+                </FilterButton>
+                <p>If Clearance, cross out original price and render price that is 20% off next to it.</p>
+                {/* <label htmlFor="outOfStock">
                     Show out of stock items
                     <input 
                         onChange={() => {
@@ -70,7 +116,8 @@ const Filters = () => {
                         name="outOfStock" 
                         checked={byStock}
                     />
-                </label>
+                </label> */}
+                <li><h4>By Rating:</h4></li>
                 <Rating 
                     rating={byRating} 
                     onClick={(i) => {
@@ -80,7 +127,7 @@ const Filters = () => {
                         })
                     }}
                 />
-                <button 
+                <Button 
                     onClick={() => 
                         productDispatch({
                             type: "CLEAR_FILTERS",
@@ -88,7 +135,8 @@ const Filters = () => {
                     }
                 >
                     Clear Filters
-                </button>
+                </Button>
+                <p>Render a category for each item based on the first word in the name.  Then render a selector for each category here.</p>
             </ul>
         </FilterWrapper>
     )

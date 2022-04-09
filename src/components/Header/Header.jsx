@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 import { GiLindenLeaf } from 'react-icons/gi';
 import { AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai';
+import { COLORS } from '../../StyleProps';
 import {
     HeaderWrapper, 
     HeaderLogo, 
@@ -21,7 +22,7 @@ const Header = () => {
 
     return (
         <HeaderWrapper>
-            <HeaderLogo><GiLindenLeaf style={{color:'#14a76c'}}/>  fresh commerce</HeaderLogo>
+            <HeaderLogo><GiLindenLeaf style={{color: `${COLORS.accentPurple}`}}/>  fresh commerce</HeaderLogo>
             <HeaderSearchContianer>
                 <label htmlFor="productSearch">
                     <HeaderSearch
@@ -43,8 +44,7 @@ const Header = () => {
             <HeaderNav>
                 <ul>
                     <CartNavItemsLi 
-                        color={location.pathname === '/' ? "#14a76c" : "#444"}
-                        // border={location.pathname === '/' ? '2px solid #14a76c' : ''}
+                        color={location.pathname === '/' ? `${COLORS.accentPurple}` : "#444"}
                         display={location.pathname === '/' ? 'block' : 'none'}
                     >
                         <Link  to="/">
@@ -52,8 +52,7 @@ const Header = () => {
                         </Link>
                     </CartNavItemsLi>
                     <CartNavItemsLi 
-                        color={location.pathname === '/' ? "#444" : "#14a76c"}
-                        // border={location.pathname === '/' ? '' : '2px solid #14a76c'}
+                        color={location.pathname === '/' ? "#444" : `${COLORS.accentPurple}`}
                         display={location.pathname === '/' ? 'none' : 'block'}
                         className={cart.length ? "cart-active" : null}
                     >

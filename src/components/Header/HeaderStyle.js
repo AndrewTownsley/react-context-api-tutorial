@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS, BORDERS, FONTS, STYLES } from '../../StyleProps';
 
 export const HeaderWrapper = styled.header `
     background-color: #fff;
@@ -44,10 +45,10 @@ export const HeaderSearch = styled.input `
     margin: 1rem ;
     border-radius: 5px;
     &:focus {
-        outline: 2px solid #14a76c;
+        outline: ${BORDERS.borderDark};
     }
     &:hover {
-        outline: 2px solid #14a76c;
+        outline: ${BORDERS.borderDark};
     }
 `
 
@@ -77,16 +78,14 @@ export const CartNavItemsLi = styled.li `
         display: ${(props) => props.display};
         width: 100%;
         height: 3px;
-        background-color: #14a76c;
+        background-color: ${COLORS.accentPurple};
         margin: 0.5rem 0;
     }
-        /* border-bottom: ${(props) => props.border}; */
     }
     a {
         color: ${(props) => props.color};
             &:hover {
-                /* background-color: rgba(20, 167, 108, 0.1); */
-                color: #14a76c;
+                color: ${COLORS.accentPurple};
             }
     }
 `
@@ -99,6 +98,6 @@ export const CartQuantityIcon = styled.span`
     border-radius: 5px;
     padding: 2px;
     color: #fff;
-    background-color: #14a76c;
+    background-color: ${COLORS.accentLightBlue};
 `
 

@@ -1,23 +1,35 @@
 import styled from 'styled-components';
+import { BORDERS, STYLES } from '../../StyleProps';
 
 export const ProductCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  text-align: center;
+  /* text-align: center; */
   margin: 1rem;
   border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 0.75rem;
-  max-width: 200px;
+  border-radius: ${BORDERS.radiusPrimary};
+  max-width: 220px;
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0rem 1rem 0 1rem;
+  }
   h5 {
     height: 2rem;
+    padding-bottom: ${STYLES.paddingSecondary};
+    color: #333;
+    &:hover {
+      color: #666;
+    }
+  }
+  p {
+    padding: 0.5rem 0 0 0;
   }
   cursor: pointer;
-  &:hover {
-    border: 1px solid #14a76c;
-  }
 `
 
 export const ProductCardImgCont = styled.div`
@@ -25,6 +37,13 @@ export const ProductCardImgCont = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-right-radius: ${BORDERS.radiusPrimary};
+    border-top-left-radius: ${BORDERS.radiusPrimary};
+  }
 `
 
 export const ProductCardBtnCont = styled.div`

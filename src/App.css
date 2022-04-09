@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
 * {
   margin: 0;
 }
 
 body {
-  font-family: 'Noto Sans', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Quicksand', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
@@ -16,7 +16,7 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  color: #444;
+  color: #333;
 }
 
 ul li {
@@ -30,6 +30,16 @@ button {
 .active-page-link {
   background-color: #444;
   color: rgb(251, 79, 188);
+}
+
+.rating span svg {
+  font-size: 1rem;
+  fill: #ffe400;
+  cursor: pointer;
+}
+
+.rating span svg:hover {
+  fill: #ffe400;
 }
 
 .cart-active {

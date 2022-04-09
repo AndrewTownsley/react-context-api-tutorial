@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '../../StyleProps';
 import { ProductCard,ProductCardImgCont, ProductCardBtnCont } from './ProductItemStyle';
 import RatingOnCard from '../RatingOnCard';
+import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 
 const ProductDetail = ({ product }) => {
   const { 
@@ -19,15 +20,15 @@ const ProductDetail = ({ product }) => {
     return (
         <ProductCard>
             <ProductCardImgCont>
-              <img src="https://picsum.photos/125" alt="product" />
+              <img src="https://picsum.photos/220" alt="product" />
             </ProductCardImgCont>
-            {/* <section> */}
+            <section>
                <h5>{product.name}</h5>
-               { product.nextDay ? <p>Next Day Shipping</p> : null}
                <RatingOnCard rating={product.rating} />
+               { product.nextDay ? <p>Next Day Shipping</p> : null}
                {/* <p className={inStock === 1 ? "low-stock" : ""}>inStock: {inStock}</p> */}
                <p>${product.price}</p>            
-            {/* </section> */}
+            </section>
             <ProductCardBtnCont>
 
                 { cart.some(p => p.id === product.id ) ?
@@ -42,6 +43,9 @@ const ProductDetail = ({ product }) => {
                       })
                     }}
                     >
+                       <AiOutlineClose 
+                                style={{fontSize: '1rem', paddingRight: '5px'}} 
+                       />
                       Remove
                     </Button>
                   )
@@ -58,6 +62,9 @@ const ProductDetail = ({ product }) => {
                         })
                       }}
                       >
+                        <AiOutlineShoppingCart 
+                                style={{fontSize: '1rem', paddingRight: '5px'}} 
+                            />
                       Add to Cart
                     </Button>
                   </>

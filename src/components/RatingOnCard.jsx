@@ -15,7 +15,7 @@ const RatingOnCard = ({ rating, onClick}) => {
                         {
                             rating > i ?
                             (
-                                <AiFillStar fontSize="15px" />
+                                <AiFillStar fontSize="15px" color="#ffe400" />
                             )
                              :
                             (
