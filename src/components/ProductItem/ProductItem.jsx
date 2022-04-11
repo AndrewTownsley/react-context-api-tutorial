@@ -5,7 +5,7 @@ import { ProductCard,ProductCardImgCont, ProductCardBtnCont, PriceClearanceBefor
 import RatingOnCard from '../RatingOnCard';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 
-const ProductDetail = ({ product }) => {
+const ProductItem = ({ product }) => {
   const { 
       state: { cart },
       dispatch 
@@ -80,4 +80,4 @@ const ProductDetail = ({ product }) => {
     )
 }
 
-export default ProductDetail;
+export default ProductItem;

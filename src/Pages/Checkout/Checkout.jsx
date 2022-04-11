@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
-import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
+import CheckoutItem from './CheckoutItem';
 import ShippingForm from '../../components/Checkout/ShippingForm';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import ConfirmationModal from '../../components/Checkout/ConfirmationModal';

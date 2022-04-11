@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
-import { CheckoutItem } from '../Checkout/CheckoutItem';
 import { CartWrapper, ProductContainer, CartEmpty, CartHeader } from './CartStyle';
 import Footer from '../../components/Footer';
 import { Button } from '../../StyleProps';
+import CheckoutItem from '../Checkout/CheckoutItem';
 
 export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
@@ -20,21 +20,6 @@ export const Cart = ({ total, setTotal}) => {
         cart.length !== 0
              ?
             (<CartWrapper>
-                <CartHeader>  
-                    <div>
-                        <h3>Cart</h3>
-                        <h4>{cart.length} Items</h4>
-                        <h5>Total: ${total}</h5>
-                    </div>
-                    <Link 
-                        to="/checkout"
-                        state={{ total: 'total' }}
-                        >
-                        <Button>
-                            Checkout
-                        </Button>
-                    </Link>
-                </CartHeader>
                 <ProductContainer>
                     {
                         cart.map((product, index) => (
@@ -48,6 +33,21 @@ export const Cart = ({ total, setTotal}) => {
                             ))
                     }
                 </ProductContainer>
+                <CartHeader>  
+                    <div>
+                        <h3>Cart Totals</h3>
+                        <h4>Items: {cart.length}</h4>
+                        <h4>Total: ${total}</h4>
+                    </div>
+                    <Link 
+                        to="/checkout"
+                        state={{ total: 'total' }}
+                        >
+                        <Button >
+                            Checkout
+                        </Button>
+                    </Link>
+                </CartHeader>
             </CartWrapper>)
         : 
             (
