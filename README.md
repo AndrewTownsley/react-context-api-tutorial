@@ -1,3 +1,10 @@
+CSS
+
+1.  Home
+    a. Checkout button
+    b. Clearance Button border onClick
+    c.
+
 <!-- 1.  Just make a basic Router setup. -->
 
 2.  Home page, Product page, checkout page/modal
@@ -47,4 +54,4 @@ Page Structure ===
    2. Star Ratings
    3. \***_ ERROR Handling !!! _**
    4. **_ 404 page !!! _**
-   5. Validation of form inputs****\*\*****\*****\*\*****
+   5. Validation of form inputs\***\*\*\*\*\***\*\***\*\*\*\*\***

@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
-import CartItem from '../../components/CartItem/CartItem';
 import { CartState } from '../../Context/Context';
-import { CartWrapper, ProductContainer, CartEmpty } from './CartStyle';
+import { CheckoutItem } from '../Checkout/CheckoutItem';
+import { CartWrapper, ProductContainer, CartEmpty, CartHeader } from './CartStyle';
 import Footer from '../../components/Footer';
+import { Button } from '../../StyleProps';
 
 export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
@@ -19,26 +20,29 @@ export const Cart = ({ total, setTotal}) => {
         cart.length !== 0
              ?
             (<CartWrapper>
-
-                    <h3>Cart</h3>
-                <h4>{cart.length} Items</h4>
-                <h5>Total: ${total}</h5>
-                <Link 
-                    to="/checkout"
-                    state={{ total: 'total' }}
-                >
-                    <button>
-                        Checkout
-                    </button>
-                </Link>
+                <CartHeader>  
+                    <div>
+                        <h3>Cart</h3>
+                        <h4>{cart.length} Items</h4>
+                        <h5>Total: ${total}</h5>
+                    </div>
+                    <Link 
+                        to="/checkout"
+                        state={{ total: 'total' }}
+                        >
+                        <Button>
+                            Checkout
+                        </Button>
+                    </Link>
+                </CartHeader>
                 <ProductContainer>
                     {
                         cart.map((product, index) => (
-                            <CartItem 
-                            key={index} 
-                            product={product} 
-                            cart={cart} 
-                            setCart={setCart}
+                            <CheckoutItem 
+                                key={index} 
+                                product={product} 
+                                cart={cart} 
+                                setCart={setCart}
                             />
                             
                             ))

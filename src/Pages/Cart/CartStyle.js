@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CartWrapper = styled.div`
     max-width: 80%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     `
 export const ProductContainer = styled.div`
@@ -11,5 +11,13 @@ export const ProductContainer = styled.div`
     `
 
 export const CartEmpty = styled.div`
-height: 100vh;
+    height: 100vh;
 ` 
+
+export const CartHeader = styled.section`
+    display: flex;
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+`

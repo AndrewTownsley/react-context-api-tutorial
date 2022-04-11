@@ -1,7 +1,7 @@
 import { CartState } from '../../Context/Context';
 import React, { useState } from 'react';
 import { Button } from '../../StyleProps';
-import { ProductCard,ProductCardImgCont, ProductCardBtnCont, PriceClearance } from './ProductItemStyle';
+import { ProductCard,ProductCardImgCont, ProductCardBtnCont, PriceClearanceBefore, PriceClearanceAfter } from './ProductItemStyle';
 import RatingOnCard from '../RatingOnCard';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 
@@ -26,7 +26,7 @@ const ProductDetail = ({ product }) => {
                {
                 inStock <= 5 ? 
                 <p>
-                  <PriceClearance>{product.price}</PriceClearance> {parseInt(product.price * .800)}.00
+                  <PriceClearanceBefore>{product.price}</PriceClearanceBefore> <PriceClearanceAfter>{parseInt(product.price * .800)}.00</PriceClearanceAfter>
                 </p>
                 :
                <p>${product.price}</p>            

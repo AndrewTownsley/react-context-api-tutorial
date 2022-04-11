@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 import { GiLindenLeaf } from 'react-icons/gi';
 import { AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai';
-import { COLORS } from '../../StyleProps';
+import { Button, COLORS } from '../../StyleProps';
 import {
     HeaderWrapper, 
     HeaderLogo, 
@@ -12,7 +12,8 @@ import {
     HeaderSearchButton, 
     HeaderNav, 
     CartNavItemsLi,
-    CartQuantityIcon
+    CartQuantityIcon,
+    HeaderCheckoutButtonCont
 } from './HeaderStyle';
 
 const Header = () => {
@@ -22,7 +23,9 @@ const Header = () => {
 
     return (
         <HeaderWrapper>
-            <HeaderLogo><GiLindenLeaf style={{color: `${COLORS.accentPurple}`}}/>  fresh commerce</HeaderLogo>
+            <HeaderLogo>
+                <GiLindenLeaf style={{color: `${COLORS.accentPurple}`, paddingRight: '10px' }}/>  fresh commerce
+            </HeaderLogo>
             <HeaderSearchContianer>
                 <label htmlFor="productSearch">
                     <HeaderSearch
@@ -42,6 +45,23 @@ const Header = () => {
                 </label>
             </HeaderSearchContianer>
             <HeaderNav>
+            {
+                cart.length ? 
+            <HeaderCheckoutButtonCont>
+                    <Link 
+                        to="/cart"
+                        state={{ total: 'total' }}
+                        style={{ color: 'white'}}
+                        >
+                        <Button>
+                        View Cart
+                </Button>
+                    </Link>
+            </HeaderCheckoutButtonCont>
+                    
+            :
+            <></>
+        }
                 <ul>
                     <CartNavItemsLi 
                         color={location.pathname === '/' ? `${COLORS.accentPurple}` : "#444"}

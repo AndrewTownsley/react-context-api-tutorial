@@ -12,11 +12,10 @@ export const FilterWrapper = styled.div`
         font-size: ${FONTS.sizeSmall};
       }
       ul {
-        /* display: flex; */
-        /* flex-direction: column; */
-        /* justify-content: center; */
-        /* align-items: center; */
-        text-align: left;
+        /* text-align: center; */
+        display: flex;
+        flex-direction: column;
+        padding: ${STYLES.paddingSecondary};
         border-bottom: ${BORDERS.borderSecondary}; 
         label {
           font-size: ${FONTS.sizeSmall};

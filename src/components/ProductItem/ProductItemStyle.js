@@ -24,6 +24,7 @@ export const ProductCard = styled.div`
     padding-bottom: ${STYLES.paddingSecondary};
     color: #000;
     font-weight: bold;
+    cursor: pointer;
     &:hover {
       color: #666;
     }
@@ -31,7 +32,6 @@ export const ProductCard = styled.div`
   p {
     padding: 0.5rem 0 0 0;
   }
-  cursor: pointer;
 `
 
 export const ProductCardImgCont = styled.div`
@@ -55,7 +55,13 @@ export const ProductCardBtnCont = styled.div`
   align-items: flex-end;
 `
 
-export const PriceClearance = styled.span`
+export const PriceClearanceBefore = styled.span`
   color: ${COLORS.textLight};
   text-decoration: line-through;
+`
+
+export const PriceClearanceAfter = styled.span`
+  background: rgba(252, 205, 4, 0.6);
+  border-radius: ${BORDERS.radiusSmall};
+  padding: 0 2px;
 `

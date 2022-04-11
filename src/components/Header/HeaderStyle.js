@@ -78,15 +78,15 @@ export const CartNavItemsLi = styled.li `
         display: ${(props) => props.display};
         width: 100%;
         height: 3px;
-        background-color: ${COLORS.accentPurple};
+        background: ${COLORS.accentPurpleGrad};
         margin: 0.5rem 0;
     }
     }
     a {
         color: ${(props) => props.color};
-            &:hover {
-                color: ${COLORS.accentPurple};
-            }
+            /* &:hover {
+                color: ${COLORS.accentPurpleGrad};
+            } */
     }
 `
 
@@ -99,5 +99,16 @@ export const CartQuantityIcon = styled.span`
     padding: 1px 4px;
     color: #fff;
     background-color: ${COLORS.accentLightBlue};
+`
+
+export const HeaderCheckoutButtonCont = styled.div `
+    display: flex;
+    button {
+        margin: 0;
+        padding: 0.65rem 1rem;    
+        }
+    a {
+        padding: 0;
+    }
 `
 

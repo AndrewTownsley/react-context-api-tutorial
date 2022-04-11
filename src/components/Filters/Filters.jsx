@@ -15,6 +15,7 @@ const Filters = () => {
     const [ rating ] = useState(3);
     const [sortActiveLow, setSortActiveLow] = useState(false);
     const [sortActiveHigh, setSortActiveHigh] = useState(false);
+    const [sortClearance, setSortClearance] = useState(false);
 
     return (
         <FilterWrapper>
@@ -29,7 +30,8 @@ const Filters = () => {
                             })
                             setSortActiveHigh(false)
                         }}
-                        onMouseDown={() => setSortActiveLow(true)}
+                        // onMouseDown={() => setSortActiveLow(true)}
+                        onMouseDown={() => setSortActiveLow(prevState => !prevState)}
                         type="radio" 
                         name="priceSort" 
                         value="sortLow" 
@@ -61,7 +63,8 @@ const Filters = () => {
                             })
                             setSortActiveHigh(true)
                         }}
-                        onMouseDown={() => setSortActiveLow(false)}
+                        // onMouseDown={() => setSortActiveLow(false)}
+                        onMouseDown={() => setSortActiveLow(prevState => !prevState)}
                         type="radio" 
                         name="priceSort" 
                         value="sortHigh"
@@ -85,22 +88,23 @@ const Filters = () => {
                         checked={sort === "highToLow" ? true : false}
                     />
                 </label> */}
-                </ul>
-                <ul>
                 <FilterButton 
                         onClick={() => {
                             productDispatch({
                                 type: "FILTER_BY_STOCK"
                             })
+                            console.log('CLEARANCE!!!')
                         }}
+                        onMouseDown={() => setSortClearance(prevState => !prevState)}
                         type="checkbox"
                         name="outOfStock" 
-                        border={`${BORDERS.borderPrimary}`}
+                        border={sortClearance ? `${BORDERS.borderActive}` : `${BORDERS.borderPrimary}`}
                         checked={byStock}
-                >
+                        >
                     Clearance
                 </FilterButton>
-                <p>If Clearance, cross out original price and render price that is 20% off next to it.</p>
+                </ul>
+                <ul>
                 {/* <label htmlFor="outOfStock">
                     Show out of stock items
                     <input 

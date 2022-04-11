@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import ProductItem from '../ProductItem/ProductItem';
 import Pagination from '../Pagination';
 import { CartState } from '../../Context/Context';
 import { ProductListWrapper } from './ProductListStyle';
+import { cartReducer } from '../../Context/Reducers';
+import { Button } from '../../StyleProps';
 
 const ProductList = () => {
-    const { state: {productsArray },
+    const { state: { cart, productsArray },
             productState: { sort, byStock, byNextDay, byRating, searchQuery }
         } = CartState();
     const PRODUCTS_PER_PAGE = 10;
