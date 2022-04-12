@@ -9,7 +9,7 @@ export const ProductCard = styled.div`
   /* text-align: center; */
   margin: 1rem;
   border: 1px solid #e5e5e5;
-  /* border-radius: ${BORDERS.radiusPrimary}; */
+  border-radius: ${BORDERS.radiusSecondary};
   max-width: 220px;
   section {
     display: flex;
@@ -43,8 +43,8 @@ export const ProductCardImgCont = styled.div`
     width: 100%;
     height: auto;
     object-fit: cover;
-    /* border-top-right-radius: ${BORDERS.radiusPrimary}; */
-    /* border-top-left-radius: ${BORDERS.radiusPrimary}; */
+    border-top-right-radius: ${BORDERS.radiusSecondary};
+    border-top-left-radius: ${BORDERS.radiusSecondary};
   }
 `
 

@@ -35,16 +35,16 @@ export const Cart = ({ total, setTotal}) => {
                 </ProductContainer>
                 <CartHeader>  
                     <div>
-                        <h3>Cart Totals</h3>
-                        <h4>Items: {cart.length}</h4>
-                        <h4>Total: ${total}</h4>
+                        <h3>CART SUMMARY</h3>
+                        <h4><span>ITEMS:</span> {cart.length}</h4>
+                        <h4><span>TOTAL:</span> ${total}.00</h4>
                     </div>
                     <Link 
                         to="/checkout"
                         state={{ total: 'total' }}
                         >
                         <Button >
-                            Checkout
+                            Continue to Checkout
                         </Button>
                     </Link>
                 </CartHeader>

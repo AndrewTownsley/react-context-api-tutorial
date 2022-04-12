@@ -15,8 +15,14 @@ export const CheckoutCard = styled.article`
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
     max-width: 550px;
+    :first-child {
+      border-top-left-radius: ${BORDERS.radiusSecondary};
+      border-top-right-radius: ${BORDERS.radiusSecondary};
+    }
     :last-child {
         border-bottom: 1px solid #e5e5e5;
+        border-bottom-left-radius: ${BORDERS.radiusSecondary};
+        border-bottom-right-radius: ${BORDERS.radiusSecondary};
     }
     section {
       display: flex;

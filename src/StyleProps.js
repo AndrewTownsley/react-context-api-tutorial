@@ -53,7 +53,7 @@ export const Button = styled.button`
     background: ${COLORS.accentPurpleGrad};
     color: ${COLORS.white};
     border: none};
-    border-radius: ${BORDERS.radiusSecondary};
+    border-radius: ${BORDERS.radiusSmall};
     padding: 0.5rem 1rem;
     margin: ${STYLES.marginSecondary};
     font-size: ${FONTS.sizeSmall};

@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.header `
     `
 
 export const HeaderLogo = styled.h1 `
-    padding: 1rem;
+    padding-left: 1rem;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;

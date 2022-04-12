@@ -24,7 +24,9 @@ const Header = () => {
     return (
         <HeaderWrapper>
             <HeaderLogo>
-                <GiLindenLeaf style={{color: `${COLORS.accentPurple}`, paddingRight: '10px' }}/>  fresh commerce
+                <Link to="/">
+                 fresh commerce
+                </Link>
             </HeaderLogo>
             <HeaderSearchContianer>
                 <label htmlFor="productSearch">
