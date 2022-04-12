@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Header from './components/Header/Header';
 // import { Header } from './components/Header/HeaderStyle';
 import Cart from './Pages/Cart/Cart';
+import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import Home from './Pages/Home/Home';
 import Checkout from './Pages/Checkout/Checkout';
 import ConfirmationModal from './components//Checkout/ConfirmationModal';
@@ -24,14 +25,13 @@ function App() {
     <BrowserRouter>
       <AppContainer>
       <Header/> 
-        {/* <MainWrapper> */}
           <Routes>
             <Route exact path="/" element={<Home openEdit={openEdit} />} />
             <Route path="/cart" element={<Cart total={total} setTotal={setTotal} />} />
             <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} openEdit=    {openEdit} openConfirmationModal={openConfirmationModal} />} />
             <Route exact path="/confirmationmodal" element={<ConfirmationModal openEdit={openEdit} />} />
+            <Route path="/productdetail" element={<ProductDetail />} />
           </Routes>
-        {/* </MainWrapper> */}
       </AppContainer>
     </BrowserRouter>
   );

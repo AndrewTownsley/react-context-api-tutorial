@@ -66,7 +66,6 @@ const Header = () => {
         }
                 <ul>
                     <CartNavItemsLi 
-                        color={location.pathname === '/' ? `${COLORS.accentPurple}` : "#444"}
                         display={location.pathname === '/' ? 'block' : 'none'}
                     >
                         <Link  to="/">
@@ -74,13 +73,12 @@ const Header = () => {
                         </Link>
                     </CartNavItemsLi>
                     <CartNavItemsLi 
-                        color={location.pathname === '/' ? "#444" : `${COLORS.accentPurple}`}
                         display={location.pathname === '/' ? 'none' : 'block'}
                         className={cart.length ? "cart-active" : null}
                     >
                         <Link to="/cart">
                             <AiOutlineShoppingCart 
-                                style={{position: 'relative', fontSize: '1.5rem'}} 
+                                style={{color: '#fff', position: 'relative', fontSize: '1.5rem'}} 
                             />
                     <CartQuantityIcon>{cart.length}</CartQuantityIcon>
                         </Link>

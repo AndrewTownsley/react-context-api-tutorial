@@ -9,8 +9,10 @@ export const COLORS = {
     textReg: '#444',
     textLight: '#666',
     textDark: '#222',
+    textWhite: '#fff',
     lightGray: '#e5e5e5',
-    white: '#fff',
+    white: 'rgb(240, 240, 240)',
+    backgroundDark: '#0b0c10'
 }
 
 export const BORDERS = {
@@ -19,6 +21,7 @@ export const BORDERS = {
     borderDark: '2px solid #444',
     borderAccent: '1px solid #a64ac9',
     borderActive: '3px solid #a64ac9',
+    borderPurple: '6px solid rgba(104,1,230,1)',
     focus: '3px solid #222',
     radiusPrimary: '10px',
     radiusSecondary: '5px',
@@ -51,21 +54,21 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     background: ${COLORS.accentPurpleGrad};
-    color: ${COLORS.white};
+    color: ${COLORS.textWhite};
     border: none};
     border-radius: ${BORDERS.radiusSmall};
     padding: 0.5rem 1rem;
     margin: ${STYLES.marginSecondary};
     font-size: ${FONTS.sizeSmall};
     font-weight: ${FONTS.fontWeightBold};
-    outline: none;
+    /* outline: none; */
     transition: ease all .2s;
     opacity: 0.85;
     cursor: pointer;
     &:hover {
         opacity: 1;
     &:focus {
-        /* outline: ${BORDERS.focus}; */
+        outline: ${BORDERS.focus};
     }
 `
 

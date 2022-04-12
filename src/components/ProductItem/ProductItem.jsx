@@ -4,6 +4,7 @@ import { Button } from '../../StyleProps';
 import { ProductCard,ProductCardImgCont, ProductCardBtnCont, PriceClearanceBefore, PriceClearanceAfter } from './ProductItemStyle';
 import RatingOnCard from '../RatingOnCard';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product }) => {
   const { 
@@ -20,7 +21,14 @@ const ProductItem = ({ product }) => {
               <img src="https://picsum.photos/220" alt="product" />
             </ProductCardImgCont>
             <section>
-               <h5>{product.name}</h5>
+                <h5>
+                  <Link 
+                    to="/productdetail"
+                      state= {{from: "productitem", product: product}}
+                  >
+                    {product.name}
+                  </Link>
+                </h5>
                <RatingOnCard rating={product.rating} />
                { product.nextDay ? <p>Next Day Shipping</p> : null}
                {

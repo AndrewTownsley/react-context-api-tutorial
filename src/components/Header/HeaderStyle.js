@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { COLORS, BORDERS, FONTS, STYLES } from '../../StyleProps';
 
 export const HeaderWrapper = styled.header `
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: ${COLORS.backgroundDark};
     /* color: #fff; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #e5e5e5;
+    border-bottom: ${BORDERS.borderPurple};
     `
 
 export const HeaderLogo = styled.h1 `
@@ -16,6 +17,10 @@ export const HeaderLogo = styled.h1 `
     display: flex;
     justify-content: space-between;
     align-items: center;
+    a {
+        /* color: ${COLORS.accentLightBlue}; */
+        color: $${COLORS.white};
+    }
 `
 
 export const HeaderSearchContianer = styled.div `
@@ -43,7 +48,7 @@ export const HeaderSearch = styled.input `
     outline: 2px solid #e5e5e5;
     padding: 0.5rem 2rem;
     margin: 1rem ;
-    border-radius: 5px;
+    border-radius: ${BORDERS.radiusSmall};
     &:focus {
         outline: ${BORDERS.borderDark};
     }
@@ -71,34 +76,27 @@ export const CartNavItemsLi = styled.li `
     display: flex;
     justify-content: center;
     align-items: center;
-    &::after {
+    /* &::after {
         position: absolute;
-        bottom: -14px;
+        bottom: -17px;
         content: "";
         display: ${(props) => props.display};
         width: 100%;
-        height: 3px;
-        background: ${COLORS.accentPurpleGrad};
+        height: 6px;
+        background: ${COLORS.accentLightBlue};
         margin: 0.5rem 0;
-    }
-    }
-    a {
-        color: ${(props) => props.color};
-            /* &:hover {
-                color: ${COLORS.accentPurpleGrad};
-            } */
-    }
+    } */
 `
 
 export const CartQuantityIcon = styled.span`
     position: absolute;
-    top: 19px;
+    top: 15px;
     right: 25px;
     font-size: .75rem;
     border-radius: 5px;
     padding: 1px 4px;
     color: #fff;
-    background-color: ${COLORS.accentLightBlue};
+    background-color: ${COLORS.accentPurple};
 `
 
 export const HeaderCheckoutButtonCont = styled.div `

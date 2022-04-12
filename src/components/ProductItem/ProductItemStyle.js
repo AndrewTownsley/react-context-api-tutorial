@@ -11,6 +11,7 @@ export const ProductCard = styled.div`
   border: 1px solid #e5e5e5;
   border-radius: ${BORDERS.radiusSecondary};
   max-width: 220px;
+  background: ${COLORS.textWhite};
   section {
     display: flex;
     flex-direction: column;
@@ -25,8 +26,12 @@ export const ProductCard = styled.div`
     color: #000;
     font-weight: bold;
     cursor: pointer;
-    &:hover {
-      color: #666;
+    a {
+      color: ${COLORS.textReg};
+      padding: 0;
+      &:hover {
+        color: ${COLORS.textLight};
+      }
     }
   }
   p {
