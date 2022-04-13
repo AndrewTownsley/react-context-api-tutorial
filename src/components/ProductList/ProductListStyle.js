@@ -6,4 +6,5 @@ export const ProductListWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background: ${COLORS.white};
 `

@@ -1,18 +1,19 @@
 import styled from "styled-components"
 
 export const COLORS = {
-    accentPurpleGrad: 'linear-gradient(90deg, rgba(141,0,188,1) 0%, rgba(115,0,169,1) 50%, rgba(104,1,230,1) 100%)',
+    // accentPurpleGrad: 'linear-gradient(90deg, rgba(141,0,188,1) 0%, rgba(115,0,169,1) 50%, rgba(104,1,230,1) 100%)',
+    accentPurpleGrad: 'linear-gradient(90deg, rgba(0,180,63,1) 0%, rgba(0,188,88,1) 19%, rgba(0,158,195,1) 100%)',
     accentPurpleGradHover: 'linear-gradient(90deg, rgba(138,0,202,1) 0%, rgba(186,58,255,1) 50%, rgba(128,0,255,1) 100%)',
-    accentPurple: 'rgba(104,1,230,1)',
+    accentGreen: '#00bc58',
     accentYellow: '#fccd04',
-    accentLightBlue: '#17e9e0',
+    accentLightBlue: '#009ec3',
     textReg: '#444',
     textLight: '#666',
     textDark: '#222',
     textWhite: '#fff',
     lightGray: '#e5e5e5',
-    white: 'rgb(240, 240, 240)',
-    backgroundDark: '#0b0c10'
+    white: 'rgb(250, 250, 250)',
+    backgroundDark: '#031810e6',
 }
 
 export const BORDERS = {
@@ -20,8 +21,8 @@ export const BORDERS = {
     borderSecondary: '1px solid #e5e5e5',
     borderDark: '2px solid #444',
     borderAccent: '1px solid #a64ac9',
-    borderActive: '3px solid #a64ac9',
-    borderPurple: '6px solid rgba(104,1,230,1)',
+    borderActive: '3px solid #009ec3',
+    borderBlue: '6px solid #009ec3',
     focus: '3px solid #222',
     radiusPrimary: '10px',
     radiusSecondary: '5px',
@@ -62,11 +63,13 @@ export const Button = styled.button`
     font-size: ${FONTS.sizeSmall};
     font-weight: ${FONTS.fontWeightBold};
     /* outline: none; */
-    transition: ease all .2s;
-    opacity: 0.85;
+    transition: ease all .3s;
+    opacity: 1;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     &:hover {
         opacity: 1;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
     &:focus {
         outline: ${BORDERS.focus};
     }

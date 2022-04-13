@@ -13,7 +13,6 @@ const FooterWrapper = styled.footer`
     align-items: center;
     width: 100vw;
     border-top: 3px solid #e5e5e5;
-    margin-top: 2rem;
     background-color: ${COLORS.backgroundDark};
     div {
         padding-top: 3rem;

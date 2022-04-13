@@ -56,8 +56,8 @@ const Header = () => {
                         style={{ color: 'white'}}
                         >
                         <Button>
-                        View Cart
-                </Button>
+                            View Cart
+                        </Button>
                     </Link>
             </HeaderCheckoutButtonCont>
                     
@@ -66,14 +66,12 @@ const Header = () => {
         }
                 <ul>
                     <CartNavItemsLi 
-                        display={location.pathname === '/' ? 'block' : 'none'}
                     >
                         <Link  to="/">
                             Shop
                         </Link>
                     </CartNavItemsLi>
                     <CartNavItemsLi 
-                        display={location.pathname === '/' ? 'none' : 'block'}
                         className={cart.length ? "cart-active" : null}
                     >
                         <Link to="/cart">

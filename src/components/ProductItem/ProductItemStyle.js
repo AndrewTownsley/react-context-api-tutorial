@@ -12,6 +12,7 @@ export const ProductCard = styled.div`
   border-radius: ${BORDERS.radiusSecondary};
   max-width: 220px;
   background: ${COLORS.textWhite};
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.05);
   section {
     display: flex;
     flex-direction: column;
@@ -58,6 +59,7 @@ export const ProductCardBtnCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  padding-bottom: 0.5rem;
 `
 
 export const PriceClearanceBefore = styled.span`

@@ -1,7 +1,7 @@
 import React, { useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
-import { CartWrapper, ProductContainer, CartEmpty, CartHeader } from './CartStyle';
+import { CartWrapper, CartContent, ProductContainer, CartEmpty, CartHeader, CartSummary } from './CartStyle';
 import Footer from '../../components/Footer';
 import { Button } from '../../StyleProps';
 import CheckoutItem from '../Checkout/CheckoutItem';
@@ -20,6 +20,14 @@ export const Cart = ({ total, setTotal}) => {
         cart.length !== 0
              ?
             (<CartWrapper>
+                <CartHeader>
+                    <Link to="/">
+                        <Button>
+                            Continue Shopping
+                        </Button>
+                    </Link>
+                </CartHeader>
+                <CartContent>
                 <ProductContainer>
                     {
                         cart.map((product, index) => (
@@ -33,7 +41,7 @@ export const Cart = ({ total, setTotal}) => {
                             ))
                     }
                 </ProductContainer>
-                <CartHeader>  
+                <CartSummary>  
                     <div>
                         <h3>CART SUMMARY</h3>
                         <h4><span>ITEMS:</span> {cart.length}</h4>
@@ -47,7 +55,8 @@ export const Cart = ({ total, setTotal}) => {
                             Continue to Checkout
                         </Button>
                     </Link>
-                </CartHeader>
+                </CartSummary>
+                </CartContent>
             </CartWrapper>)
         : 
             (

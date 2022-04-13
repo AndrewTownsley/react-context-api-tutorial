@@ -5,6 +5,8 @@ export const CheckoutWrapper = styled.section`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 `
+
+// Cart Card styles...
 export const CheckoutCard = styled.article`
     display: flex;
     /* flex-direction: column; */
@@ -15,6 +17,7 @@ export const CheckoutCard = styled.article`
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
     max-width: 550px;
+    height: auto;
     :first-child {
       border-top-left-radius: ${BORDERS.radiusSecondary};
       border-top-right-radius: ${BORDERS.radiusSecondary};
@@ -34,7 +37,7 @@ export const CheckoutCard = styled.article`
     h5 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 2rem;
-      padding-bottom: ${STYLES.paddingSecondary};
+      padding: 1rem 0rem 1rem 0rem;
       color: #000;
       font-weight: bold;
       cursor: pointer;

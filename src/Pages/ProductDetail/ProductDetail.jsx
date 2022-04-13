@@ -9,9 +9,11 @@ const ProductDetail = ({ product, state }) => {
 
   return (
     <ProductDetailWrapper>
-        <Button>
-            <Link to="/">Continue Shopping</Link>
-        </Button>
+            <Link to="/">
+              <Button>
+              Continue Shopping
+              </Button>
+            </Link>
         <h1>Product Detail</h1>
         <h2>{location.state.product.name}</h2>
         <h2>{location.state.product.price}</h2>

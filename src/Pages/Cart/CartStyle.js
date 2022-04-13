@@ -1,12 +1,29 @@
 import styled from "styled-components";
 import { COLORS, BORDERS, FONTS, STYLES } from "../../StyleProps";
 
-export const CartWrapper = styled.div`
+export const CartWrapper = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: ${COLORS.white};
+    height: 100%;
+`
+
+export const CartHeader = styled.header`
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`
+
+export const CartContent = styled.div`
     display: grid;
     grid-template-columns: 2fr 1fr;
-    max-width: 80%;
+    gap: 2rem;
+    max-width: 90%;
     min-height: 100vh;
-    margin: 2rem auto;
+    margin: 1rem auto;
     `
 export const ProductContainer = styled.div`
     display: flex;
@@ -17,7 +34,7 @@ export const CartEmpty = styled.div`
     height: 100vh;
 ` 
 
-export const CartHeader = styled.section`
+export const CartSummary = styled.section`
     height: max-content;
     display: flex;
     flex-direction: column;

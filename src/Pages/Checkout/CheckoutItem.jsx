@@ -20,7 +20,15 @@ const CheckoutItem = ({ product }) => {
             <section>
                 <div>
 
-               <h5>{product.name}</h5>
+               <h5>
+                   {
+                    product.name.length > 17 
+                    ?
+                   product.name.substring(0,17) + "..."
+                   :
+                     product.name
+                   }
+                   </h5>
                <RatingOnCard rating={product.rating} />
                 </div>
                { product.nextDay ? <p>Next Day Shipping</p> : null}

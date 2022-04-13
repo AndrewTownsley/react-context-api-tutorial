@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.header `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: ${BORDERS.borderPurple};
+    /* border-bottom: ${BORDERS.borderPurple}; */
     `
 
 export const HeaderLogo = styled.h1 `
@@ -18,7 +18,6 @@ export const HeaderLogo = styled.h1 `
     justify-content: space-between;
     align-items: center;
     a {
-        /* color: ${COLORS.accentLightBlue}; */
         color: $${COLORS.white};
     }
 `
@@ -50,10 +49,7 @@ export const HeaderSearch = styled.input `
     margin: 1rem ;
     border-radius: ${BORDERS.radiusSmall};
     &:focus {
-        outline: ${BORDERS.borderDark};
-    }
-    &:hover {
-        outline: ${BORDERS.borderDark};
+        border: ${BORDERS.borderDark};
     }
 `
 
@@ -76,16 +72,31 @@ export const CartNavItemsLi = styled.li `
     display: flex;
     justify-content: center;
     align-items: center;
-    /* &::after {
-        position: absolute;
-        bottom: -17px;
+    width: 100%;
+    &::after {
         content: "";
-        display: ${(props) => props.display};
-        width: 100%;
-        height: 6px;
-        background: ${COLORS.accentLightBlue};
+        position: absolute;
+        bottom: -1px;
+        content: "";
+        /* display: ${(props) => props.display}; */
+        width: 0;
+        height: 3px;
+        background: ${COLORS.lightGray};
         margin: 0.5rem 0;
-    } */
+    }
+    &:hover::after {
+        transition: width ease 0.4s;
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        content: "";
+        /* display: ${(props) => props.display}; */
+        width: 100%;
+        height: 3px;
+        border-radius: ${BORDERS.radiusSmall};
+        background: ${COLORS.lightGray};
+        margin: 0.5rem 0;
+        }
 `
 
 export const CartQuantityIcon = styled.span`
@@ -96,14 +107,21 @@ export const CartQuantityIcon = styled.span`
     border-radius: 5px;
     padding: 1px 4px;
     color: #fff;
-    background-color: ${COLORS.accentPurple};
+    background-color: ${COLORS.accentGreen};
 `
 
 export const HeaderCheckoutButtonCont = styled.div `
     display: flex;
     button {
         margin: 0;
-        padding: 0.65rem 1rem;    
+        padding: 0.65rem 1rem; 
+        box-shadow: none;
+        :hover {
+            box-shadow: none;
+        }   
+        :focus {
+            outline: ${BORDERS.white};
+        }
         }
     a {
         padding: 0;
