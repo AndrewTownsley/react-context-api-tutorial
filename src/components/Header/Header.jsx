@@ -62,7 +62,9 @@ const Header = () => {
             </HeaderCheckoutButtonCont>
                     
             :
-            <></>
+            <HeaderCheckoutButtonCont>
+                
+            </HeaderCheckoutButtonCont>
         }
                 <ul>
                     <CartNavItemsLi 

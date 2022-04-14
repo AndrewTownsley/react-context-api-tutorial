@@ -12,7 +12,7 @@ export const CheckoutCard = styled.article`
     /* flex-direction: column; */
     align-items: center;
     justify-content: flex-end;
-    margin: 0 1rem 0 1rem;
+    /* margin: 0 1rem 0 1rem; */
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;

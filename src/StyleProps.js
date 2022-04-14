@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const COLORS = {
-    // accentPurpleGrad: 'linear-gradient(90deg, rgba(141,0,188,1) 0%, rgba(115,0,169,1) 50%, rgba(104,1,230,1) 100%)',
     accentPurpleGrad: 'linear-gradient(90deg, rgba(0,180,63,1) 0%, rgba(0,188,88,1) 19%, rgba(0,158,195,1) 100%)',
     accentPurpleGradHover: 'linear-gradient(90deg, rgba(138,0,202,1) 0%, rgba(186,58,255,1) 50%, rgba(128,0,255,1) 100%)',
     accentGreen: '#00bc58',
@@ -13,7 +12,7 @@ export const COLORS = {
     textWhite: '#fff',
     lightGray: '#e5e5e5',
     white: 'rgb(250, 250, 250)',
-    backgroundDark: '#031810e6',
+    backgroundDark: '#0c3223e6',
 }
 
 export const BORDERS = {
@@ -47,6 +46,10 @@ export const STYLES = {
     marginLayout: '2rem',
     transitionFast: 'ease all 0.2s',
     transitionSlow: 'background ease all 0.5s',
+    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.2)',
+    boxShadowHover: '0px 8px 15px rgba(0, 0, 0, 0.3)',
+    boxShadowLight: '0px 10px 15px rgba(0, 0, 0, 0.4)',
+    boxShadowLightHover: '0px 10px 17px rgba(0, 0, 0, 1)'
 }
 
 export const Button = styled.button`

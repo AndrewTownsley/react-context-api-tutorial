@@ -112,12 +112,18 @@ export const CartQuantityIcon = styled.span`
 
 export const HeaderCheckoutButtonCont = styled.div `
     display: flex;
+    width: 110px;
     button {
+        background: ${COLORS.accentYellow};
+        color: ${COLORS.backgroundDark};
         margin: 0;
         padding: 0.65rem 1rem; 
         box-shadow: none;
+        /* outline: 3px solid ${COLORS.accentLightBlue}; */
+        box-shadow: ${STYLES.boxShadowLight};
         :hover {
-            box-shadow: none;
+            box-shadow: ${STYLES.boxShadowLightHover};
+            /* box-shadow: none; */
         }   
         :focus {
             outline: ${BORDERS.white};

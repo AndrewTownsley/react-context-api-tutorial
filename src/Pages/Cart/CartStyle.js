@@ -28,6 +28,7 @@ export const CartContent = styled.div`
 export const ProductContainer = styled.div`
     display: flex;
     flex-direction: column;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
     `
 
 export const CartEmpty = styled.div`
@@ -43,6 +44,7 @@ export const CartSummary = styled.section`
     border: ${BORDERS.borderSecondary};
     border-radius: ${BORDERS.radiusSecondary};
     padding: 1rem 1rem 0 1rem;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
     div {
         width: 100%;
         display: flex;
