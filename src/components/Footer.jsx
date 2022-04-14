@@ -19,9 +19,13 @@ const FooterWrapper = styled.footer`
     }
     h1 {
         color: ${COLORS.accentLightBlue};
+        color: ${COLORS.accentYellow};
     }
     p {
-        color: ${COLORS.textLight};
+        color: ${COLORS.white};
+    }
+    a {
+        text-decoration: underline;
     }
 `
 

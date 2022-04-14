@@ -12,6 +12,7 @@ export const HeaderWrapper = styled.header `
     `
 
 export const HeaderLogo = styled.h1 `
+    font-family: 'Fjalla One', sans-serif;
     padding-left: 1rem;
     font-size: 1.5rem;
     display: flex;

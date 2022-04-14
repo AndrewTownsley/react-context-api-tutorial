@@ -4,6 +4,7 @@ import { COLORS, BORDERS, FONTS, STYLES } from "../../StyleProps";
 export const CheckoutWrapper = styled.section`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background: ${COLORS.white};
 `
 
 // Cart Card styles...
@@ -18,6 +19,8 @@ export const CheckoutCard = styled.article`
     border-right: 1px solid #e5e5e5;
     max-width: 550px;
     height: auto;
+    background: ${COLORS.textWhite};
+    box-shadow: ${STYLES.boxShadow};
     :first-child {
       border-top-left-radius: ${BORDERS.radiusSecondary};
       border-top-right-radius: ${BORDERS.radiusSecondary};

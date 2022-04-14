@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
 * {
   margin: 0;
 }
 
 body {
-  font-family: 'Quicksand', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Fjalla One', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
   font-family: 'Oswald', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -16,7 +17,11 @@ a {
   font-weight: bold;
 }
 
-h1, h2, h3, h4, h5 {
+h1 {
+  color: #fff;
+} 
+
+h2, h3, h4, h5 {
   color: #333;
 }
 

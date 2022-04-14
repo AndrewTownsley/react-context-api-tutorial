@@ -5,9 +5,9 @@ export const CartWrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: ${COLORS.white};
     height: 100%;
+    min-height: 90vh;
 `
 
 export const CartHeader = styled.header`
@@ -22,7 +22,6 @@ export const CartContent = styled.div`
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     max-width: 90%;
-    min-height: 100vh;
     margin: 1rem auto;
     `
 export const ProductContainer = styled.div`
@@ -45,6 +44,7 @@ export const CartSummary = styled.section`
     border-radius: ${BORDERS.radiusSecondary};
     padding: 1rem 1rem 0 1rem;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+    background: ${COLORS.textWhite};
     div {
         width: 100%;
         display: flex;

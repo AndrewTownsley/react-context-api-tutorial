@@ -28,7 +28,7 @@ export const DetailContentImg = styled.div`
 export const DetailContentInfo = styled.div`
     padding: ${STYLES.paddingPrimary};
     h1 {
-        font-size: ${FONTS.sizeXLarge};
+        font-size: ${FONTS.sizeLarge};
         padding-bottom: 1rem;
     }
     h2 {
@@ -36,8 +36,9 @@ export const DetailContentInfo = styled.div`
         padding: 0.5rem 0;
     }
     p {
-        font-size: ${FONTS.sizeMedium};
+        font-size: ${FONTS.sizeSmall};
         color: ${COLORS.textLight};
+        max-width: 80%;
     }
     button {
         margin: 0.5rem 0 0 0;

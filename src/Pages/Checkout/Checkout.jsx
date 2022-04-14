@@ -6,6 +6,8 @@ import ShippingForm from '../../components/Checkout/ShippingForm';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import ConfirmationModal from '../../components/Checkout/ConfirmationModal';
 import { CheckoutWrapper } from './CheckoutStyle';
+import { UserInfo } from '../../components/Checkout/CheckoutStyles/ShippingFormStyle';
+import { Button } from '../../StyleProps';
 
 const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShipping, setGroundShipping }) => {
     const { state: { cart, setCart, states } } = CartState();
@@ -51,7 +53,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
         <>
         <CheckoutWrapper>
             
-            <Link to="/cart"><button>Back to Cart</button></Link>
+            <Link to="/cart"><Button>Back to Cart</Button></Link>
             <h4>Cart Total: ${total}</h4>
             {/* <section className="userInfo">
                 <h3>Ship To:</h3>
@@ -82,6 +84,30 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                     }
                 </section>
                 <section className='checkout-summary'>
+                {
+                shipFormData.email 
+                    ? 
+                <UserInfo>
+                    {/* <h3>Ship To:</h3> */}
+                    <div>
+                        <p>
+                            <strong>Contact: </strong>
+                                {shipFormData.firstName} {shipFormData.lastName}
+                        </p>
+                        <p>{shipFormData.email}</p>
+                        </div>
+                    <div>
+                        <p>
+                            <strong>Ship to: </strong> 
+                                {shipFormData.address} 
+                        </p>
+                        <p>{shipFormData.city} {shipFormData.state} {shipFormData.zipCode}
+                        </p>
+                    </div>
+                </UserInfo>
+                :
+                <></>
+            }
                     {
                         cart.map((product, index) => (
                             <CheckoutItem

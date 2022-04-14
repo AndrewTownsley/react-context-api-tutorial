@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
 import Checkout from '../../Pages/Checkout/Checkout';
-import { CheckoutFormWrapper, UserInfo } from './CheckoutStyles/ShippingFormStyle';
+import { CheckoutFormWrapper, UserInfo, ShipFormInputCont } from './CheckoutStyles/ShippingFormStyle';
 
 
 const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, setShipFormData }) => {
@@ -53,15 +53,8 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
             // className='checkout-form' 
             action="submit"
         >
-            <UserInfo>
-                {/* <h3>Ship To:</h3> */}
-                <p><strong>Contact:</strong> {shipFormData.firstName} {shipFormData.lastName}</p>
-                <p>{shipFormData.email}</p>
-                <p><strong>Ship to:</strong> {shipFormData.address} 
-                </p>
-                <p>{shipFormData.city} {shipFormData.state} {shipFormData.zipCode}
-                </p>
-            </UserInfo>
+          
+                <ShipFormInputCont>
                         <h3>Contact Information</h3>
                         <label htmlFor="email">
                             <input 
@@ -69,7 +62,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 type="email"
                                 name="email"
                                 onChange={handleShipFormSubmit} 
-                            />
+                                />
                         </label>
                         <h3>Shipping Information</h3>
                         <label htmlFor="firstName">
@@ -88,7 +81,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 type="text"
                                 name="lastName" 
                                 onChange={handleShipFormSubmit}
-                            />
+                                />
                         </label>
                         <label htmlFor="address">
                             <input 
@@ -97,7 +90,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 type="text"
                                 name="address"
                                 onChange={handleShipFormSubmit} 
-                            />
+                                />
                         </label>
                         <label htmlFor="apartment">
                             <input 
@@ -106,7 +99,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 type="text"
                                 name="apartment" 
                                 onChange={handleShipFormSubmit}
-                            />
+                                />
                         </label>
                         <label htmlFor="city">
                             <input 
@@ -115,7 +108,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 type="text"
                                 name="city"
                                 onChange={handleShipFormSubmit} 
-                            />
+                                />
                         </label>
                         <label htmlFor="zipCode">
                             <input 
@@ -124,7 +117,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 type="text"
                                 name="zipCode"
                                 onChange={handleShipFormSubmit} 
-                            />
+                                />
                         </label>
                         {/* <select name="country" id="country">
                             <option value="usa">United States</option>
@@ -135,12 +128,12 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                             id="state"
                             name="state"
                             onChange={handleShipFormSubmit} 
-                        >
+                            >
                             {
                                 states.map((state) => (
                                     <option 
-                                        key={state} 
-                                        value={state}  
+                                    key={state} 
+                                    value={state}  
                                     >
                                         {state}
                                     </option>
@@ -150,12 +143,13 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                         <button 
                             type="button"
                             onClick={() => setShipFormSubmit(true)}
-                        >
+                            >
                             Submit
                         </button>
+                        </ShipFormInputCont>
                         {
                             shipFormSubmit && 
-                        <section className='ship-options'>
+                            <section className='ship-options'>
                             <h3>Shipping Options</h3>
                             <label htmlFor="nextDay">
                                 Next Day Shipping -- $10
