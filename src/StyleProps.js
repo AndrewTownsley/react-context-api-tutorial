@@ -11,6 +11,7 @@ export const COLORS = {
     textDark: '#222',
     textWhite: '#fff',
     lightGray: '#e5e5e5',
+    grayInputBg: '#f5f5f5', 
     white: 'rgb(250, 250, 250)',
     backgroundDark: '#0c3223e6',
 }

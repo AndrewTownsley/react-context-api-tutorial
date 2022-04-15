@@ -5,8 +5,8 @@ import CheckoutItem from './CheckoutItem';
 import ShippingForm from '../../components/Checkout/ShippingForm';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import ConfirmationModal from '../../components/Checkout/ConfirmationModal';
-import { CheckoutWrapper } from './CheckoutStyle';
-import { UserInfo } from '../../components/Checkout/CheckoutStyles/ShippingFormStyle';
+import { CheckoutWrapper, CheckoutSummary } from './CheckoutStyle';
+import { UserInfo, ShippingFormCont } from '../../components/Checkout/CheckoutStyles/ShippingFormStyle';
 import { Button } from '../../StyleProps';
 
 const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShipping, setGroundShipping }) => {
@@ -62,7 +62,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                 <p>{shipFormData.address}</p>
                 <p>{shipFormData.city} {shipFormData.zipCode}</p>
             </section> */}
-                <section className='checkout-form-container'>
+                <ShippingFormCont>
                     <ShippingForm
                         total={total}
                         setTotal={setTotal}
@@ -82,8 +82,8 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                     :
                     null
                     }
-                </section>
-                <section className='checkout-summary'>
+                </ShippingFormCont>
+                <CheckoutSummary>
                 {
                 shipFormData.email 
                     ? 
@@ -117,7 +117,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                             />
                         ))
                     }
-                </section>
+                </CheckoutSummary>
         </CheckoutWrapper>
             </>)  
 }

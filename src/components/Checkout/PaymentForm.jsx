@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
-import { PaymentFormWrapper } from './CheckoutStyles/ShippingFormStyle';
+import { PaymentFormWrapper } from '../../Pages/Checkout/CheckoutStyle';
 
 const PaymentForm = ({ openConfirmationModal }) => {
     const { state: {} } = CartState();

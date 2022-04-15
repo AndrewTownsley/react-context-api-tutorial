@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { COLORS, BORDERS, FONTS, STYLES } from "../../StyleProps";
 
 export const CheckoutWrapper = styled.section`
@@ -65,4 +65,41 @@ export const CheckoutCardImgCont = styled.div`
     /* border-top-right-radius: ${BORDERS.radiusPrimary}; */
     /* border-top-left-radius: ${BORDERS.radiusPrimary}; */
   }
+`
+
+export const PaymentFormWrapper = styled.section`
+        display: flex;
+        flex-direction: column;
+        padding: ${STYLES.paddingLayout};
+        border: ${BORDERS.borderSecondary};
+        border-radius: ${BORDERS.radiusSecondary};
+        box-shadow: ${STYLES.boxShadow};
+        background: ${COLORS.textWhite};
+        margin: 0;
+        max-width: 80%;
+        h3 {
+        font-size: ${FONTS.sizeMedium};
+        margin-bottom: ${STYLES.marginSecondary};
+        border-bottom: ${BORDERS.borderPrimary};
+    }
+        input {
+          width: 90%;
+          background-color: ${COLORS.grayInputBg};
+          border: none;
+          outline: 2px solid ${COLORS.lightGray};
+          padding: 0.5rem;
+          margin: 0.5rem 0;
+          border-radius: ${BORDERS.radiusSmall};
+          transition: ${STYLES.transitionFast};
+          &:focus {
+              outline: ${BORDERS.borderDark};
+          }
+          &:hover {
+              outline: ${BORDERS.borderDark};
+          }
+        }
+` 
+
+export const CheckoutSummary = styled.section`
+    margin: 2rem;
 `

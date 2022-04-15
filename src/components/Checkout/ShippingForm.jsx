@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
 import Checkout from '../../Pages/Checkout/Checkout';
-import { CheckoutFormWrapper, UserInfo, ShipFormInputCont } from './CheckoutStyles/ShippingFormStyle';
+import { Button } from '../../StyleProps';
+import { CheckoutFormWrapper, ShipFormInputCont, ShipingOptions, StateSelectLabel } from './CheckoutStyles/ShippingFormStyle';
 
 
 const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, setShipFormData }) => {
@@ -19,8 +20,6 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
             [name]: value,
         }))
     }
-
-
 
     const shipMethodChange = (e) => {
       
@@ -55,6 +54,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
         >
           
                 <ShipFormInputCont>
+                    <div>
                         <h3>Contact Information</h3>
                         <label htmlFor="email">
                             <input 
@@ -64,6 +64,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 onChange={handleShipFormSubmit} 
                                 />
                         </label>
+                    </div>
                         <h3>Shipping Information</h3>
                         <label htmlFor="firstName">
                             <input 
@@ -119,40 +120,37 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 onChange={handleShipFormSubmit} 
                                 />
                         </label>
-                        {/* <select name="country" id="country">
-                            <option value="usa">United States</option>
-                            <option value="canada">Canada</option>
-                            <option value="Mexico">Mexico</option>
-                        </select> */}
-                        <select 
-                            id="state"
-                            name="state"
-                            onChange={handleShipFormSubmit} 
-                            >
-                            {
-                                states.map((state) => (
-                                    <option 
-                                    key={state} 
-                                    value={state}  
-                                    >
-                                        {state}
-                                    </option>
-                                ))
-                            }
-                        </select>
-                        <button 
-                            type="button"
-                            onClick={() => setShipFormSubmit(true)}
-                            >
-                            Submit
-                        </button>
+                        <StateSelectLabel htmlFor="state">
+                            <select 
+                                id="state"
+                                name="state"
+                                onChange={handleShipFormSubmit} 
+                                >
+                                {
+                                    states.map((state) => (
+                                        <option 
+                                        key={state} 
+                                        value={state}  
+                                        >
+                                            {state}
+                                        </option>
+                                    ))
+                                }
+                            </select>
+                            <Button 
+                                type="button"
+                                onClick={() => setShipFormSubmit(true)}
+                                >
+                                Submit
+                            </Button>
+                        </StateSelectLabel>
                         </ShipFormInputCont>
                         {
                             shipFormSubmit && 
-                            <section className='ship-options'>
+                            <ShipingOptions>
                             <h3>Shipping Options</h3>
                             <label htmlFor="nextDay">
-                                Next Day Shipping -- $10
+                                Next Day Shipping (additional $10)
                                 <input 
                                     onChange={shipMethodChange}
                                     value="10"
@@ -161,7 +159,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     id="nextDay" />
                             </label>
                             <label htmlFor="standard">
-                                Standard Ground Shipping (5 days) -- Free
+                                Standard Ground Shipping (5 days) Free
                                 <input 
                                     onChange={shipMethodChange}
                                     value="0"
@@ -169,7 +167,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     name="shipMethod" 
                                     id="ground" />
                             </label>
-                        </section>
+                        </ShipingOptions>
                         }
                     </CheckoutFormWrapper>
     )
