@@ -5,7 +5,7 @@ import { CartState } from '../../Context/Context';
 import { Button } from '../../StyleProps';
 import { CheckoutItemList, CheckoutCard, CheckoutCardImgCont } from './CheckoutStyle';
 import { AiOutlineClose } from 'react-icons/ai';
-import { CartItemControls } from '../../components/CartItem/CartItemStyle';
+import { CartItemControls } from '../Cart/CartStyle'
 
 const CheckoutItem = ({ product }) => {
     const [selectedQty, setSelectedQty] = useState(0);

@@ -4,7 +4,6 @@ import { CartState } from '../../Context/Context';
 import { CartWrapper, CartContent, ProductContainer, CartEmpty, CartHeader, CartSummary } from './CartStyle';
 import Footer from '../../components/Footer';
 import { Button } from '../../StyleProps';
-// import CheckoutItem from '../Checkout/CheckoutItem';
 import CartItem from '../Checkout/CheckoutItem';
 
 export const Cart = ({ total, setTotal}) => {
