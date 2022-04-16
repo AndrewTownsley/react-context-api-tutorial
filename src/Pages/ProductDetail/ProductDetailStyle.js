@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { COLORS, STYLES, FONTS, BORDERS} from "../../StyleProps";
 
 export const ProductDetailWrapper = styled.section`
+margin: 0 2rem;
 `
 
 export const DetailContent = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 80%;
-    margin: 0 auto;
+    margin: 0 2rem;
     justify-content: center;
     align-items: center;
     /* border: 1px solid black; */
@@ -47,5 +48,10 @@ export const DetailContentInfo = styled.div`
 
 export const DetailCartBtnCont = styled.div`
     display: flex;
-    
+    justify-content: space-between;
+    align-items: center;
+    button {
+        height: 40px;
+        width: 150px;
+    }
 `

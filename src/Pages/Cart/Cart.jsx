@@ -4,7 +4,7 @@ import { CartState } from '../../Context/Context';
 import { CartWrapper, CartContent, ProductContainer, CartEmpty, CartHeader, CartSummary } from './CartStyle';
 import Footer from '../../components/Footer';
 import { Button } from '../../StyleProps';
-import CartItem from '../Checkout/CheckoutItem';
+import CartItem from './CartItem';
 
 export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
@@ -32,10 +32,10 @@ export const Cart = ({ total, setTotal}) => {
                     {
                         cart.map((product, index) => (
                             <CartItem 
-                            key={index} 
-                            product={product} 
-                            cart={cart} 
-                            setCart={setCart}
+                                key={index} 
+                                product={product} 
+                                cart={cart} 
+                                setCart={setCart}
                             />
                             
                             ))

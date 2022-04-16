@@ -5,7 +5,7 @@ import { CartState } from '../../Context/Context';
 import { Button } from '../../StyleProps';
 import { CheckoutItemList, CheckoutCard, CheckoutCardImgCont } from './CheckoutStyle';
 import { AiOutlineClose } from 'react-icons/ai';
-import { CartItemControls } from '../Cart/CartStyle'
+import { CheckoutItemControls } from './CheckoutStyle'
 
 const CheckoutItem = ({ product }) => {
     const [selectedQty, setSelectedQty] = useState(0);
@@ -14,10 +14,7 @@ const CheckoutItem = ({ product }) => {
         
         return (
             <CheckoutCard>
-                    <CheckoutCardImgCont>
-                      <img src="https://picsum.photos/90" alt="product" />
-                    </CheckoutCardImgCont>
-                    <section>
+                    {/* <section> */}
                         <div>
                 
                        <h5>
@@ -31,7 +28,6 @@ const CheckoutItem = ({ product }) => {
                            </h5>
                        <RatingOnCard rating={product.rating} />
                         </div>
-                       { product.nextDay ? <p>Next Day Shipping</p> : null}
                        {
                         inStock <= 5 ? 
                         <p>
@@ -40,8 +36,8 @@ const CheckoutItem = ({ product }) => {
                         :
                        <p>${product.price}</p>            
                        }
-                    </section>
-                    <CartItemControls>
+                    {/* </section> */}
+                    <CheckoutItemControls>
                         <div>
 
                             <select 
@@ -84,7 +80,7 @@ const CheckoutItem = ({ product }) => {
                                 />
                                Remove
                             </Button>
-                    </CartItemControls>
+                    </CheckoutItemControls>
             </CheckoutCard>
     )
 }

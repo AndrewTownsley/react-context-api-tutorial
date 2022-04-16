@@ -74,7 +74,7 @@ export const CartNavItemsLi = styled.li `
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 70px;
     &::after {
         content: "";
         position: absolute;

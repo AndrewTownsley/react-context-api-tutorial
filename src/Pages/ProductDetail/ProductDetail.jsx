@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CartState } from '../../Context/Context';
 import { Link, useLocation } from 'react-router-dom';
-import { Button } from '../../StyleProps';
+import { Button, COLORS } from '../../StyleProps';
 import RatingOnCard from '../../components/RatingOnCard';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 import { ProductDetailWrapper, DetailContent, DetailContentImg, DetailContentInfo, DetailCartBtnCont } from './ProductDetailStyle'
@@ -73,6 +73,16 @@ const ProductDetail = ({ product }) => {
 
                         ) 
                       }
+                      <Link 
+                        to="/checkout"
+                        style={{ padding: '0px' }}  
+                      >
+                        <Button
+                          style={{ background: `${COLORS.accentYellow}`, color: `${COLORS.textDark}` }}
+                        >
+                          Checkout
+                        </Button>
+                      </Link>
                 </DetailCartBtnCont>
           
           </DetailContentInfo>

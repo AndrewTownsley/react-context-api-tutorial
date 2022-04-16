@@ -10,15 +10,14 @@ export const CheckoutWrapper = styled.section`
 // Cart Card styles...
 export const CheckoutCard = styled.article`
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
-    justify-content: flex-end;
-    /* margin: 0 1rem 0 1rem; */
+    justify-content: space-between;
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
     max-width: 550px;
-    height: auto;
+    padding: 1rem;
+    /* height: auto; */
     background: ${COLORS.textWhite};
     box-shadow: ${STYLES.boxShadow};
     :first-child {
@@ -30,17 +29,10 @@ export const CheckoutCard = styled.article`
         border-bottom-left-radius: ${BORDERS.radiusSecondary};
         border-bottom-right-radius: ${BORDERS.radiusSecondary};
     }
-    section {
-      display: flex;
-      /* flex-direction: column; */
-      align-items: center;
-      justify-content: center;
-      padding: 0rem 1rem 0 1rem;
-    }
     h5 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 2rem;
-      padding: 1rem 0rem 1rem 0rem;
+      padding: 0rem 0rem 1rem 0rem;
       color: #000;
       font-weight: bold;
       cursor: pointer;
@@ -48,23 +40,23 @@ export const CheckoutCard = styled.article`
         color: #666;
       }
     }
-    p {
+    /* p {
       padding: 0.5rem 1rem;
-    }
+    } */
 `
 
-export const CheckoutCardImgCont = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    /* border-top-right-radius: ${BORDERS.radiusPrimary}; */
-    /* border-top-left-radius: ${BORDERS.radiusPrimary}; */
-  }
+export const CheckoutItemControls = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 0 1rem; */
+    div {
+        padding: 0.5rem 0 0.15rem 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 `
 
 export const PaymentFormWrapper = styled.section`
