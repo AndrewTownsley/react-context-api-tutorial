@@ -33,10 +33,10 @@ export const Cart = ({ total, setTotal}) => {
                     {
                         cart.map((product, index) => (
                             <CartItem 
-                                key={index} 
-                                product={product} 
-                                cart={cart} 
-                                setCart={setCart}
+                            key={index} 
+                            product={product} 
+                            cart={cart} 
+                            setCart={setCart}
                             />
                             
                             ))

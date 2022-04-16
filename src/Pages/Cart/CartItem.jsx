@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+import { CartState } from '../../Context/Context';
 import { PriceClearanceAfter, PriceClearanceBefore, ProductCardImgCont } from '../../components/ProductItem/ProductItemStyle';
 import RatingOnCard from '../../components/RatingOnCard';
-import { CartState } from '../../Context/Context';
 import { Button } from '../../StyleProps';
-import { CheckoutItemList, CheckoutCard, CheckoutCardImgCont } from './CheckoutStyle';
+import { CheckoutItemList, CheckoutCard, CheckoutCardImgCont, CartItemControls } from '../Checkout/CheckoutStyle';
 import { CartItemCard, CartItemCardImgCont } from './CartStyle';
 import { AiOutlineClose } from 'react-icons/ai';
-import { CartItemControls } from '../../components/CartItem/CartItemStyle';
 
 const CheckoutItem = ({ product }) => {
     const [selectedQty, setSelectedQty] = useState(0);
@@ -15,6 +14,7 @@ const CheckoutItem = ({ product }) => {
         
         return (
             <CartItemCard>
+                <h1>HELLO HELLO HELLO HELLO</h1>
                     <CartItemCardImgCont>
                       <img src="https://picsum.photos/90" alt="product" />
                     </CartItemCardImgCont>
