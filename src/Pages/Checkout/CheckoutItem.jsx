@@ -10,8 +10,13 @@ import { CheckoutItemControls } from './CheckoutStyle'
 const CheckoutItem = ({ product }) => {
     const [selectedQty, setSelectedQty] = useState(0);
     const { state: { cart, inStock }, 
-        dispatch } = CartState();        
+        dispatch } = CartState();  
         
+        const findItemQuantity = (id) => {
+            cart.filter((item) => item.id === id)
+            console.log("Cart",cart);
+        }
+        console.log(findItemQuantity(product.id))        
         return (
             <CheckoutCard>
                     {/* <section> */}
@@ -38,34 +43,7 @@ const CheckoutItem = ({ product }) => {
                        }
                     {/* </section> */}
                     <CheckoutItemControls>
-                        <div>
-
-                            <select 
-                                value={product.productQty}
-                                name="productQuantity"
-                                id="productQuantity"
-                                onChange={(e) => {
-                                    console.log(cart)
-                                    setSelectedQty(e.target.value)
-                                    dispatch({
-                                        type: "UPDATE_CART_QUANTITY",
-                                        payload: {
-                                            id: product.id,
-                                            qty: e.target.value
-                                        }
-                                    })
-                                }}
-                                >
-                                {
-                                    product.inStock > 0 ? 
-                                    ([...Array(product.inStock).keys()].map((x) => (
-                                        <option key={x + 1}>{x + 1}</option>
-                                        )))
-                                        :
-                                    <option>0</option>
-                                }
-                            </select> <span> Quantity</span>
-                        </div>
+                            <p>Quantity: {1}</p>
                             <Button 
                                 onClick={() => {
                                 dispatch({

@@ -62,7 +62,11 @@ export const Cart = ({ total, setTotal}) => {
             (
                 <CartEmpty>
                     <h3>Cart is Empty!</h3>
-                    <Link to="/"><button>Continue Shopping</button></Link>
+                        <Link to="/">
+                            <Button>
+                                Continue Shopping
+                            </Button>
+                        </Link>
                 </CartEmpty>
             )
         }

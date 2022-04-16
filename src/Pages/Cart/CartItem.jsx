@@ -8,9 +8,11 @@ import { CartItemCard, CartItemCardImgCont, CartItemControls } from './CartStyle
 import { AiOutlineClose } from 'react-icons/ai';
 
 const CartItem = ({ product }) => {
-    const [selectedQty, setSelectedQty] = useState(0);
+    const [selectedQty, setSelectedQty] = useState(1);
     const { state: { cart, inStock }, 
         dispatch } = CartState();        
+
+        console.log("selectedQty",selectedQty);
         
         return (
             <CartItemCard>

@@ -113,10 +113,7 @@ export const CartQuantityIcon = styled.span`
     color: ${COLORS.textDark};
     color: ${COLORS.textWhite};
     /* background-color: ${COLORS.textWhite}; */
-    background-color: #fc4445;
-    background-color: #ff652f;
-    background-color: #950740;
-    background-color: #c3073f;
+    background-color: ${COLORS.accentRed};
 `
 
 export const HeaderCheckoutButtonCont = styled.div `

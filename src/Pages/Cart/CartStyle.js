@@ -30,10 +30,6 @@ export const ProductContainer = styled.div`
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
     `
 
-export const CartEmpty = styled.div`
-    height: 100vh;
-` 
-
 export const CartSummary = styled.section`
     height: max-content;
     display: flex;
@@ -106,7 +102,7 @@ export const CartItemCard = styled.article`
     h5 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 2rem;
-      padding: 1rem 0rem 1rem 0rem;
+      padding: 1rem 0rem 0.5rem 0rem;
       color: #000;
       font-weight: bold;
       cursor: pointer;
@@ -145,4 +141,12 @@ export const CartItemControls = styled.section`
         align-items: center;
         justify-content: space-between;
     }
+`
+
+export const CartEmpty = styled.div`
+    height: calc(100vh - 95px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto;
 `
