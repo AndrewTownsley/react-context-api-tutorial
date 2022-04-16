@@ -110,5 +110,5 @@ export const PaymentFormWrapper = styled.section`
 ` 
 
 export const CheckoutSummary = styled.section`
-    margin: 2rem;
+    margin: 0 2rem 2rem 2rem;
 `

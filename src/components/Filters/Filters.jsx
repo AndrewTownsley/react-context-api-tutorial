@@ -21,7 +21,7 @@ const Filters = () => {
         <FilterWrapper>
             <h3>Filter Products</h3>
             <ul>
-                <li><h4>Price:</h4></li>
+                <li><h4>By Price:</h4></li>
                 <FilterButton 
                         onClick={() => {
                             productDispatch({

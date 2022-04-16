@@ -8,6 +8,7 @@ export const HeaderWrapper = styled.header `
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 95px;
     /* border-bottom: ${BORDERS.borderPurple}; */
     `
 
@@ -102,13 +103,20 @@ export const CartNavItemsLi = styled.li `
 
 export const CartQuantityIcon = styled.span`
     position: absolute;
-    top: 15px;
-    right: 25px;
+    /* top: 15px; */
+    /* right: 25px; */
+    top: ${(props) => props.top};
+    right: ${(props) => props.right};
     font-size: .75rem;
     border-radius: 5px;
-    padding: 1px 4px;
-    color: #fff;
-    background-color: ${COLORS.accentGreen};
+    padding: 4px 4px;
+    color: ${COLORS.textDark};
+    color: ${COLORS.textWhite};
+    /* background-color: ${COLORS.textWhite}; */
+    background-color: #fc4445;
+    background-color: #ff652f;
+    background-color: #950740;
+    background-color: #c3073f;
 `
 
 export const HeaderCheckoutButtonCont = styled.div `

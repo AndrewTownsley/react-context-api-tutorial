@@ -4,6 +4,7 @@ import RatingOnCard from '../../components/RatingOnCard';
 import { CartState } from '../../Context/Context';
 import { Button } from '../../StyleProps';
 import { CheckoutItemList, CheckoutCard, CheckoutCardImgCont } from './CheckoutStyle';
+import { CartItemCard, CartItemCardImgCont } from './CartStyle';
 import { AiOutlineClose } from 'react-icons/ai';
 import { CartItemControls } from '../../components/CartItem/CartItemStyle';
 
@@ -13,10 +14,10 @@ const CheckoutItem = ({ product }) => {
         dispatch } = CartState();        
         
         return (
-            <CheckoutCard>
-                    <CheckoutCardImgCont>
+            <CartItemCard>
+                    <CartItemCardImgCont>
                       <img src="https://picsum.photos/90" alt="product" />
-                    </CheckoutCardImgCont>
+                    </CartItemCardImgCont>
                     <section>
                         <div>
                 
@@ -85,7 +86,7 @@ const CheckoutItem = ({ product }) => {
                                Remove
                             </Button>
                     </CartItemControls>
-            </CheckoutCard>
+            </CartItemCard>
     )
 }
 

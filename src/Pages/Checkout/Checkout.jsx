@@ -128,14 +128,3 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
 export default Checkout
 
 
-
-
-    // 1.  Submit the info from the address form
-    // 2.  Choose shipping option, update total price, and submit payment info.
-    // 3.  Pass it to a component that shows the address, the items ordered, the total price, and shipping info, just like in the Oregon Originals page. 
-    // Then show a Submit Order button and display a modal saying the order is successfully placed, and has been shipped.   
-    //
-    // Fill out, Validate, and submit user personal info
-    // OnSubmit, show shipping options
-    // once shipping is seected, show payment form.  
-    // Once again, use oregon originals as an example

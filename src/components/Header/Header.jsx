@@ -47,7 +47,7 @@ const Header = () => {
                 </label>
             </HeaderSearchContianer>
             <HeaderNav>
-            {
+            {/* {
                 cart.length ? 
             <HeaderCheckoutButtonCont>
                     <Link 
@@ -65,7 +65,7 @@ const Header = () => {
             <HeaderCheckoutButtonCont>
                 
             </HeaderCheckoutButtonCont>
-        }
+        } */}
                 <ul>
                     <CartNavItemsLi 
                     >
@@ -73,16 +73,39 @@ const Header = () => {
                             Shop
                         </Link>
                     </CartNavItemsLi>
-                    <CartNavItemsLi 
-                        className={cart.length ? "cart-active" : null}
-                    >
-                        <Link to="/cart">
+                    {
+                        cart.length ?
+                        <CartNavItemsLi>
+                            <Link 
+                                to="/cart"
+                                state={{ total: 'total' }}
+                                style={{ margin: '0', padding: '0'}}
+                                // style={{ color: 'white'}}
+                            >
+                                <Button style={{background: `${COLORS.accentYellow}`, margin: '0'}}>
+                                <AiOutlineShoppingCart 
+                                    style={{color: `${COLORS.backgroundDark}`, position: 'relative', fontSize: '1.5rem'}} 
+                                />
+                                    <CartQuantityIcon
+                                        top='15px'
+                                        right='25px'
+                                    >
+                                        {cart.length}
+                                    </CartQuantityIcon>
+                                </Button>
+                            </Link>
+                        </CartNavItemsLi>
+                        :
+                        <CartNavItemsLi 
+                            className={cart.length ? "cart-active" : null}
+                        >
+                            <Link to="/cart">
                             <AiOutlineShoppingCart 
                                 style={{color: '#fff', position: 'relative', fontSize: '1.5rem'}} 
                             />
-                    <CartQuantityIcon>{cart.length}</CartQuantityIcon>
-                        </Link>
-                    </CartNavItemsLi>  
+                            </Link>
+                        </CartNavItemsLi>  
+                    }
                 </ul>
             </HeaderNav>
         </HeaderWrapper>
