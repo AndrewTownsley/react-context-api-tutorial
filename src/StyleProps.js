@@ -63,7 +63,7 @@ export const Button = styled.button`
     border: none};
     border-radius: ${BORDERS.radiusSmall};
     padding: 0.5rem 1rem;
-    margin: ${STYLES.marginSecondary};
+    margin: ${STYLES.marginSecondary} 0;
     font-size: ${FONTS.sizeSmall};
     font-weight: ${FONTS.fontWeightBold};
     /* outline: none; */

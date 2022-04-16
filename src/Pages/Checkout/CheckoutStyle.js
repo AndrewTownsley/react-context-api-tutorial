@@ -78,9 +78,9 @@ export const PaymentFormWrapper = styled.section`
         margin: 0;
         max-width: 80%;
         h3 {
-        font-size: ${FONTS.sizeMedium};
-        margin-bottom: ${STYLES.marginSecondary};
-        border-bottom: ${BORDERS.borderPrimary};
+          font-size: ${FONTS.sizeMedium};
+          margin-bottom: ${STYLES.marginSecondary};
+          border-bottom: ${BORDERS.borderPrimary};
     }
         input {
           width: 90%;
@@ -97,6 +97,15 @@ export const PaymentFormWrapper = styled.section`
           &:hover {
               outline: ${BORDERS.borderDark};
           }
+        }
+        select {
+          background-color: ${COLORS.grayInputBg};
+          border: none;
+          outline: 2px solid ${COLORS.lightGray};
+          padding: ${STYLES.paddingSecondary};
+          margin: 0.5rem 0;
+          border-radius: ${BORDERS.radiusSmall};
+          transition: ${STYLES.transitionFast};
         }
 ` 
 

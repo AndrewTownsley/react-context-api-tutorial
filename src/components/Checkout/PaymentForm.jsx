@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
 import { PaymentFormWrapper } from '../../Pages/Checkout/CheckoutStyle';
+import { Button } from '../../StyleProps';
 
 const PaymentForm = ({ openConfirmationModal }) => {
     const { state: {} } = CartState();
@@ -61,7 +62,7 @@ const PaymentForm = ({ openConfirmationModal }) => {
                     />
                 </label>
                 <label htmlFor="exp-select">
-                    Expiration Date
+                    <p>Expiration Date</p>
                 <select 
                     name="credit-card-exp-month" 
                     id="creditCardExpMonth"
@@ -82,11 +83,11 @@ const PaymentForm = ({ openConfirmationModal }) => {
                 </select>
                 </label>
             </form>
-                <button 
+                <Button 
                     onClick={() => openConfirmationModal()} 
                 >
-                        Confirm Card
-                    </button>
+                    Confirm Card
+                </Button>
         </PaymentFormWrapper>
     )
 }
