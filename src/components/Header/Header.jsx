@@ -19,7 +19,6 @@ import {
 const Header = () => {
     const { state: {cart}, dispatch, productDispatch } = CartState();
     const location = useLocation();
-    console.log(location.pathname);
 
     return (
         <HeaderWrapper>

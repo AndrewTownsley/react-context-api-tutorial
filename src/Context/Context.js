@@ -6,7 +6,7 @@ const Cart = createContext();
 faker.seed(100);
 
 const Context = ({ children }) => {
-  const [productQty, setProductQty] = useState(1);
+  const [productQty, setProductQty] = useState(0);
   const [groundShipping, setGroundShipping] = useState(false);
 
   const states = [
@@ -70,6 +70,7 @@ const Context = ({ children }) => {
     inStock: faker.random.arrayElement([0,0,0,0,1,1,1,1,1,3,3,3,3,3,4,4,4,4,5,6,7,24,37,46,57,79,29,64,12,17,98,56,47]),
     // nextDay: faker.datatype.boolean(),
     rating: faker.random.arrayElement([1,2,3,4,5]),
+    productQty: 0,
   }));
 
   const [shipFormData, setShipFormData] = useState({
@@ -99,7 +100,7 @@ const Context = ({ children }) => {
   })
 
   return (
-    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData, groundShipping, setGroundShipping}}>
+    <Cart.Provider value={{ state, dispatch, setProductQty, productState, productDispatch, shipFormData, setShipFormData, groundShipping, setGroundShipping}}>
       {children}
     </Cart.Provider>
   );

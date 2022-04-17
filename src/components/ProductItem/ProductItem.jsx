@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 const ProductItem = ({ product }) => {
   const { 
       state: { cart },
+      productQty,
+      setProductQty,
       dispatch 
     } = CartState();
   const [inStock, setInStock] = useState(product.inStock)
@@ -64,18 +66,18 @@ const ProductItem = ({ product }) => {
                   (
                     <>
                     <Button 
-                      className={inStock !== 0 ? "" : "out-of-stock"} 
                       onClick={() => {
                         setInStock(inStock -1)
+                        setProductQty(product.productQty + 1)
                         dispatch({
                           type: "ADD_TO_CART",
                           payload: product
                         })
                       }}
-                      >
+                    >
                         <AiOutlineShoppingCart 
-                                style={{fontSize: '1rem', paddingRight: '5px'}} 
-                            />
+                          style={{fontSize: '1rem', paddingRight: '5px'}} 
+                        />
                       Add to Cart
                     </Button>
                   </>

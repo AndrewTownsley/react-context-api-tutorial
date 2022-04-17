@@ -8,15 +8,14 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { CheckoutItemControls } from './CheckoutStyle'
 
 const CheckoutItem = ({ product }) => {
-    const [selectedQty, setSelectedQty] = useState(0);
+    // const [selectedQty, setSelectedQty] = useState(0);
     const { state: { cart, inStock }, 
-        dispatch } = CartState();  
+    productQty, dispatch } = CartState();  
         
-        const findItemQuantity = (id) => {
-            cart.filter((item) => item.id === id)
-            console.log("Cart",cart);
-        }
-        console.log(findItemQuantity(product.id))        
+    console.log(productQty);
+    console.log(cart);
+
+       
         return (
             <CheckoutCard>
                     {/* <section> */}
@@ -26,9 +25,9 @@ const CheckoutItem = ({ product }) => {
                            {
                             product.name.length > 17 
                             ?
-                           product.name.substring(0,17) + "..."
-                           :
-                             product.name
+                            product.name.substring(0,17) + "..."
+                            :
+                            product.name
                            }
                            </h5>
                        <RatingOnCard rating={product.rating} />
@@ -43,7 +42,7 @@ const CheckoutItem = ({ product }) => {
                        }
                     {/* </section> */}
                     <CheckoutItemControls>
-                            <p>Quantity: {1}</p>
+                            <p>Quantity: {product.productQty}</p>
                             <Button 
                                 onClick={() => {
                                 dispatch({

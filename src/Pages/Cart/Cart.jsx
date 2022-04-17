@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 import { CartWrapper, CartContent, ProductContainer, CartEmpty, CartHeader, CartSummary } from './CartStyle';
 import Footer from '../../components/Footer';
-import { Button } from '../../StyleProps';
+import { Button, COLORS } from '../../StyleProps';
 import CartItem from './CartItem';
 
 export const Cart = ({ total, setTotal}) => {
@@ -27,6 +27,7 @@ export const Cart = ({ total, setTotal}) => {
                         </Button>
                     </Link>
                 </CartHeader>
+                    <h2>Review your Order</h2>
                 <CartContent>
                 <ProductContainer>
                     {
@@ -51,7 +52,9 @@ export const Cart = ({ total, setTotal}) => {
                         to="/checkout"
                         state={{ total: 'total' }}
                         >
-                        <Button >
+                        <Button
+                          style={{ background: `${COLORS.accentYellow}`, color: `${COLORS.textDark}` }}
+                        >
                             Continue to Checkout
                         </Button>
                     </Link>

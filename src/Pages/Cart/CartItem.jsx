@@ -8,11 +8,12 @@ import { CartItemCard, CartItemCardImgCont, CartItemControls } from './CartStyle
 import { AiOutlineClose } from 'react-icons/ai';
 
 const CartItem = ({ product }) => {
-    const [selectedQty, setSelectedQty] = useState(1);
-    const { state: { cart, inStock }, 
+    // const [selectedQty, setSelectedQty] = useState(1);
+    const { state: { cart, inStock },
+    productQty, setProductQty, 
         dispatch } = CartState();        
 
-        console.log("selectedQty",selectedQty);
+        console.log("productQty",product.productQty);
         
         return (
             <CartItemCard>
@@ -47,19 +48,27 @@ const CartItem = ({ product }) => {
                         <div>
 
                             <select 
-                                value={product.productQty}
+                                // value={productQty}
                                 name="productQuantity"
                                 id="productQuantity"
                                 onChange={(e) => {
                                     console.log(cart)
-                                    setSelectedQty(e.target.value)
+                                    console.log("e.value:", e.target.value)
+                                    setProductQty(e.target.value)
                                     dispatch({
                                         type: "UPDATE_CART_QUANTITY",
                                         payload: {
                                             id: product.id,
-                                            qty: e.target.value
+                                            qty: e.target.value,
+                                            productQty: e.target.value
                                         }
                                     })
+                                    dispatch({
+                                        type: "UPDATE_PRODUCT_QUANTITY",
+                                        payload: {
+                                            id: product.id,
+                                            qty: e.target.value
+                                    }})
                                 }}
                                 >
                                 {
