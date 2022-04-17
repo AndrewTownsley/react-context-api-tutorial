@@ -13,12 +13,22 @@ import { AppContainer } from './AppContainer';
 
 
 function App() {
+  const { state: { cart, inStock },
+  productQty, setProductQty, 
+      dispatch } = CartState();
+      console.log(cart)
 
   const [total, setTotal] = useState(0.00)
   const [openEdit, setOpenEdit] = useState(false)
 
-  const openConfirmationModal = () => {
-    setOpenEdit(true)
+  const openConfirmationModal = (e) => {
+    // dispatch{(
+    //   type: "CLEAR_CART",
+    //   payload: {}
+      
+    //   )}
+      setProductQty(0)
+      setOpenEdit(true)
   }
 
   return (

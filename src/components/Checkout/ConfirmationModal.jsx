@@ -39,6 +39,7 @@ const ConfirmationModal = ({ shipFormData, setShipFormData}) => {
     console.log("shipDate: ", shipDateString);
     console.log("ground Date: ", groundDeliveryDate);
     console.log("groundShipping: ", groundShipping);
+    
 return (
     <ConfirmationWrapper>
         <div>

@@ -4,7 +4,12 @@ import { PaymentFormWrapper } from '../../Pages/Checkout/CheckoutStyle';
 import { Button } from '../../StyleProps';
 
 const PaymentForm = ({ openConfirmationModal }) => {
-    const { state: {} } = CartState();
+    const { state: { cart, inStock },
+    productQty, setProductQty, 
+        dispatch } = CartState();
+
+        console.log(cart)
+
 
     const [month, setMonth] = useState("")
     const [days, setDays] = useState("")
@@ -83,8 +88,15 @@ const PaymentForm = ({ openConfirmationModal }) => {
                 </select>
                 </label>
             </form>
+            {/* // onClick={ () => openConfirmationModal() } */}
                 <Button 
-                    onClick={() => openConfirmationModal()} 
+                    onClick={() => {
+                        openConfirmationModal()
+                        dispatch({
+                            type: "CLEAR_CART",
+                            payload: {}
+                        })
+                    }}
                 >
                     Confirm Card
                 </Button>
