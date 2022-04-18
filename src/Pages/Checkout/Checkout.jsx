@@ -122,8 +122,13 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                     <p></p>
                     <CheckoutSummaryTotals>
                         <div>
-                            <span>Shipping:</span>
-                            <span>$0.00</span>
+                            Shipping:
+                                {
+                                    groundShipping ?
+                                    <span>$0.00</span>
+                                    :
+                                    <span>$10.00</span>
+                                }
                         </div>
                         <div>
                             <span><h4>Total:</h4></span>
