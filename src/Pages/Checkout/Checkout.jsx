@@ -5,8 +5,8 @@ import CheckoutItem from './CheckoutItem';
 import ShippingForm from '../../components/Checkout/ShippingForm';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import ConfirmationModal from '../../components/Checkout/ConfirmationModal';
-import { CheckoutWrapper, CheckoutSummary } from './CheckoutStyle';
-import { UserInfo, ShippingFormCont } from '../../components/Checkout/CheckoutStyles/ShippingFormStyle';
+import { CheckoutWrapper, CheckoutSummaryContainer } from './CheckoutStyle';
+import { UserInfo, ShippingFormCont, CheckoutSummaryTable, CheckoutSummaryTotals } from '../../components/Checkout/CheckoutStyles/ShippingFormStyle';
 import { Button } from '../../StyleProps';
 
 const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShipping, setGroundShipping }) => {
@@ -55,7 +55,6 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
             <Link to="/cart"><Button>Back to Cart</Button></Link>
             <header>
                 <h2>Complete Payment</h2>
-            <h4>Cart Total: ${total}</h4>
             </header>
             {/* <section className="userInfo">
                 <h3>Ship To:</h3>
@@ -85,7 +84,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                     null
                     }
                 </ShippingFormCont>
-                <CheckoutSummary>
+                <CheckoutSummaryContainer>
                 {
                 shipFormData.email 
                     ? 
@@ -110,16 +109,29 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                 :
                 <></>
             }
+                <CheckoutSummaryTable>
                     {
                         cart.map((product, index) => (
                             <CheckoutItem
-                                key={index}
-                                product={product}
-                                className="cart-item checkout-item"
+                            key={index}
+                            product={product}
+                            className="cart-item checkout-item"
                             />
-                        ))
+                            ))
                     }
-                </CheckoutSummary>
+                    <p></p>
+                    <CheckoutSummaryTotals>
+                        <div>
+                            <span>Shipping:</span>
+                            <span>$0.00</span>
+                        </div>
+                        <div>
+                            <span><h4>Total:</h4></span>
+                            <span><h4>${total}.00</h4></span>
+                        </div>
+                    </CheckoutSummaryTotals>
+                </CheckoutSummaryTable>
+                </CheckoutSummaryContainer>
         </CheckoutWrapper>
             </>)  
 }

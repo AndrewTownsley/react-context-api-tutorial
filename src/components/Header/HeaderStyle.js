@@ -20,7 +20,11 @@ export const HeaderLogo = styled.h1 `
     justify-content: space-between;
     align-items: center;
     a {
+        transition: all 0.3s ease-in-out;
         color: $${COLORS.white};
+        &:hover {
+            color: ${COLORS.accentYellow};
+        }
     }
 `
 

@@ -31,6 +31,28 @@ export const ShippingFormCont = styled.section`
     margin: 0 2rem;
 `
 
+export const CheckoutSummaryTable = styled.section`
+    max-width: 500px;
+`
+
+export const CheckoutSummaryTotals = styled.section`
+        padding: 1rem 1rem 0.5rem 1rem;
+        border: ${BORDERS.borderSecondary};
+        border-bottom-right-radius: ${BORDERS.radiusSecondary};
+        border-bottom-left-radius: ${BORDERS.radiusSecondary};
+        box-shadow: ${STYLES.boxShadow};
+        background: ${COLORS.textWhite};
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                padding-bottom: 0.5rem;
+            }
+        }
+        background: ${COLORS.textWhite};
+`
+
 export const UserInfo = styled.section `
     max-width: 300px;
     display: flex;

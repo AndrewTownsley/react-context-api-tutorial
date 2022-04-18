@@ -15,7 +15,7 @@ export const CheckoutCard = styled.article`
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
-    /* max-width: 550px; */
+    max-width: 500px;
     padding: 1rem;
     /* height: auto; */
     background: ${COLORS.textWhite};
@@ -118,6 +118,6 @@ export const PaymentFormWrapper = styled.section`
         }
 ` 
 
-export const CheckoutSummary = styled.section`
+export const CheckoutSummaryContainer = styled.section`
     margin: 0 2rem 2rem 2rem;
 `
