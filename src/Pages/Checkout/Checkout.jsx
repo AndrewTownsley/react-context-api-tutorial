@@ -51,11 +51,12 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                 :
         (    
         <>
-            <h2>Complete Payment</h2>
         <CheckoutWrapper>
-            
             <Link to="/cart"><Button>Back to Cart</Button></Link>
+            <header>
+                <h2>Complete Payment</h2>
             <h4>Cart Total: ${total}</h4>
+            </header>
             {/* <section className="userInfo">
                 <h3>Ship To:</h3>
                 <p>{shipFormData.email}</p>

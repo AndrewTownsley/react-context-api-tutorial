@@ -10,12 +10,12 @@ export const CheckoutWrapper = styled.section`
 // Cart Card styles...
 export const CheckoutCard = styled.article`
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
-    max-width: 550px;
+    /* max-width: 550px; */
     padding: 1rem;
     /* height: auto; */
     background: ${COLORS.textWhite};
@@ -31,13 +31,30 @@ export const CheckoutCard = styled.article`
     }
     h5 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 2rem;
-      padding: 0rem 0rem 1rem 0rem;
+      /* height: 2rem; */
+      /* padding: 0rem 0rem 1rem 0rem; */
       color: #000;
       font-weight: bold;
       cursor: pointer;
       &:hover {
         color: #666;
+      }
+    }
+    p {
+      font-size: ${FONTS.sizeSmall};
+      span {
+        color: ${COLORS.textLight};
+      }
+    }
+    button {
+      padding: 2px;
+      border: none;
+      background: none;
+      color: ${COLORS.textDark};
+      box-shadow: none;
+      &:hover {
+        box-shadow: none;
+        background: ${COLORS.grayInputBg};
       }
     }
     /* p {
@@ -47,7 +64,7 @@ export const CheckoutCard = styled.article`
 
 export const CheckoutItemControls = styled.section`
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     /* padding: 0 1rem; */
     div {

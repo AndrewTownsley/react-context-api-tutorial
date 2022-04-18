@@ -30,19 +30,13 @@ const CheckoutItem = ({ product }) => {
                             product.name
                            }
                            </h5>
-                       <RatingOnCard rating={product.rating} />
-                        </div>
-                       {
-                        inStock <= 5 ? 
-                        <p>
-                          <PriceClearanceBefore>{product.price}</PriceClearanceBefore> <PriceClearanceAfter>{parseInt(product.price * .800)}.00</PriceClearanceAfter>
-                        </p>
-                        :
-                       <p>${product.price}</p>            
-                       }
+                           <p><span>Qty: </span>{product.productQty}</p>
+                       </div>
+
+                       {/* <RatingOnCard rating={product.rating} /> */}
+                    
                     {/* </section> */}
-                    <CheckoutItemControls>
-                            <p>Quantity: {product.productQty}</p>
+                    {/* <CheckoutItemControls> */}
                             <Button 
                                 onClick={() => {
                                 dispatch({
@@ -55,9 +49,17 @@ const CheckoutItem = ({ product }) => {
                                 <AiOutlineClose 
                                         style={{fontSize: '1rem', paddingRight: '5px'}} 
                                 />
-                               Remove
+                               Delete
                             </Button>
-                    </CheckoutItemControls>
+                    {
+                        inStock <= 5 ? 
+                        <p>
+                          <PriceClearanceBefore>{product.price}</PriceClearanceBefore> <PriceClearanceAfter>{parseInt(product.price * .800)}.00</PriceClearanceAfter>
+                        </p>
+                        :
+                        <p>${product.price}</p>            
+                    }
+                    {/* </CheckoutItemControls> */}
             </CheckoutCard>
     )
 }
