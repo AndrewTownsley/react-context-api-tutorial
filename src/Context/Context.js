@@ -6,7 +6,7 @@ const Cart = createContext();
 faker.seed(100);
 
 const Context = ({ children }) => {
-  const [productQty, setProductQty] = useState(0);
+  const [productQty, setProductQty] = useState(1);
   const [groundShipping, setGroundShipping] = useState(false);
 
   const states = [
@@ -86,7 +86,7 @@ const Context = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, {
     productsArray: productsArray,
     cart: [],
-    productQty: 0,
+    productQty: 1,
     states: states,
     paymentFormActive: false,
     shipFormData: shipFormData,
@@ -100,7 +100,7 @@ const Context = ({ children }) => {
   })
 
   return (
-    <Cart.Provider value={{ state, dispatch, setProductQty, productState, productDispatch, shipFormData, setShipFormData, groundShipping, setGroundShipping}}>
+    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData, groundShipping, setGroundShipping}}>
       {children}
     </Cart.Provider>
   );

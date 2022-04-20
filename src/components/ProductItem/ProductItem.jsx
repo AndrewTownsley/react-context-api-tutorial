@@ -66,13 +66,19 @@ const ProductItem = ({ product }) => {
                   (
                     <>
                     <Button 
-                      onClick={() => {
+                      onClick={(e) => {
                         setInStock(inStock -1)
                         setProductQty(product.productQty + 1)
                         dispatch({
                           type: "ADD_TO_CART",
                           payload: product
                         })
+                        dispatch({
+                          type: "UPDATE_PRODUCT_QUANTITY",
+                          payload: {
+                              id: product.id,
+                              qty: 1,
+                      }})
                       }}
                     >
                         <AiOutlineShoppingCart 

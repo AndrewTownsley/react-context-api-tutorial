@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 // import { Header } from './components/Header/HeaderStyle';
 import Cart from './Pages/Cart/Cart';
@@ -16,7 +16,6 @@ function App() {
   const { state: { cart, inStock },
   productQty, setProductQty, 
       dispatch } = CartState();
-      console.log(cart)
 
   const [total, setTotal] = useState(0.00)
   const [openEdit, setOpenEdit] = useState(false)
@@ -30,6 +29,11 @@ function App() {
       setProductQty(0)
       setOpenEdit(true)
   }
+
+  
+  useEffect(() => {
+    setTotal(cart.reduce((a, b) => a + Number(b.price) * Number(b.qty), 0))
+}, [cart, setTotal, total])
 
   return (
     <BrowserRouter>

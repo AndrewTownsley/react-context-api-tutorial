@@ -9,9 +9,11 @@ import CartItem from './CartItem';
 export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
 
-    useEffect(() => {
-        setTotal(cart.reduce((a, b) => a + Number(b.price) * Number(b.qty), 0))
-    }, [cart, setTotal, total])
+    console.log("total CART!!",total)
+
+    // useEffect(() => {
+    //     setTotal(cart.reduce((a, b) => a + Number(b.price) * Number(b.qty), 0))
+    // }, [cart, setTotal, total])
       
 
     return (
@@ -29,11 +31,13 @@ export const Cart = ({ total, setTotal}) => {
                 </CartHeader>
                     <h2>Review your Order</h2>
                 <CartContent>
+                <div>
                 <ProductContainer>
+
                     {
                         cart.map((product, index) => (
                             <CartItem 
-                                key={index} 
+                            key={index} 
                                 product={product} 
                                 cart={cart} 
                                 setCart={setCart}
@@ -42,6 +46,7 @@ export const Cart = ({ total, setTotal}) => {
                             ))
                     }
                 </ProductContainer>
+                </div>
                 <CartSummary>  
                     <div>
                         <h3>CART SUMMARY</h3>

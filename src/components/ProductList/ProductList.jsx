@@ -15,7 +15,6 @@ const ProductList = () => {
     const [error, setError] = useState(false);
     const [totalPages, setTotalPages] = useState(Math.ceil(productsArray.length/PRODUCTS_PER_PAGE));
     const [pageNumber, setPageNumber] = useState(0);
-    console.log(productsArray.length / PRODUCTS_PER_PAGE);
 
         // console.log(productsArray.forEach(product => console.log(product.inStock)));
 
@@ -25,7 +24,6 @@ const ProductList = () => {
         })
     }, [productsArray]);
 
-    console.log(productsArray);
 
     const transFormProducts = () => {
         let sortedProducts = productsArray;
