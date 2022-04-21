@@ -16,7 +16,7 @@ export const COLORS = {
     lightGray: '#e5e5e5',
     grayInputBg: '#f5f5f5', 
     white: 'rgb(250, 250, 250)',
-    backgroundDark: '#0c3223e6',
+    backgroundDark: '#1a1a1d',
 }
 
 export const BORDERS = {
@@ -77,7 +77,7 @@ export const Button = styled.button`
     &:hover {
         opacity: 1;
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
-    &:focus {
+    &:focus-visible {
         outline: ${BORDERS.focus};
     }
 `
