@@ -16,7 +16,7 @@ export const COLORS = {
     lightGray: '#e5e5e5',
     grayInputBg: '#f5f5f5', 
     white: 'rgb(250, 250, 250)',
-    backgroundDark: '#1a1a1d',
+    backgroundDark: '#1A1A1D',
 }
 
 export const BORDERS = {
