@@ -14,8 +14,6 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
     const [paymentFormActive, setPaymentFormActive] = useState(false)
     // const [groundShipping, setGroundShipping] = useState(true);
 
-    console.log("total Checkout",total)
-
     const [shipFormData, setShipFormData] = useState({
         email: "",
         firstName: "",
@@ -60,6 +58,7 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
             </div>
             <header>
                 <h2>Complete Payment</h2>
+                <h4>-- USER INFO!! --</h4>
             </header>
             {/* <section className="userInfo">
                 <h3>Ship To:</h3>

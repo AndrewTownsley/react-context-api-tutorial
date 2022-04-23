@@ -13,12 +13,12 @@ const TextInputWrapper = styled.div`
         margin: 0.5rem 0;
         border-radius: ${BORDERS.radiusSmall};
         transition: ${STYLES.transitionFast};
-        &:focus {
-            outline: ${BORDERS.borderDark};
-        }
-        &:hover {
-            outline: ${BORDERS.borderDark};
-        }
+            &:focus {
+                outline: ${BORDERS.borderDark};
+            }
+            &:hover {
+                outline: ${BORDERS.borderDark};
+            }
     }
 `
 

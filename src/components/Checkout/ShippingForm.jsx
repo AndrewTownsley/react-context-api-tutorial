@@ -3,8 +3,9 @@ import { CartState } from '../../Context/Context';
 import Checkout from '../../Pages/Checkout/Checkout';
 import TextInput from '../TextInput';
 import { Button } from '../../StyleProps';
-import { Formik, Form } from 'formik';
 import { CheckoutFormWrapper, ShipFormInputCont, ShipingOptions, StateSelectLabel } from './CheckoutStyles/ShippingFormStyle';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 
 
 const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, setShipFormData }) => {
@@ -12,16 +13,37 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
     const [shipFormSubmit, setShipFormSubmit] = useState(false);
     const [shipTotal, setShipTotal] = useState(0)
     const [groundShipping, setGroundShipping] = useState(true);
+
+    const validate = Yup.object({
+        email: Yup.string()
+            .email('Invalid email address')
+            .required('Required'),
+        firstName: Yup.string()
+            .required('Required'),
+        lastName: Yup.string()
+            .required('Required'),
+        address: Yup.string()
+            .required('Required'),
+        apartment: Yup.string()
+            .required('Required'),
+        city: Yup.string()
+            .required('Required'),
+        zipCode: Yup.string()
+            .required('Required'),
+        // state: Yup.string()
+            // .required('Required')
+            // .oneOf(states, 'State is required'),
+    })
   
 
-    const handleShipFormSubmit = (e) => {
-        e.preventDefault();
-        const { name, value } = e.target;
-        setShipFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }))
-    }
+    // const handleShipFormSubmit = (e) => {
+    //     e.preventDefault();
+    //     const { name, value } = e.target;
+    //     setShipFormData((prevState) => ({
+    //         ...prevState,
+    //         [name]: value,
+    //     }))
+    // }
 
     const shipMethodChange = (e) => {
       
@@ -50,9 +72,8 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
     
     return (
         <CheckoutFormWrapper 
-            onSubmit={(e) => e.preventDefault}
-            // className='checkout-form' 
-            action="submit"
+            // onSubmit={(e) => e.preventDefault}
+            // action="submit"
             >
             <Formik
                 initialValues={{
@@ -64,10 +85,13 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                     city: "",
                     zipCode: "",
                 }}
+                validationSchema={validate}
+                onSubmit={() => console.log("Submitted !!")}
             >
                 {formik => (
 
                     <ShipFormInputCont>
+                        {/* {console.log(formik.values)} */}
                         <Form>
                             <div>
                                 <h3>Contact Information</h3>
@@ -77,7 +101,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="email"
                                     id="email"
                                     placeholder="Email"
-                                    onChange={handleShipFormSubmit}
+                                    // onChange={handleShipFormSubmit}
                                     />
                             </div>
                                 <TextInput
@@ -86,7 +110,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     id="firstName"
                                     placeholder="First Name"
-                                    onChange={handleShipFormSubmit}
+                                    // onChange={handleShipFormSubmit}
                                     />
                                 <TextInput
                                     label="Last Name"
@@ -94,7 +118,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     id="lastName"
                                     placeholder="Last Name"
-                                    onChange={handleShipFormSubmit}
+                                    // onChange={handleShipFormSubmit}
                                     />
                                 <h3>Shipping Information</h3>
                                 <TextInput
@@ -103,7 +127,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="Address"
                                     id="address"
-                                    onChange={handleShipFormSubmit}
+                                    // onChange={handleShipFormSubmit}
                                     />
                                 <TextInput
                                     label="Apartment"
@@ -111,7 +135,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="Apt/Suite"
                                     id="apartment"
-                                    onChange={handleShipFormSubmit}
+                                    // onChange={handleShipFormSubmit}
                                     />
                                 <TextInput
                                     label="City"
@@ -119,7 +143,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="City"
                                     id="city"
-                                    onChange={handleShipFormSubmit}
+                                    // onChange={handleShipFormSubmit}
                                     />
                                 <TextInput
                                     label="Zip Code"
@@ -127,13 +151,13 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="Zip Code"
                                     id="zipCode"
-                                    onChange={handleShipFormSubmit}
+                                    // onChange={handleShipFormSubmit}
                                     />
                                 <StateSelectLabel htmlFor="state">
                                     <select 
                                         id="state"
                                         name="state"
-                                        onChange={handleShipFormSubmit} 
+                                        // onChange={handleShipFormSubmit} 
                                         >
                                         {
                                             states.map((state) => (
@@ -148,8 +172,9 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     </select>
                                 </StateSelectLabel>
                                     <Button 
-                                        type="button"
-                                        onClick={() => setShipFormSubmit(true)}
+                                        type="submit"
+                                        // onClick={() => setShipFormSubmit(true)}
+                                        onClick={() => console.log("ON CLICK SUBMIT")}
                                         >
                                         Submit
                                     </Button>

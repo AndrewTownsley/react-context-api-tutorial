@@ -11,10 +11,6 @@ const CheckoutItem = ({ product }) => {
     // const [selectedQty, setSelectedQty] = useState(0);
     const { state: { cart, inStock }, 
     productQty, setInStock, dispatch } = CartState();  
-        
-    console.log(product.productQty);
-    console.log(cart);
-
        
         return (
             <CheckoutCard>

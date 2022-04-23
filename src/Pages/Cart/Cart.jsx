@@ -9,8 +9,6 @@ import CartItem from './CartItem';
 export const Cart = ({ total, setTotal}) => {
     const { state: { cart, setCart}} = CartState();
 
-    console.log("total CART!!",total)
-
     // useEffect(() => {
     //     setTotal(cart.reduce((a, b) => a + Number(b.price) * Number(b.qty), 0))
     // }, [cart, setTotal, total])

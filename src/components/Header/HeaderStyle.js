@@ -107,8 +107,6 @@ export const CartNavItemsLi = styled.li `
 
 export const CartQuantityIcon = styled.span`
     position: absolute;
-    /* top: 15px; */
-    /* right: 25px; */
     top: ${(props) => props.top};
     right: ${(props) => props.right};
     font-size: .75rem;
@@ -130,11 +128,10 @@ export const HeaderCheckoutButtonCont = styled.div `
         box-shadow: none;
         /* outline: 3px solid ${COLORS.accentLightBlue}; */
         box-shadow: ${STYLES.boxShadowLight};
-        :hover {
+        &:hover {
             box-shadow: ${STYLES.boxShadowLightHover};
-            /* box-shadow: none; */
         }   
-        :focus {
+        &:focus {
             outline: ${BORDERS.white};
         }
         }

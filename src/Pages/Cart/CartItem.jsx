@@ -12,8 +12,6 @@ const CartItem = ({ product }) => {
     const { state: { cart, inStock },
     productQty, setProductQty, 
         dispatch } = CartState();        
-
-        console.log("productQty",product.productQty);
         
         return (
             <CartItemCard>

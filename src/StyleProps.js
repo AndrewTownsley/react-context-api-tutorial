@@ -70,16 +70,20 @@ export const Button = styled.button`
     margin: ${STYLES.marginSecondary} 0;
     font-size: ${FONTS.sizeSmall};
     font-weight: ${FONTS.fontWeightBold};
-    /* outline: none; */
-    transition: ease all .3s;
+    transition: ease all .2s;
     opacity: 1;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     &:hover {
         opacity: 1;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+    }
     &:focus-visible {
         outline: ${BORDERS.focus};
+    }
+    &:active {
+        /* transform: translateY(2px); */
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
     }
 `
 
