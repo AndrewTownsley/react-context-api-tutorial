@@ -1,5 +1,9 @@
 **_ Checkout Form _**
 
+### just go one step at a time with the form validation.
+
+###
+
 ## Formik Validation
 
 **_ Shipping Form _**

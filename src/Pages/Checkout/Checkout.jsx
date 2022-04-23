@@ -51,7 +51,13 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
         (    
         <>
         <CheckoutWrapper>
-            <Link to="/cart"><Button>Back to Cart</Button></Link>
+            <div>
+                <Link to="/cart">
+                    <Button >
+                        Fix the Link to Cart layout issue
+                    </Button>
+                </Link>
+            </div>
             <header>
                 <h2>Complete Payment</h2>
             </header>

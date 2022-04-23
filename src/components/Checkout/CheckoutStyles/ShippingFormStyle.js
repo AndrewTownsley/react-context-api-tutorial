@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { BORDERS, COLORS, STYLES, FONTS } from "../../../StyleProps";
 
-export const CheckoutFormWrapper = styled.form`
+export const CheckoutFormWrapper = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,15 +86,8 @@ export const ShipFormInputCont = styled.section `
     box-shadow: ${STYLES.boxShadow};
     background: ${COLORS.textWhite};
     width: 80%;
-    div {
-        padding-bottom: ${STYLES.paddingPrimary};} 
     }
-    /* h3 {
-        font-size: ${FONTS.sizeMedium};
-        padding-bottom: 1rem;
-    } */
-    input {
-        width: 90%;
+    select {
         background-color: ${COLORS.grayInputBg};
         border: none;
         outline: 2px solid ${COLORS.lightGray};
@@ -109,15 +102,10 @@ export const ShipFormInputCont = styled.section `
             outline: ${BORDERS.borderDark};
         }
     }
-    select {
-        background-color: ${COLORS.grayInputBg};
-        border: none;
-        outline: 2px solid ${COLORS.lightGray};
-        padding: 0.5rem;
-        margin: 0.5rem 0;
-        border-radius: ${BORDERS.radiusSmall};
-        transition: ${STYLES.transitionFast};
-    }
+button {
+    width: 100%;
+    margin: 0.5rem 0 0.5rem 0;
+}
 `
 
 export const StateSelectLabel = styled.label `
@@ -128,10 +116,6 @@ export const StateSelectLabel = styled.label `
     select {
         padding: 0.5rem 0;
         width: 50%;
-    }
-    button {
-        width: 100%;
-        margin: 0.5rem 0 0.5rem 0;
     }
 `
 

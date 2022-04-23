@@ -24,7 +24,7 @@ const Header = () => {
         <HeaderWrapper>
             <HeaderLogo>
                 <Link to="/">
-                 Fresh Commerce
+                 ShopFresh
                 </Link>
             </HeaderLogo>
             <HeaderSearchContianer>

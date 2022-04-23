@@ -39,7 +39,6 @@ const CheckoutItem = ({ product }) => {
                             </Button>
                         </div>
                     <CheckoutCardInfo>
-                        <span><span>Quantity: </span>{product.productQty}</span>
                         {
                             inStock <= 5 ? 
                             <p>
@@ -48,6 +47,7 @@ const CheckoutItem = ({ product }) => {
                             :
                             <p>${product.price}</p>            
                         }
+                        <span><span>Quantity: </span>{product.productQty}</span>
                     </CheckoutCardInfo>
             </CheckoutCard>
     )

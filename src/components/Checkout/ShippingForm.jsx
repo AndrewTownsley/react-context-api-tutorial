@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../../Context/Context';
 import Checkout from '../../Pages/Checkout/Checkout';
+import TextInput from '../TextInput';
 import { Button } from '../../StyleProps';
+import { Formik, Form } from 'formik';
 import { CheckoutFormWrapper, ShipFormInputCont, ShipingOptions, StateSelectLabel } from './CheckoutStyles/ShippingFormStyle';
 
 
@@ -44,113 +46,123 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
         setPaymentFormActive(true)
         console.log("total: ", total);
     }
-
-        
+    
+    
     return (
         <CheckoutFormWrapper 
             onSubmit={(e) => e.preventDefault}
             // className='checkout-form' 
             action="submit"
-        >
-          
-                <ShipFormInputCont>
-                    <div>
-                        <h3>Contact Information</h3>
-                        <label htmlFor="email">
-                            <input 
-                                placeholder="Email" 
-                                type="email"
-                                name="email"
-                                onChange={handleShipFormSubmit} 
-                                />
-                        </label>
-                    </div>
-                        <h3>Shipping Information</h3>
-                        <label htmlFor="firstName">
-                            <input 
-                                placeholder="First name" 
-                                id="firstName" 
-                                type="text"
-                                name="firstName"
-                                onChange={handleShipFormSubmit} 
-                            />
-                        </label>
-                        <label htmlFor="lastName">
-                            <input 
-                                placeholder="Last name" 
-                                id="lastName" 
-                                type="text"
-                                name="lastName" 
-                                onChange={handleShipFormSubmit}
-                                />
-                        </label>
-                        <label htmlFor="address">
-                            <input 
-                                placeholder="Address" 
-                                id="address" 
-                                type="text"
-                                name="address"
-                                onChange={handleShipFormSubmit} 
-                                />
-                        </label>
-                        <label htmlFor="apartment">
-                            <input 
-                                placeholder="Apartment" 
-                                id="apartment" 
-                                type="text"
-                                name="apartment" 
-                                onChange={handleShipFormSubmit}
-                                />
-                        </label>
-                        <label htmlFor="city">
-                            <input 
-                                placeholder="City" 
-                                id="city" 
-                                type="text"
-                                name="city"
-                                onChange={handleShipFormSubmit} 
-                                />
-                        </label>
-                        <label htmlFor="zipCode">
-                            <input 
-                                placeholder="Zip code" 
-                                id="zipCode" 
-                                type="text"
-                                name="zipCode"
-                                onChange={handleShipFormSubmit} 
-                                />
-                        </label>
-                        <StateSelectLabel htmlFor="state">
-                            <select 
-                                id="state"
-                                name="state"
-                                onChange={handleShipFormSubmit} 
-                                >
-                                {
-                                    states.map((state) => (
-                                        <option 
-                                        key={state} 
-                                        value={state}  
+            >
+            <Formik
+                initialValues={{
+                    email: "",
+                    firstName: "",
+                    lastName: "",
+                    address: "",
+                    apartment: "",
+                    city: "",
+                    zipCode: "",
+                }}
+            >
+                {formik => (
+
+                    <ShipFormInputCont>
+                        <Form>
+                            <div>
+                                <h3>Contact Information</h3>
+                                <TextInput
+                                    label="Email"
+                                    name="email"
+                                    type="email"
+                                    id="email"
+                                    placeholder="Email"
+                                    onChange={handleShipFormSubmit}
+                                    />
+                            </div>
+                                <TextInput
+                                    label="First Name"
+                                    name="firstName"
+                                    type="text"
+                                    id="firstName"
+                                    placeholder="First Name"
+                                    onChange={handleShipFormSubmit}
+                                    />
+                                <TextInput
+                                    label="Last Name"
+                                    name="lastName"
+                                    type="text"
+                                    id="lastName"
+                                    placeholder="Last Name"
+                                    onChange={handleShipFormSubmit}
+                                    />
+                                <h3>Shipping Information</h3>
+                                <TextInput
+                                    label="Address"
+                                    name="address"
+                                    type="text"
+                                    placeholder="Address"
+                                    id="address"
+                                    onChange={handleShipFormSubmit}
+                                    />
+                                <TextInput
+                                    label="Apartment"
+                                    name="apartment"
+                                    type="text"
+                                    placeholder="Apt/Suite"
+                                    id="apartment"
+                                    onChange={handleShipFormSubmit}
+                                    />
+                                <TextInput
+                                    label="City"
+                                    name="city"
+                                    type="text"
+                                    placeholder="City"
+                                    id="city"
+                                    onChange={handleShipFormSubmit}
+                                    />
+                                <TextInput
+                                    label="Zip Code"
+                                    name="zipCode"
+                                    type="text"
+                                    placeholder="Zip Code"
+                                    id="zipCode"
+                                    onChange={handleShipFormSubmit}
+                                    />
+                                <StateSelectLabel htmlFor="state">
+                                    <select 
+                                        id="state"
+                                        name="state"
+                                        onChange={handleShipFormSubmit} 
                                         >
-                                            {state}
-                                        </option>
-                                    ))
-                                }
-                            </select>
-                            <Button 
-                                type="button"
-                                onClick={() => setShipFormSubmit(true)}
-                                >
-                                Submit
-                            </Button>
-                        </StateSelectLabel>
+                                        {
+                                            states.map((state) => (
+                                                <option 
+                                                key={state} 
+                                                value={state}  
+                                                >
+                                                    {state}
+                                                </option>
+                                            ))
+                                        }
+                                    </select>
+                                </StateSelectLabel>
+                                    <Button 
+                                        type="button"
+                                        onClick={() => setShipFormSubmit(true)}
+                                        >
+                                        Submit
+                                    </Button>
+                        </Form>
                         </ShipFormInputCont>
+            )}
+            </Formik>
                         {
                             shipFormSubmit && 
                             <ShipingOptions>
                             <h3>Shipping Options</h3>
                             <label htmlFor="nextDay">
-                                Next Day Shipping (additional $10)
+                            Next Day Shipping (additional $10)
                                 <input 
                                     onChange={shipMethodChange}
                                     value="10"
