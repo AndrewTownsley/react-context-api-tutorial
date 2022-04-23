@@ -81,9 +81,9 @@ const Header = () => {
                                 style={{ margin: '0', padding: '0'}}
                                 // style={{ color: 'white'}}
                             >
-                                <Button style={{background: `${COLORS.accentYellow}`, margin: '0'}}>
+                                <Button style={{background: `${COLORS.accentPurpleGrad}`, margin: '0'}}>
                                 <AiOutlineShoppingCart 
-                                    style={{color: `${COLORS.backgroundDark}`, position: 'relative', fontSize: '1.5rem'}} 
+                                    style={{color: `${COLORS.textWhite}`, position: 'relative', fontSize: '1.5rem'}} 
                                 />
                                     <CartQuantityIcon
                                         top='15px'

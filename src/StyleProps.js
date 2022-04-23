@@ -6,6 +6,7 @@ export const COLORS = {
     accentGreen: '#00bc58',
     accentYellow: '#fccd04',
     accentLightBlue: '#009ec3',
+    accentBlue: '#009ec3',
     accentRed: '#ff0000',
     accentRedFade: 'rgba(255, 0, 0, 0.3)',
     accentRedFadeBg: 'rgba(255, 0, 0, 0.1)',

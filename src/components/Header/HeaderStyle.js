@@ -23,7 +23,7 @@ export const HeaderLogo = styled.h1 `
         transition: all 0.3s ease-in-out;
         color: $${COLORS.white};
         &:hover {
-            color: ${COLORS.accentYellow};
+            color: ${COLORS.accentBlue};
         }
     }
 `
@@ -84,7 +84,6 @@ export const CartNavItemsLi = styled.li `
         position: absolute;
         bottom: -1px;
         content: "";
-        /* display: ${(props) => props.display}; */
         width: 0;
         height: 3px;
         background: ${COLORS.lightGray};
@@ -116,7 +115,6 @@ export const CartQuantityIcon = styled.span`
     padding: 4px 4px;
     color: ${COLORS.textDark};
     color: ${COLORS.textWhite};
-    /* background-color: ${COLORS.textWhite}; */
     background-color: ${COLORS.accentRed};
 `
 
