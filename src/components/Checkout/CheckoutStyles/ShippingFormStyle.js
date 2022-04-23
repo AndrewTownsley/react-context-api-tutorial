@@ -79,7 +79,7 @@ export const UserInfo = styled.section `
     }
     `
 
-export const ShipFormInputCont = styled.section `
+export const ShipFormInputCont = styled.form `
     padding: ${STYLES.paddingLayout};
     border: ${BORDERS.borderSecondary};
     border-radius: ${BORDERS.radiusSecondary};

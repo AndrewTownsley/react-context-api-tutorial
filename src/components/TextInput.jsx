@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { useField } from 'formik';
+import { ErrorMessage, useField } from 'formik';
 import { BORDERS, COLORS, STYLES } from '../StyleProps';
 
 const TextInputWrapper = styled.div`
@@ -23,16 +23,23 @@ const TextInputWrapper = styled.div`
 `
 
 const TextInput = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
+    // const [field, meta] = useField(props);
   return (
     <TextInputWrapper>
-        <label htmlFor={field.name}></label>
+        <label 
+            // htmlFor={field.name}
+            // htmlFor={field.name}
+        >
+        </label>
         <input 
+            // className={`${meta.touched && meta.error && 'is-invalid'}`}
             type="text" 
             autoComplete='off'
-            {...field}
+            // {...field}
             {...props}
         />
+        {/* <ErrorMessage name={field.name} component="div" className="error" /> */}
+
     </TextInputWrapper>
   )
 }
