@@ -82,7 +82,7 @@ export const Button = styled.button`
         outline: ${BORDERS.focus};
     }
     &:active {
-        /* transform: translateY(2px); */
+        transform: translateY(2px);
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
     }
 `

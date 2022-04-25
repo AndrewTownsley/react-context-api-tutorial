@@ -13,7 +13,8 @@ import {
     HeaderNav, 
     CartNavItemsLi,
     CartQuantityIcon,
-    HeaderCheckoutButtonCont
+    HeaderCheckoutButtonCont,
+    HeaderCartButton
 } from './HeaderStyle';
 
 const Header = () => {
@@ -81,9 +82,9 @@ const Header = () => {
                                 style={{ margin: '0', padding: '0'}}
                                 // style={{ color: 'white'}}
                             >
-                                <Button style={{background: `${COLORS.accentPurpleGrad}`, margin: '0'}}>
+                                <HeaderCartButton >
                                 <AiOutlineShoppingCart 
-                                    style={{color: `${COLORS.textWhite}`, position: 'relative', fontSize: '1.5rem'}} 
+                                    style={{color: `${COLORS.backgroundDark}`, position: 'relative', fontSize: '1.5rem'}} 
                                 />
                                     <CartQuantityIcon
                                         top='15px'
@@ -91,7 +92,7 @@ const Header = () => {
                                     >
                                         {cart.length}
                                     </CartQuantityIcon>
-                                </Button>
+                                </HeaderCartButton>
                             </Link>
                         </CartNavItemsLi>
                         :

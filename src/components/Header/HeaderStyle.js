@@ -121,12 +121,9 @@ export const HeaderCheckoutButtonCont = styled.div `
     display: flex;
     width: 110px;
     button {
-        background: ${COLORS.accentYellow};
-        color: ${COLORS.backgroundDark};
         margin: 0;
         padding: 0.65rem 1rem; 
         box-shadow: none;
-        /* outline: 3px solid ${COLORS.accentLightBlue}; */
         box-shadow: ${STYLES.boxShadowLight};
         &:hover {
             box-shadow: ${STYLES.boxShadowLightHover};
@@ -137,6 +134,31 @@ export const HeaderCheckoutButtonCont = styled.div `
         }
     a {
         padding: 0;
+    }
+`
+
+export const HeaderCartButton = styled.button `
+        appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${COLORS.accentYellow};
+    border: none};
+    border-radius: ${BORDERS.radiusSmall};
+    padding: 0.5rem 1rem;
+    margin: ${STYLES.marginSecondary} 0;
+    font-size: ${FONTS.sizeSmall};
+    font-weight: ${FONTS.fontWeightBold};
+    transition: ease all .2s;
+    opacity: 1;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+    }
+    &:focus-visible {
+        outline: ${BORDERS.focus};
     }
 `
 

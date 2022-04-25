@@ -104,7 +104,10 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                     <div>
                         <p>
                             <strong>Ship to: </strong> 
-                                {shipFormData.address} 
+                            <br/>
+                                {shipFormData.address}
+                            <br/> 
+                               Apt. {shipFormData.apartment ? ` ${shipFormData.apartment}` : null}
                         </p>
                         <p>{shipFormData.city} {shipFormData.state} {shipFormData.zipCode}
                         </p>
