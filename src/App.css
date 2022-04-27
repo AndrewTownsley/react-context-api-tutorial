@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
 * {
   margin: 0;
@@ -7,6 +8,7 @@
 
 body {
   font-family: 'Fjalla One', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto Slab', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
   font-family: 'Oswald', 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
 }
 
