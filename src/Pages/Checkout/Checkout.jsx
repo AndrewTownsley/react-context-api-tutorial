@@ -52,13 +52,13 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
             <div>
                 <Link to="/cart">
                     <Button >
-                        Fix the Link to Cart layout issue
+                        Back to Cart
                     </Button>
                 </Link>
             </div>
             <header>
                 <h2>Complete Payment</h2>
-                <h4>-- USER INFO!! --</h4>
+                {/* <h4>-- USER INFO!! --</h4> */}
             </header>
             {/* <section className="userInfo">
                 <h3>Ship To:</h3>
