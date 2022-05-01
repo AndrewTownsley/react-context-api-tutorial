@@ -42,7 +42,8 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home openEdit={openEdit} />} />
             <Route path="/cart" element={<Cart total={total} setTotal={setTotal} />} />
-            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} openEdit=    {openEdit} openConfirmationModal={openConfirmationModal} />} />
+            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} 
+            openEdit={openEdit} openConfirmationModal={openConfirmationModal} />} />
             <Route exact path="/confirmationmodal" element={<ConfirmationModal openEdit={openEdit} />} />
             <Route path="/productdetail" element={<ProductDetail />} />
           </Routes>
