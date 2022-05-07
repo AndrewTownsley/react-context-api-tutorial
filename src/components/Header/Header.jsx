@@ -12,6 +12,7 @@ import {
     HeaderSearchButton, 
     HeaderNav, 
     CartNavItemsLi,
+    CartNavItemsLiCart,
     CartQuantityIcon,
     HeaderCheckoutButtonCont,
     HeaderCartButton
@@ -75,7 +76,7 @@ const Header = () => {
                     </CartNavItemsLi>
                     {
                         cart.length ?
-                        <CartNavItemsLi>
+                        <CartNavItemsLiCart>
                             <Link 
                                 to="/cart"
                                 state={{ total: 'total' }}
@@ -94,7 +95,7 @@ const Header = () => {
                                     </CartQuantityIcon>
                                 </HeaderCartButton>
                             </Link>
-                        </CartNavItemsLi>
+                        </CartNavItemsLiCart>
                         :
                         <CartNavItemsLi 
                             className={cart.length ? "cart-active" : null}

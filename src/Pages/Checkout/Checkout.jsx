@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 import CheckoutItem from './CheckoutItem';
 import ShippingForm from '../../components/Checkout/ShippingForm';
+import FormikForm from '../../components/Checkout/FormikForm';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import ConfirmationModal from '../../components/Checkout/ConfirmationModal';
 import { CheckoutWrapper, CheckoutSummaryContainer } from './CheckoutStyle';
@@ -58,17 +59,10 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
             </div>
             <header>
                 <h2>Complete Payment</h2>
-                {/* <h4>-- USER INFO!! --</h4> */}
+                <h4>-- USER INFO!! --</h4>
             </header>
-            {/* <section className="userInfo">
-                <h3>Ship To:</h3>
-                <p>{shipFormData.email}</p>
-                <p>{shipFormData.firstName}{shipFormData.lastName}</p>
-                <p>{shipFormData.address}</p>
-                <p>{shipFormData.city} {shipFormData.zipCode}</p>
-            </section> */}
                 <ShippingFormCont>
-                    <ShippingForm
+                    <FormikForm
                         total={total}
                         setTotal={setTotal}
                         setPaymentFormActive={setPaymentFormActive}
@@ -77,6 +71,15 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
                         groundShipping={groundShipping}
                         setGroundShipping={setGroundShipping}
                     />
+                    {/* <ShippingForm
+                        total={total}
+                        setTotal={setTotal}
+                        setPaymentFormActive={setPaymentFormActive}
+                        shipFormData={shipFormData}
+                        setShipFormData={setShipFormData}
+                        groundShipping={groundShipping}
+                        setGroundShipping={setGroundShipping}
+                    /> */}
                    {
                        paymentFormActive ? 
                    <PaymentForm 

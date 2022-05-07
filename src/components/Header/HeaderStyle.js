@@ -105,6 +105,15 @@ export const CartNavItemsLi = styled.li `
         }
 `
 
+export const CartNavItemsLiCart = styled.li `
+    position: relative;
+    padding: 1rem 1rem 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+`
+
 export const CartQuantityIcon = styled.span`
     position: absolute;
     top: ${(props) => props.top};
@@ -151,11 +160,11 @@ export const HeaderCartButton = styled.button `
     font-weight: ${FONTS.fontWeightBold};
     transition: ease all .2s;
     opacity: 1;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 7px 14px 3px rgba(252, 205, 4, 0.35);
     cursor: pointer;
     &:hover {
         opacity: 1;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+        box-shadow: 0px 7px 14px 5px rgba(252, 205, 4, 0.4);
     }
     &:focus-visible {
         outline: ${BORDERS.focus};

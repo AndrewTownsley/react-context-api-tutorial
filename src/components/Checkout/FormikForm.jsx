@@ -112,7 +112,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                 {formik => (
 
                     <ShipFormInputCont>
-                        {/* {console.log(formik.values)} */}
+                        {console.log(formik.values)}
                         <Form>
                             <div>
                                 <h3>Contact Information</h3>
@@ -200,9 +200,9 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     </select>
                                 </StateSelectLabel>
                                     <Button 
-                                        type="submit"
+                                        // type="submit"
                                         // onClick={() => setShipFormSubmit(true)}
-                                        onSubmit={() => console.log("ON CLICK SUBMIT")}
+                                        // onSubmit={() => console.log("ON CLICK SUBMIT")}
                                         >
                                         Submit
                                     </Button>

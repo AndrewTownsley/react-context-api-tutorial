@@ -4,6 +4,8 @@ General
 2.  CSS Cleanup/Colors
 3.  Auth
 4.  Responsive !!!
+5.  Backend
+6.  Remove Commented Code/Unused props
 
 Header
 
@@ -19,7 +21,7 @@ ProductList
 
 Cart
 
-1.  Cart Item Padding/Spacing
+1.  Added to cart Notification
 2.  Update Cart total item quantity when individual item quantity is updated.
 
 Checkout
