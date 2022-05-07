@@ -55,7 +55,16 @@ input {
 }
 
 .error {
-  position: absolute;
+  /* position: absolute; */
+  /* top: 10px; */
   color: red;
   font-size: 0.6rem;
+  margin-top: -10px;
 }
+
+.is-invalid {
+  outline: 2px solid rgba(255, 0, 0, 0.5);
+}
+/* .input-error {
+  outline: 5px solid red;
+} */

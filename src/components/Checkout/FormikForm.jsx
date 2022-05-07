@@ -14,7 +14,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
     const [shipTotal, setShipTotal] = useState(0)
     const [groundShipping, setGroundShipping] = useState(true);
 
-    const validate = Yup.object({
+    const validate = Yup.object().shape({
         email: Yup.string()
             .email('Invalid email address')
             .required('Required'),
@@ -57,9 +57,6 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
     // }
 
     const shipMethodChange = (e) => {
-      
-        console.log(e.target.value);
-
         if(e.target.value === "10" && shipTotal === 0) {
             console.log("Next Day");
             setTotal(total + 10)
@@ -97,7 +94,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                     zipCode: "",
                 }}
                 validationSchema={validate}
-                onSubmit={() => console.log("ON CLICK SUBMIT")}
+                // onSubmit={(e) => {e.preventDefault(); Formik.handleSubmit(e)}}
                 handleChange={(e) => {
                     const { name, value } = e.target;
                     setShipFormData((prevState) => ({
@@ -111,19 +108,19 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
             >
                 {formik => (
 
-                    <ShipFormInputCont>
-                        {console.log(formik.values)}
-                        <Form>
+                    <ShipFormInputCont onSubmit={(e) => e.preventDefault()}>
+                        {console.log("formik.errors: ",formik.errors)}
                             <div>
                                 <h3>Contact Information</h3>
                                 <TextInput
                                     label="Email"
                                     name="email"
-                                    type="email"
+                                    // type="email"
                                     id="email"
                                     placeholder="Email"
                                     // onChange={handleShipFormSubmit}
                                     onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
                                     />
                             </div>
                                 <TextInput
@@ -201,12 +198,11 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                 </StateSelectLabel>
                                     <Button 
                                         // type="submit"
-                                        // onClick={() => setShipFormSubmit(true)}
+                                        onClick={() => setShipFormSubmit(true)}
                                         // onSubmit={() => console.log("ON CLICK SUBMIT")}
                                         >
                                         Submit
                                     </Button>
-                        </Form>
                         </ShipFormInputCont>
             )}
             </Formik>

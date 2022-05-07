@@ -5,10 +5,12 @@ import { BORDERS, COLORS, STYLES } from '../StyleProps';
 
 const TextInputWrapper = styled.div`
     input {
+        position: relative;
         width: 90%;
         background-color: ${COLORS.grayInputBg};
         border: none;
-        outline: 2px solid ${COLORS.lightGray};
+        /* outline: 2px solid ${COLORS.lightGray}; */
+        outline: ${(props) => props.outline};
         padding: 0.5rem;
         margin: 0.5rem 0;
         border-radius: ${BORDERS.radiusSmall};
@@ -23,22 +25,25 @@ const TextInputWrapper = styled.div`
 `
 
 const TextInput = ({ label, ...props }) => {
-    // const [field, meta] = useField(props);
+    const [field, meta] = useField(props);
   return (
     <TextInputWrapper>
         <label 
-            // htmlFor={field.name}
-            // htmlFor={field.name}
+            htmlFor={field.name}
         >
         </label>
-        <input 
+            <input 
             // className={`${meta.touched && meta.error && 'is-invalid'}`}
+            className={`${meta.touched && meta.error && 'is-invalid'}`}
             type="text" 
             autoComplete='off'
-            // {...field}
+            onBlur={console.log("meta", meta)}
+            // onBlur={console.log("field", field)}
+            {...field}
             {...props}
-        />
-        {/* <ErrorMessage name={field.name} component="div" className="error" /> */}
+            />
+    
+        <ErrorMessage component="div" name={field.name} className="error" />
 
     </TextInputWrapper>
   )
