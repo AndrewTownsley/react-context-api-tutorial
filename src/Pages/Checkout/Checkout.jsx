@@ -24,16 +24,15 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
         city: "",
         zipCode: "",
     }) 
-
-    // const handleShipFormSubmit = (e) => {
-    //     e.preventDefault();
-    //     const { name, value } = e.target;
-    //     setShipFormData((prevState) => ({
-    //         ...prevState,
-    //         [name]: value,
-    //     }))
-    // }
-    // console.log(shipFormData);
+    // const [shipFormData, setShipFormData] = useState({
+    //     email: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     address: "",
+    //     apartment: "",
+    //     city: "",
+    //     zipCode: "",
+    // }) 
 
     return (
         <div>

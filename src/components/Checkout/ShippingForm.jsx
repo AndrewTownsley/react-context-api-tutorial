@@ -77,6 +77,14 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
         console.log("total: ", total);
     }
     
+    const handleShipFormSubmit = (e) => {
+        // e.preventDefault();
+        const { name, value } = e.target;
+        setShipFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }))
+    }
     
     return (
         <CheckoutFormWrapper 
@@ -112,7 +120,8 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     // onChange={handleShipFormSubmit}
                                     onChange={formik.handleChange}
                                     />
-                                <TextInput
+                                {/* <TextInput
+                                    props={formik.values}
                                     label="Last Name"
                                     name="lastName"
                                     type="text"
@@ -124,6 +133,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     />
                                 <h3>Shipping Information</h3>
                                 <TextInput
+                                    props={formik.values}
                                     label="Address"
                                     name="address"
                                     type="text"
@@ -134,6 +144,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     onChange={formik.handleChange}
                                     />
                                 <TextInput
+                                    props={formik.values}
                                     label="Apartment"
                                     name="apartment"
                                     type="text"
@@ -144,6 +155,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     onChange={formik.handleChange}
                                     />
                                 <TextInput
+                                    props={formik.values}
                                     label="City"
                                     name="city"
                                     type="text"
@@ -154,6 +166,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     onChange={formik.handleChange}
                                     />
                                 <TextInput
+                                    props={formik.values}
                                     label="Zip Code"
                                     name="zipCode"
                                     type="text"
@@ -162,8 +175,8 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     value={formik.values.zipCode}
                                     onChange={formik.handleChange}
                                     // onChange={handleShipFormSubmit}
-                                    />
-                                <StateSelectLabel htmlFor="state">
+                                    /> */}
+                                {/* <StateSelectLabel htmlFor="state">
                                     <select 
                                         id="state"
                                         name="state"
@@ -180,7 +193,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                             ))
                                         }
                                     </select>
-                                </StateSelectLabel>
+                                </StateSelectLabel> */}
                                     <Button 
                                         type="submit"
                                         // onClick={() => setShipFormSubmit(true)}

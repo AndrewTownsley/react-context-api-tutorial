@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { ErrorMessage, useField } from 'formik';
+import { useField, Form, FormikProps, Formik, ErrorMessage } from 'formik';
 import { BORDERS, COLORS, STYLES } from '../StyleProps';
 
 const TextInputWrapper = styled.div`
@@ -16,34 +16,57 @@ const TextInputWrapper = styled.div`
         border-radius: ${BORDERS.radiusSmall};
         transition: ${STYLES.transitionFast};
             &:focus {
-                outline: ${BORDERS.borderDark};
+                /* outline: ${BORDERS.borderDark}; */
+                outline: ${(props) => props.outline};
             }
             &:hover {
-                outline: ${BORDERS.borderDark};
+                outline: ${(props) => props.outline};
             }
     }
 `
 
 const TextInput = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
+    const [field, meta, helpers] = useField(props);
   return (
     <TextInputWrapper>
         <label 
-            htmlFor={field.name}
+            // htmlFor={field.name}
         >
         </label>
-            <input 
-            // className={`${meta.touched && meta.error && 'is-invalid'}`}
-            className={`${meta.touched && meta.error && 'is-invalid'}`}
-            type="text" 
-            autoComplete='off'
-            onBlur={console.log("meta", meta)}
-            // onBlur={console.log("field", field)}
-            {...field}
-            {...props}
-            />
+        {
+            meta.touched && meta.error ?
+                    <input 
+                        className={`${meta.touched && meta.error && 'is-invalid'}`}
+                        type="text" 
+                        name={field.name}
+                        autoComplete='off'
+                        outline={`2px solid ${COLORS.red}`}
+                        // onBlur={console.log("meta", meta, "field", field, "props", props)}
+                        // onBlur={(e) => console.log(e.target.value)}
+                        value={field.value}
+                        {...field}
+                        {...props}
+                    />
+                :
+                    <input 
+                        // className={`${meta.touched && meta.error && 'is-invalid'}`}
+                        type="text" 
+                        name={field.name}
+                        autoComplete='off'
+                        outline={`2px solid ${COLORS.lightGray}`}
+                        // onBlur={console.log("meta", meta, "field", field, "props", props)}
+                        // onBlur={(e) => console.log(e.target.value)}
+                        value={field.value}
+                        {...field}
+                        {...props}
+                    />
+            }
     
-        <ErrorMessage component="div" name={field.name} className="error" />
+        <ErrorMessage 
+            component="div" 
+            name={field.name} 
+            className="error" 
+        />
 
     </TextInputWrapper>
   )
