@@ -27,6 +27,7 @@ export const CheckoutFormWrapper = styled.section`
 `
 
 export const CheckoutHeader = styled.header`
+    height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -40,6 +41,8 @@ export const ShippingFormCont = styled.section`
 `
 
 export const CheckoutSummaryTable = styled.section`
+    position: sticky;
+    top:261px;
     max-width: 500px;
 `
 
@@ -62,6 +65,8 @@ export const CheckoutSummaryTotals = styled.section`
 `
 
 export const UserInfo = styled.section `
+    position: sticky;
+    top:20px;
     max-width: 300px;
     display: flex;
     flex-direction: column;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PriceClearanceAfter, PriceClearanceBefore, ProductCardImgCont } from '../../components/ProductItem/ProductItemStyle';
 import RatingOnCard from '../../components/RatingOnCard';
 import { CartState } from '../../Context/Context';
@@ -16,7 +17,12 @@ const CheckoutItem = ({ product }) => {
             <CheckoutCard>
                         <div>
                         <h5>
+                            <Link 
+                                to="/productdetail"
+                                state= {{from: "productitem", product: product}}
+                            >
                              {product.name}
+                            </Link>
                         </h5>
                             <Button 
                                 onClick={() => {

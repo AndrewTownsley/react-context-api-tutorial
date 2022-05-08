@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 import { PriceClearanceAfter, PriceClearanceBefore, ProductCardImgCont } from '../../components/ProductItem/ProductItemStyle';
 import RatingOnCard from '../../components/RatingOnCard';
@@ -25,9 +26,19 @@ const CartItem = ({ product }) => {
                            {
                             product.name.length > 17 
                             ?
-                           product.name.substring(0,17) + "..."
+                            <Link 
+                                to="/productdetail"
+                                state= {{from: "productitem", product: product}}
+                            >
+                           {product.name.substring(0,17) + "..."}
+                            </Link>
                            :
-                             product.name
+                            <Link 
+                                to="/productdetail"
+                                state= {{from: "productitem", product: product}}
+                            >
+                             {product.name}
+                            </Link>
                            }
                            </h5>
                        <RatingOnCard rating={product.rating} />

@@ -22,12 +22,11 @@ ProductList
 
 Cart
 
-1.  Added to cart Notification
-2.  Update Cart total item quantity when individual item quantity is updated.
+1.  Cart Sidebar Popout??
+2.  Added to cart Notification
+3.  Update Cart total item quantity when individual item quantity is updated.
 
 Checkout
-
-<!-- 1.  Display correct quantity in checkout summary -->
 
 1.  Clear Cart on Final Payment Submit
 1.  Stripe Checkout !!

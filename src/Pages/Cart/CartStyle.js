@@ -110,6 +110,12 @@ export const CartItemCard = styled.article`
       &:hover {
         color: #666;
       }
+      a {
+          color: ${COLORS.textReg};
+        &:hover {
+            text-decoration: underline;
+        }
+      }
     }
     p {
       padding: 0.5rem 1rem;

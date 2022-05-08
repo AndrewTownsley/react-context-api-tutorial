@@ -32,6 +32,7 @@ export const ProductCard = styled.div`
       padding: 0;
       &:hover {
         color: ${COLORS.textLight};
+        text-decoration: underline;
       }
     }
   }

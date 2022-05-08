@@ -44,17 +44,20 @@ export const CheckoutCard = styled.article`
       color: #000;
       font-weight: bold;
       cursor: pointer;
-      &:hover {
-        color: #666;
+      a {
+        color: ${COLORS.textDark};
+        &:hover {
+          text-decoration: underline;
       }
     }
-      span {
+  }
+    span {
         color: ${COLORS.textDark};
         span {
           font-size: ${FONTS.sizeSmall};
           color: ${COLORS.textLight};
         }
-    }
+      }
     button {
       font-size: ${FONTS.sizeSmall};
       padding: 0;
@@ -67,6 +70,7 @@ export const CheckoutCard = styled.article`
         background: ${COLORS.accentRedFade};
       }
     }
+
     /* p {
       padding: 0.5rem 1rem;
     } */

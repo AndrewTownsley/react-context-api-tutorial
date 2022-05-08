@@ -30,10 +30,12 @@ export const DetailContentInfo = styled.div`
     padding: ${STYLES.paddingPrimary};
     h1 {
         font-size: ${FONTS.sizeLarge};
+        color: ${COLORS.backgroundDark};
         padding-bottom: 1rem;
     }
     h2 {
         font-size: ${FONTS.sizeMedium};
+        color: ${COLORS.backgroundDark};
         padding: 0.5rem 0;
     }
     p {

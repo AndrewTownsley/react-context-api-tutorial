@@ -18,9 +18,9 @@ const ProductDetail = ({ product }) => {
 
   return (
     <ProductDetailWrapper>
-            <Link to="/">
+            <Link to="/cart">
               <Button>
-              Continue Shopping
+                Back to Cart
               </Button>
             </Link>
         <DetailContent>

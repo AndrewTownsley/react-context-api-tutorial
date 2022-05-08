@@ -91,6 +91,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
             >
                 {formik => (
                     <ShipFormInputCont 
+                        onSubmit={formik.handleSubmit}
                         // onSubmit={((values, e) => {
                         //     e.preventDefault();
                         //     console.log("Form Submitted")
@@ -188,7 +189,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     </select>
                                 </StateSelectLabel>
                                     <Button 
-                                        type="button"
+                                        type="submit"
                                         // onSubmit={(e) => { e.preventDefault(); formik.handleSubmit(e)}}
                                         onClick={() => handleShipFormSubmit(formik.values)}
                                         >
