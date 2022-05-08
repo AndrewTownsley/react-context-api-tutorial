@@ -157,3 +157,36 @@ export const CartEmpty = styled.div`
     align-items: center;
     margin: 4rem auto;
 `
+
+export const ClearCartBtn = styled.button`
+     appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: ${COLORS.accentPurpleGrad};
+    background: white;
+    color: ${COLORS.textDark};
+    border: none};
+    border-radius: ${BORDERS.radiusSmall};
+    padding: 0.5rem 1rem;
+    margin: ${STYLES.marginSecondary} 0;
+    font-size: ${FONTS.sizeSmall};
+    font-weight: ${FONTS.fontWeightBold};
+    transition: ease all .2s;
+    opacity: 1;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+        text-decoration: none;
+    }
+    &:focus-visible {
+        outline: ${BORDERS.focus};
+    }
+    &:active {
+        transform: translateY(2px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    }
+`

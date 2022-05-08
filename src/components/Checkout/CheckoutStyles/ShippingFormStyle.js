@@ -27,6 +27,7 @@ export const CheckoutFormWrapper = styled.section`
 `
 
 export const CheckoutHeader = styled.header`
+    background: ${COLORS.white};
     height: 120px;
     display: flex;
     flex-direction: column;

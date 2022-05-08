@@ -3,7 +3,8 @@ import { COLORS, BORDERS, FONTS, STYLES } from "../../StyleProps";
 
 export const CheckoutWrapper = styled.section`
     display: grid;
-    margin: 2rem 0 0 0;
+    padding-top: 2rem;
+    margin: 0;
     grid-template-columns: repeat(2, 1fr);
     background: ${COLORS.white};
 `
@@ -103,7 +104,7 @@ export const PaymentFormWrapper = styled.section`
         border-radius: ${BORDERS.radiusSecondary};
         box-shadow: ${STYLES.boxShadow};
         background: ${COLORS.textWhite};
-        margin: 0;
+        margin: 0 0 2rem 0;
         max-width: 80%;
         h3 {
           font-size: ${FONTS.sizeMedium};
