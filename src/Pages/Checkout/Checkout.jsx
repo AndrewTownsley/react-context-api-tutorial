@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { CartState } from '../../Context/Context';
 import CheckoutItem from './CheckoutItem';
@@ -7,10 +7,10 @@ import FormikForm from '../../components/Checkout/FormikForm';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import ConfirmationModal from '../../components/Checkout/ConfirmationModal';
 import { CheckoutWrapper, CheckoutSummaryContainer } from './CheckoutStyle';
-import { UserInfo, ShippingFormCont, CheckoutSummaryTable, CheckoutSummaryTotals } from '../../components/Checkout/CheckoutStyles/ShippingFormStyle';
+import { UserInfo, ShippingFormCont, CheckoutHeader, CheckoutSummaryTable, CheckoutSummaryTotals } from '../../components/Checkout/CheckoutStyles/ShippingFormStyle';
 import { Button } from '../../StyleProps';
 
-const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShipping, setGroundShipping }) => {
+const Checkout = ({ total, setTotal, orderConfirmation, setOrderConfirmation, openConfirmationModal, groundShipping, setGroundShipping }) => {
     const { state: { cart, setCart, states } } = CartState();
     const [paymentFormActive, setPaymentFormActive] = useState(false)
     // const [groundShipping, setGroundShipping] = useState(true);
@@ -24,42 +24,58 @@ const Checkout = ({ total, setTotal, openEdit, openConfirmationModal, groundShip
         city: "",
         zipCode: "",
     }) 
-    // const [shipFormData, setShipFormData] = useState({
-    //     email: "",
-    //     firstName: "",
-    //     lastName: "",
-    //     address: "",
-    //     apartment: "",
-    //     city: "",
-    //     zipCode: "",
-    // }) 
+
+    // check if shipFormData is in sessionStorage,
+    // if it is, set shipFormData to sessionStorage
+    // if not, set shipFormData to default values
+    useEffect(() => {
+        const checkSessionStorage = () => {
+            if (sessionStorage.getItem("shipFormData")) {
+                setShipFormData(JSON.parse(sessionStorage.getItem("shipFormData")))
+            } else {
+                setShipFormData({
+                    email: "",
+                    firstName: "",
+                    lastName: "",
+                    address: "",
+                    apartment: "",
+                    city: "",
+                    zipCode: "",
+                })
+            }
+        }
+        checkSessionStorage();
+    }, [])
+        
 
     return (
         <div>
               {
-                openEdit === (true) ?
+                orderConfirmation === (true) ?
                 (<ConfirmationModal
                     shipFormData={shipFormData}
                     setShipFormData={setShipFormData}
                     groundShipping={groundShipping}
                     setGroundShipping={setGroundShipping}
+                    paymentFormActive={paymentFormActive}
+                    setPaymentFormActive={setPaymentFormActive}
+                    setOrderConfirmation={setOrderConfirmation}
                  />
                 )
                 :
         (    
         <>
-        <CheckoutWrapper>
-            <div>
-                <Link to="/cart">
-                    <Button >
-                        Back to Cart
-                    </Button>
-                </Link>
-            </div>
-            <header>
+            <CheckoutHeader>
+            {/* <div> */}
+                    <Link to="/cart">
+                        <Button>
+                            Back to Cart
+                        </Button>
+                    </Link>
                 <h2>Complete Payment</h2>
-                <h4>-- USER INFO!! --</h4>
-            </header>
+            {/* </div> */}
+            </CheckoutHeader>
+        <CheckoutWrapper>
                 <ShippingFormCont>
                     <FormikForm
                         total={total}

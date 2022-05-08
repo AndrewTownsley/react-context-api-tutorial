@@ -68,10 +68,14 @@ const Header = () => {
             </HeaderCheckoutButtonCont>
         } */}
                 <ul>
-                    <CartNavItemsLi 
-                    >
+                    <CartNavItemsLi>
                         <Link  to="/">
                             Shop
+                        </Link>
+                    </CartNavItemsLi>
+                    <CartNavItemsLi>
+                        <Link  to="/">
+                            CLEAR CART?
                         </Link>
                     </CartNavItemsLi>
                     {

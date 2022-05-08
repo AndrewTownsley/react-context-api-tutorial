@@ -1,11 +1,12 @@
 General
 
 1.  Loading/Error states
-2.  CSS Cleanup/Colors
+2.  Pagination Cleanup
 3.  Auth
 4.  Responsive !!!
 5.  Backend
-6.  Remove Commented Code/Unused props
+6.  CSS Cleanup/Colors
+7.  Remove Commented Code/Unused props
 
 Header
 

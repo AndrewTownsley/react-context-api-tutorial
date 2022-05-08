@@ -1,5 +1,7 @@
 **_ Checkout Form _**
 
+1.  Have _User info_ and _Checkout Items_ float down the page while the user scrolls through the forms.
+
 **_ Shipping Form _**
 
 <!-- 1.  Add error class to inputs that applies red border -->

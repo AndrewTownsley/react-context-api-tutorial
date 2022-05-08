@@ -34,16 +34,6 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
             // .required('Required')
             // .oneOf(states, 'State is required'),
     })
-  
-
-    const handleShipFormSubmit = (e) => {
-        // e.preventDefault();
-        const { name, value } = e.target;
-        setShipFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }))
-    }
 
     const shipMethodChange = (e) => {
         if(e.target.value === "10" && shipTotal === 0) {
@@ -64,7 +54,23 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
         }
         setPaymentFormActive(true)
         console.log("total: ", total);
-    }    
+    }   
+    
+    
+    const handleShipFormSubmit = (values,e) => {
+        // add formik.values to localStorage
+        sessionStorage.setItem("shipFormData", JSON.stringify(values))
+        // set shipFormData to formik.values     
+        setShipFormData(values);    
+        setShipFormSubmit(true);
+        setPaymentFormActive(true);
+        // console.log("values", values);
+        // const { name, value } = e.target;
+        // setShipFormData((prevState) => ({
+            //     ...prevState,
+            //     [name]: value,
+            // }))
+        }
     
     return (
         <CheckoutFormWrapper 
@@ -82,30 +88,21 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                     zipCode: "",
                 }}
                 validationSchema={validate}
-                // onSubmit={(e) => {e.preventDefault(); Formik.handleSubmit(e)}}
-                // handleChange={(e) => {
-                //     const { name, value } = e.target;
-                //     setShipFormData((prevState) => ({
-                //         ...prevState,
-                //         [name]: value,
-                //     }
-                //     )
-                //     )
-                // }
-                // }
             >
                 {formik => (
                     <ShipFormInputCont 
-                    // onChange={((values, e) => {
-                    //     setShipFormSubmit(true);
-                    //     setShipFormData(values);
-                    //     setPaymentFormActive(true);
-                    //     console.log("shipFormData",shipFormData);
-                    // })}
-                    
-                        onSubmit={(e) => e.preventDefault()}
+                        // onSubmit={((values, e) => {
+                        //     e.preventDefault();
+                        //     console.log("Form Submitted")
+                        //     handleShipFormSubmit(formik.values);
+                        //     setShipFormSubmit(true);
+                        //     setPaymentFormActive(true);
+                        //     console.log("shipFormData",shipFormData);
+                        // })}                 
                     >
                         {console.log("formik.errors", formik.errors)}
+                        {console.log("shipFormData", shipFormData)}
+                        {console.log("formik.values", formik.values)}
                             <div>
                                 <h3>Contact Information</h3>
                                 <TextInput
@@ -114,11 +111,10 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     // type="email"
                                     id="email"
                                     placeholder="Email"
-                                    value={shipFormData.email}
-                                    // value={e.target.value}
-                                    // onChange={formik.handleChange}
-                                    onChange={handleShipFormSubmit}
-                                    onBlur={formik.handleBlur}
+                                    // value={setShipFormData.email}
+                                    onChange={formik.handleChange}
+                                    // onChange={handleShipFormSubmit}
+                                    // onBlur={formik.handleBlur}
                                     />
                             </div>
                                 <TextInput
@@ -127,13 +123,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     id="firstName"
                                     placeholder="First Name"
-                                    value={shipFormData.firstName}
-                                    // onChange={handleShipFormSubmit}
-                                    // onChange={formik.handleChange}
-                                    onChange={handleShipFormSubmit}
-                                    // onBlur={formik.handleBlur}
-                                    onBlur={(e) => console.log(e.target.value)}
-
+                                    onChange={formik.handleChange}
                                 />
                                 <TextInput
                                     label="Last Name"
@@ -141,13 +131,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     id="lastName"
                                     placeholder="Last Name"
-                                    value={shipFormData.lastName}
-                                    // onChange={handleShipFormSubmit}
-                                    // onChange={formik.handleChange}
-                                    onChange={handleShipFormSubmit}
-                                    // onBlur={formik.handleBlur}  
-                                    onBlur={(e) => console.log(e.target.value)}
-                              
+                                    onChange={formik.handleChange}                               
                                 />
                                 <h3>Shipping Information</h3>
                                 <TextInput
@@ -156,13 +140,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="Address"
                                     id="address"
-                                    value={shipFormData.address}
-                                    // onChange={handleShipFormSubmit}
-                                    // onChange={formik.handleChange}
-                                    onChange={handleShipFormSubmit}
-                                    // onBlur={formik.handleBlur}  
-                                    onBlur={(e) => console.log(e.target.value)}
-                              
+                                    onChange={formik.handleChange}
                                 />
                                 <TextInput
                                     label="Apartment"
@@ -170,13 +148,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="Apt/Suite"
                                     id="apartment"
-                                    value={shipFormData.apartment}
-                                    // onChange={handleShipFormSubmit}
-                                    // onChange={formik.handleChange}
-                                    onChange={handleShipFormSubmit}
-                                    // onBlur={formik.handleBlur}
-                                    onBlur={(e) => console.log(e.target.value)}
-                                
+                                    onChange={formik.handleChange}                
                                 />
                                 <TextInput
                                     label="City"
@@ -184,12 +156,7 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="City"
                                     id="city"
-                                    value={shipFormData.city}
-                                    // onChange={handleShipFormSubmit}
-                                    // onChange={formik.handleChange}
-                                    onChange={handleShipFormSubmit}
-                                    // onBlur={formik.handleBlur}    
-                                    onBlur={(e) => console.log(e.target.value)}
+                                    onChange={formik.handleChange}
                             
                                 />
                                 <TextInput
@@ -198,20 +165,15 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     type="text"
                                     placeholder="Zip Code"
                                     id="zipCode"
-                                    value={shipFormData.zipCode}
-                                    // onChange={handleShipFormSubmit}
-                                    // onChange={formik.handleChange}
-
-                                    onChange={handleShipFormSubmit}
-                                    // onBlur={formik.handleBlur}
-                                    onBlur={(e) => console.log(e.target.value)}
+                                    onChange={formik.handleChange}
                                 
                                 />
                                 <StateSelectLabel htmlFor="state">
                                     <select 
                                         id="state"
                                         name="state"
-                                        // onChange={handleShipFormSubmit} 
+                                        onChange={formik.handleChange}
+                                        onBlur={(e) => console.log(e.target.value)}
                                         >
                                         {
                                             states.map((state) => (
@@ -226,8 +188,9 @@ const ShippingForm = ({ total, setTotal, setPaymentFormActive, shipFormData, set
                                     </select>
                                 </StateSelectLabel>
                                     <Button 
-                                        // type="submit"
-                                        onClick={() => setShipFormSubmit(true)}
+                                        type="button"
+                                        // onSubmit={(e) => { e.preventDefault(); formik.handleSubmit(e)}}
+                                        onClick={() => handleShipFormSubmit(formik.values)}
                                         >
                                         Submit
                                     </Button>

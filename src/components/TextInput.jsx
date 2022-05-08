@@ -26,47 +26,40 @@ const TextInputWrapper = styled.div`
 `
 
 const TextInput = ({ label, ...props }) => {
-    const [field, meta, helpers] = useField(props);
+    const [field, meta] = useField(props);
   return (
     <TextInputWrapper>
-        <label 
-            // htmlFor={field.name}
-        >
-        </label>
+             <label htmlFor={props.id || props.name}>{label}</label>
+
         {
             meta.touched && meta.error ?
+                <>
                     <input 
                         className={`${meta.touched && meta.error && 'is-invalid'}`}
-                        type="text" 
-                        name={field.name}
                         autoComplete='off'
                         outline={`2px solid ${COLORS.red}`}
                         // onBlur={console.log("meta", meta, "field", field, "props", props)}
-                        // onBlur={(e) => console.log(e.target.value)}
-                        value={field.value}
                         {...field}
                         {...props}
+                        />
+                    <ErrorMessage 
+                    component="div" 
+                    name={field.name} 
+                    className="error" 
                     />
+                </>
                 :
                     <input 
                         // className={`${meta.touched && meta.error && 'is-invalid'}`}
-                        type="text" 
-                        name={field.name}
                         autoComplete='off'
                         outline={`2px solid ${COLORS.lightGray}`}
                         // onBlur={console.log("meta", meta, "field", field, "props", props)}
                         // onBlur={(e) => console.log(e.target.value)}
-                        value={field.value}
+                        // value={field.value}
                         {...field}
                         {...props}
                     />
             }
-    
-        <ErrorMessage 
-            component="div" 
-            name={field.name} 
-            className="error" 
-        />
 
     </TextInputWrapper>
   )

@@ -3,6 +3,7 @@ import { COLORS, BORDERS, FONTS, STYLES } from "../../StyleProps";
 
 export const CheckoutWrapper = styled.section`
     display: grid;
+    margin: 2rem 0 0 0;
     grid-template-columns: repeat(2, 1fr);
     background: ${COLORS.white};
 `

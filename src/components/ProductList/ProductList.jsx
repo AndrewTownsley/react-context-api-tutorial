@@ -63,6 +63,8 @@ const ProductList = () => {
         setPageNumber(number);
     }
 
+    console.log(cart)
+
 
     return (
         <ProductListWrapper>

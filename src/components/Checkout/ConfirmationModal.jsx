@@ -39,8 +39,10 @@ const ConformationContent = styled.div`
 ` 
 
 
-const ConfirmationModal = ({ shipFormData, setShipFormData}) => {
-    const { groundShipping} = CartState();
+const ConfirmationModal = ({ shipFormData, setShipFormData, paymentFormActive, setPaymentFormActive, setOrderConfirmation}) => {
+    const { state: { cart, setCart, groundShipping, setCartTotal, setCartQuantity },  productQty,
+    setProductQty,
+    dispatch  } = CartState();
     const randomNumber = Math.floor(Math.random() * 100000)
     console.log("Confirmation ship data:", shipFormData);
     
@@ -48,10 +50,31 @@ const ConfirmationModal = ({ shipFormData, setShipFormData}) => {
     const shipDate = new Date(date);
     const shipDateString = shipDate.toDateString();
     const groundDeliveryDate = new Date(shipDate.setDate(shipDate.getDate() + 35));
-    console.log("shipDate: ", shipDateString);
-    console.log("ground Date: ", groundDeliveryDate);
-    console.log("groundShipping: ", groundShipping);
     
+    const resetAllState = () => {
+        setShipFormData({
+            name: "",
+            address: "",
+            city: "",
+            state: "",
+            zip: "",
+            phone: "",
+            email: "",
+            groundShipping: false,
+            groundDeliveryDate: "",
+            groundDeliveryTime: "", 
+
+    })
+        setPaymentFormActive(false)
+        // setCart([]);
+        // setCartTotal(0);
+        // setCartQuantity(0);
+        console.log(cart);
+        console.log(paymentFormActive);
+        setOrderConfirmation(false)
+    }
+
+
 return (
     <ConfirmationWrapper>
         <ConformationContent>
@@ -72,7 +95,15 @@ return (
                 <p>{shipFormData.city} {shipFormData.state} {shipFormData.zipCode}
                 </p>   
                     <Link to="/">
-                        <Button>
+                        <Button 
+                        onClick={() => {
+                            dispatch({
+                                type: "CLEAR_CART",
+                                payload: []
+                            })
+                            resetAllState()}
+                        }
+                        >
                         Continue Shopping...
                         </Button>
                     </Link>

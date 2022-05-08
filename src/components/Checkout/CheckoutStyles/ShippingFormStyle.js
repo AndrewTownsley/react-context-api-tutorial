@@ -26,6 +26,14 @@ export const CheckoutFormWrapper = styled.section`
     } */
 `
 
+export const CheckoutHeader = styled.header`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+`
+
 export const ShippingFormCont = styled.section`
     /* width: 100%; */
     margin: 0 2rem;

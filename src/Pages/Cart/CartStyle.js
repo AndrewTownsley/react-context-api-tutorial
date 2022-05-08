@@ -13,6 +13,7 @@ export const CartWrapper = styled.section`
 export const CartHeader = styled.header`
     width: 90%;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 `

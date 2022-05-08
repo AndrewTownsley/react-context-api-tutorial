@@ -18,7 +18,7 @@ function App() {
       dispatch } = CartState();
 
   const [total, setTotal] = useState(0.00)
-  const [openEdit, setOpenEdit] = useState(false)
+  const [orderConfirmation, setOrderConfirmation] = useState(false)
 
   const openConfirmationModal = (e) => {
     // dispatch{(
@@ -27,7 +27,7 @@ function App() {
       
     //   )}
       setProductQty(0)
-      setOpenEdit(true)
+      setOrderConfirmation(true)
   }
 
   
@@ -40,11 +40,24 @@ function App() {
       <AppContainer>
       <Header/> 
           <Routes>
-            <Route exact path="/" element={<Home openEdit={openEdit} />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/cart" element={<Cart total={total} setTotal={setTotal} />} />
-            <Route path="/checkout" element={<Checkout total={total} setTotal={setTotal} 
-            openEdit={openEdit} openConfirmationModal={openConfirmationModal} />} />
-            <Route exact path="/confirmationmodal" element={<ConfirmationModal openEdit={openEdit} />} />
+            <Route 
+              path="/checkout" 
+              element={
+                <Checkout 
+                  total={total} 
+                  setTotal={setTotal} 
+                  orderConfirmation={orderConfirmation} 
+                  setOrderConfirmation={setOrderConfirmation}
+                  openConfirmationModal={openConfirmationModal} 
+              />} />
+            <Route 
+              exact path="/confirmationmodal" 
+              element={
+                <ConfirmationModal 
+                  setOrderConfirmation={setOrderConfirmation} 
+                />} />
             <Route path="/productdetail" element={<ProductDetail />} />
           </Routes>
       </AppContainer>

@@ -6,7 +6,7 @@ import { CartState } from '../../Context/Context';
 import { HomeWrapper } from './HomeStyle';
 
 
-export const Home = ({ openEdit }) => {
+export const Home = () => {
     const { state: {}} = CartState();
 
     return (
