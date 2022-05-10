@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { COLORS, BORDERS, FONTS, STYLES } from '../../StyleProps';
 
 export const HeaderWrapper = styled.header `
-    /* background-color: #fff; */
-    background-color: ${COLORS.backgroundDark};
+    background-color: #190061;
+    background-color: #3f0087;
     /* color: #fff; */
     display: flex;
     justify-content: space-between;

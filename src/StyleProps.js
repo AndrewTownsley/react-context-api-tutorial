@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const COLORS = {
-    accentPurpleGrad: 'linear-gradient(90deg, rgba(0,180,63,1) 0%, rgba(0,188,88,1) 19%, rgba(0,158,195,1) 100%)',
+    accentPurpleGrad: 'linear-gradient(90deg, rgba(63,0,135,1) 16%, rgba(0,46,160,1) 49%, rgba(156,0,183,1) 99%);',
     accentPurpleGradHover: 'linear-gradient(90deg, rgba(138,0,202,1) 0%, rgba(186,58,255,1) 50%, rgba(128,0,255,1) 100%)',
     accentGreen: '#00bc58',
     accentYellow: '#fccd04',
