@@ -23,9 +23,6 @@ export const HeaderLogo = styled.h1 `
     a {
         transition: all 0.3s ease-in-out;
         color: $${COLORS.white};
-        &:hover {
-            color: ${COLORS.accentBlue};
-        }
     }
 `
 
