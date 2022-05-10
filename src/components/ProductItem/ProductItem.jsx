@@ -1,9 +1,10 @@
 import { CartState } from '../../Context/Context';
 import React, { useState } from 'react';
-import { Button } from '../../StyleProps';
+import { COLORS, Button } from '../../StyleProps';
 import { ProductCard,ProductCardImgCont, ProductCardBtnCont, PriceClearanceBefore, PriceClearanceAfter } from './ProductItemStyle';
 import RatingOnCard from '../RatingOnCard';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
+import { BsImage } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product }) => {
@@ -20,6 +21,9 @@ const ProductItem = ({ product }) => {
     return (
         <ProductCard>
             <ProductCardImgCont>
+              <div>
+                <BsImage size={100} color={"#999"} />
+              </div>
               <img src="https://picsum.photos/220" alt="product" />
             </ProductCardImgCont>
             <section>

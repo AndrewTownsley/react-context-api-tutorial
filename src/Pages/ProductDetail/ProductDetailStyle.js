@@ -54,6 +54,6 @@ export const DetailCartBtnCont = styled.div`
     align-items: center;
     button {
         height: 40px;
-        width: 150px;
+        /* width: 150px; */
     }
 `

@@ -28,13 +28,14 @@ Cart
 
 Checkout
 
-1.  Clear Cart on Final Payment Submit
+<!-- 1.  Clear Cart on Final Payment Submit -->
+
 1.  Stripe Checkout !!
 1.  Basic Validation on address
 1.  Auto scroll to next form on Submit & Validate
 1.  Border shadow effect on next submit button, to indicate where next click should be.
 1.  Set Confirmation number when 1st item is added to cart
-1.  Cart State to localStorage.
+<!-- 1.  Cart State to localStorage. -->
 
 Confirmation
 

@@ -73,10 +73,8 @@ export const CartSummary = styled.section`
 
 export const CartItemCard = styled.article`
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: flex-end;
-    /* margin: 0 1rem 0 1rem; */
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
@@ -126,14 +124,16 @@ export const CartItemCardImgCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    /* border-top-right-radius: ${BORDERS.radiusPrimary}; */
-    /* border-top-left-radius: ${BORDERS.radiusPrimary}; */
-  }
+  padding-left: 1rem;
+  width: 85px;
+  z-index: 1;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            z-index: 3;
+        }
+    }
 `
 
 export const CartItemControls = styled.section`

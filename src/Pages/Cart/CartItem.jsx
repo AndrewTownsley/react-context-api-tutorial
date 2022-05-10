@@ -7,6 +7,7 @@ import { Button } from '../../StyleProps';
 import { CheckoutItemList, CheckoutCard } from '../Checkout/CheckoutStyle';
 import { CartItemCard, CartItemCardImgCont, CartItemControls } from './CartStyle';
 import { AiOutlineClose } from 'react-icons/ai';
+import { BsImage } from 'react-icons/bs';
 
 const CartItem = ({ product }) => {
     // const [selectedQty, setSelectedQty] = useState(1);
@@ -17,7 +18,7 @@ const CartItem = ({ product }) => {
         return (
             <CartItemCard>
                     <CartItemCardImgCont>
-                      <img src="https://picsum.photos/90" alt="product" />
+                        <img src="https://picsum.photos/80" alt="product" />
                     </CartItemCardImgCont>
                     <section>
                         <div>

@@ -18,7 +18,7 @@ export const ProductCard = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 0rem 1rem 0 1rem;
+    padding: 1rem 1rem 0 1rem;
   }
   h5 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,18 +42,27 @@ export const ProductCard = styled.div`
 `
 
 export const ProductCardImgCont = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
+  height: 220px;
+  width: 220px;
+  background: rgba(0,0,0,0.1);
+  div {
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+  }
   img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-top-right-radius: ${BORDERS.radiusSecondary};
     border-top-left-radius: ${BORDERS.radiusSecondary};
+    z-index: 2;
   }
-`
+  `
 
 export const ProductCardBtnCont = styled.div`
   /* height: 100px; */

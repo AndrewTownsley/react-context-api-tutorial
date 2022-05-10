@@ -80,7 +80,7 @@ const ProductDetail = ({ product }) => {
                         <Button
                           style={{ background: `${COLORS.accentYellow}`, color: `${COLORS.textDark}` }}
                         >
-                          Checkout
+                          Continue Checkout
                         </Button>
                       </Link>
                 </DetailCartBtnCont>
