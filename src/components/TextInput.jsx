@@ -6,6 +6,8 @@ import { BORDERS, COLORS, STYLES } from '../StyleProps';
 const TextInputWrapper = styled.div`
     input {
         position: relative;
+        display: flex;
+        flex-direction: column;
         width: 90%;
         background-color: ${COLORS.grayInputBg};
         border: none;

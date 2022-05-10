@@ -73,11 +73,6 @@ const Header = () => {
                             Shop
                         </Link>
                     </CartNavItemsLi>
-                    <CartNavItemsLi>
-                        <Link  to="/">
-                            CLEAR CART?
-                        </Link>
-                    </CartNavItemsLi>
                     {
                         cart.length ?
                         <CartNavItemsLiCart>

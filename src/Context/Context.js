@@ -6,6 +6,7 @@ const Cart = createContext();
 faker.seed(100);
 
 const Context = ({ children }) => {
+  const [ isLoading, setIsLoading ] = useState(true);
   const [productQty, setProductQty] = useState(1);
   const [groundShipping, setGroundShipping] = useState(false);
 
@@ -100,7 +101,7 @@ const Context = ({ children }) => {
   })
 
   return (
-    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData, groundShipping, setGroundShipping}}>
+    <Cart.Provider value={{ state, dispatch, productQty, setProductQty, productState, productDispatch, shipFormData, setShipFormData, groundShipping, setGroundShipping, isLoading, setIsLoading}}>
       {children}
     </Cart.Provider>
   );

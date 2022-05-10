@@ -104,7 +104,7 @@ export const PaymentFormWrapper = styled.section`
         border-radius: ${BORDERS.radiusSecondary};
         box-shadow: ${STYLES.boxShadow};
         background: ${COLORS.textWhite};
-        margin: 0 0 2rem 0;
+        margin: 0 auto 2rem auto;
         max-width: 80%;
         h3 {
           font-size: ${FONTS.sizeMedium};

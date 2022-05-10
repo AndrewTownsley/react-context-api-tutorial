@@ -9,7 +9,8 @@ import { Button } from '../../StyleProps';
 
 const ProductList = () => {
     const { state: { cart, productsArray },
-            productState: { sort, byStock, byNextDay, byRating, searchQuery }
+            productState: { sort, byStock, byNextDay, byRating, searchQuery },
+            isLoading, setIsLoading
         } = CartState();
     const PRODUCTS_PER_PAGE = 10;
     const [error, setError] = useState(false);

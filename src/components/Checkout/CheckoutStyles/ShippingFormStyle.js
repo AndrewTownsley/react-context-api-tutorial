@@ -39,11 +39,15 @@ export const CheckoutHeader = styled.header`
 export const ShippingFormCont = styled.section`
     /* width: 100%; */
     margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
 `
 
 export const CheckoutSummaryTable = styled.section`
-    position: sticky;
-    top:261px;
+    /* position: sticky; */
+    /* top:261px; */
     max-width: 500px;
 `
 
@@ -66,8 +70,8 @@ export const CheckoutSummaryTotals = styled.section`
 `
 
 export const UserInfo = styled.section `
-    position: sticky;
-    top:20px;
+    /* position: sticky; */
+    /* top:20px; */
     max-width: 300px;
     display: flex;
     flex-direction: column;

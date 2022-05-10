@@ -20,12 +20,7 @@ function App() {
   const [total, setTotal] = useState(0.00)
   const [orderConfirmation, setOrderConfirmation] = useState(false)
 
-  const openConfirmationModal = (e) => {
-    // dispatch{(
-    //   type: "CLEAR_CART",
-    //   payload: {}
-      
-    //   )}
+  const openConfirmationModal = () => {
       setProductQty(0)
       setOrderConfirmation(true)
   }

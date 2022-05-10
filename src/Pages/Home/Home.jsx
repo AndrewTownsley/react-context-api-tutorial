@@ -7,7 +7,7 @@ import { HomeWrapper } from './HomeStyle';
 
 
 export const Home = () => {
-    const { state: {}} = CartState();
+    // const { state: {}} = CartState();
 
     return (
         <HomeWrapper className='Home'>
